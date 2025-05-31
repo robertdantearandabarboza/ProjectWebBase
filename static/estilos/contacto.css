@@ -1,0 +1,126 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f7f9fc;
+  color: #333;
+  line-height: 1.6;
+}
+
+.barra-contacto {
+  background-color: #003366;
+  color: #fff;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 0.9rem;
+}
+
+nav {
+  background-color: #004080;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+nav a img {
+  height: 40px;
+  margin-right: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.activo {
+  background-color: #ff6600;
+  color: #fff;
+}
+
+main {
+  max-width: 600px;
+  background-color: #fff;
+  margin: 30px auto;
+  padding: 20px 30px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #004080;
+  text-align: center;
+}
+
+form label {
+  display: block;
+  margin: 12px 0 6px;
+  font-weight: 600;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1.5px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="tel"]:focus,
+form textarea:focus {
+  border-color: #004080;
+  outline: none;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+button[type="submit"] {
+  margin-top: 20px;
+  background-color: #004080;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+button[type="submit"]:hover {
+  background-color: #ff6600;
+}
+
+footer {
+  background-color: #003366;
+  color: #fff;
+  text-align: center;
+  padding: 12px 0;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+

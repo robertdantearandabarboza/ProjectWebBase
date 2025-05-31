@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hydromenn - Contacto</title>
+  <link rel="stylesheet" href="../static/estilos/contacto.css" />
+</head>
+<body>
+
+  <!-- Barra de contacto arriba -->
+  <div class="barra-contacto">
+    <p>Email: contacto@hydromenn.com | Tel: +51 999 999 999</p>
+  </div>
+
+  <!-- Navegación -->
+  <nav>
+    <a href="index.html"><img src="../imagenes/logo-hydromenn.png" alt="Logo Hydromenn" /></a>
+    <ul>
+      <li><a href="index.html">INICIO</a></li>
+      <li><a href="nosotros.html">NOSOTROS</a></li>
+      <li><a href="productos.html">PRODUCTOS</a></li>
+      <li><a href="clientes.html">CLIENTES</a></li>
+      <li><a href="contacto.html" class="activo">CONTACTO</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Contáctanos</h1>
+    <form action="https://formsubmit.co/tu@email.com" method="POST">
+
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" name="name" required />
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" />
+
+      <label for="empresa">Empresa:</label>
+      <input type="text" id="empresa" name="empresa" />
+
+      <label for="ruc">RUC:</label>
+      <input type="text" id="ruc" name="ruc" pattern="\d{11}" title="Debe ser un RUC válido de 11 dígitos" />
+
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="message" rows="5" required></textarea>
+
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://tu-sitio.com/gracias.html" />
+
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Hydromenn | Lima, Perú</p>
+  </footer>
+
+  <script src="../static/jscript/contacto.js"></script>
+</body>
+</html>

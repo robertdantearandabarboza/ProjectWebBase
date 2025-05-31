@@ -12,6 +12,19 @@ body {
   line-height: 1.6;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* El contenido principal (lo que está entre nav y footer) debe crecer */
+main, section {
+  flex: 1;
+}
+
 .barra-contacto {
   background-color: #003366;
   color: #fff;
@@ -169,3 +182,4 @@ footer {
   margin-top: 40px;
   font-size: 0.9rem;
 }
+
