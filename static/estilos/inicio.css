@@ -163,7 +163,8 @@ header {
 
 /* Secciones */
 section {
-  max-width: 900px;
+  width: 90%;
+  max-width: 1200px;
   margin: 40px auto;
   padding: 0 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -259,6 +260,124 @@ section button {
 section button:hover {
   background-color: var(--color-accion-hover);
 }
+
+/* ESTILOS DE INICIO ¿QUIENES SOMOS? */
+section.quienes-somos {
+  max-width: 1100px;  /* más ancho que 900px */
+  margin: 40px auto;
+  padding: 0 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--color-principal);
+  line-height: 1.7;
+  position: relative;
+}
+
+/* Contenedor que separa texto del botón */
+section.quienes-somos {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--color-principal);
+  line-height: 1.7;
+}
+
+.contenedor-quienes {
+  position: relative;
+  padding-top: 20px;
+}
+
+.contenedor-quienes p {
+  text-align: left;
+  max-width: 800px;
+  width: 850px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+
+/* Botón arriba a la derecha */
+.btn-ir-nosotros {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--color-principal);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+.btn-ir-nosotros:hover {
+  background-color: #333;
+}
+
+
+/* ESTILOS DE LAS IMAGENES DE ¿QUIENES SOMOS? */
+.carrusel-container {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  margin: 40px auto;
+  overflow: hidden;
+  height: 500px; /* fija la altura para que no colapse */
+}
+
+.carrusel {
+  display: flex;
+  gap: 15px;
+  transition: transform 0.5s ease-in-out;
+  /* Ancho dinámico, se ajusta con JS */
+}
+
+.carrusel img {
+  width: 300px; /* ancho fijo para 3 imágenes visibles en 900px */
+  height: 500px;
+  object-fit: cover;
+  flex-shrink: 0; /* evita que se reduzcan */
+  transition: transform 0.5s ease; /* para zoom al hover */
+  cursor: pointer;
+}
+
+/* Para que la última imagen no tenga margen extra */
+.carrusel img:last-child {
+  margin-right: 0;
+}
+
+/* Zoom suave al pasar el mouse */
+.carrusel img:hover {
+  transform: scale(1.05);
+}
+
+/* Botones de navegación */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0 10px;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 5px;
+  user-select: none;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+
 
 /* Footer */
 footer {
