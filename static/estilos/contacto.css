@@ -105,7 +105,7 @@ nav ul li a.activ {
 }
 
 main {
-  max-width: 600px;
+  max-width: 1200px;
   background-color: var(--color-fondo-suave);
   margin: 30px auto;
   padding: 20px 30px;
@@ -117,6 +117,28 @@ h1 {
   margin-bottom: 20px;
   color: var(--color-principal);
   text-align: center;
+}
+
+.contacto-container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.imagen-contacto {
+  flex: 1;
+  max-width: 500px;
+}
+
+.imagen-contacto img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-contacto {
+  flex: 1;
 }
 
 form label {
@@ -165,6 +187,18 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: var(--color-accion-hover);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .contacto-container {
+    flex-direction: column;
+  }
+
+  .imagen-contacto {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
 }
 
 footer {

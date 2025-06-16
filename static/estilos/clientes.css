@@ -110,77 +110,177 @@ nav ul li a.activ {
 }
 
 main {
-  max-width: 600px;
-  background-color: var(--color-fondo-suave);
+  max-width: 1400px;
+  width: 95%;
   margin: 30px auto;
-  padding: 20px 30px;
-  border-radius: 6px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  background-color: var(--color-fondo-suave);
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-  margin-bottom: 20px;
   color: var(--color-principal);
   text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
 }
 
 .clientes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
   margin-bottom: 40px;
 }
 
 .cliente {
-  background-color: var(--color-fondo-suave);
-  padding: 15px;
+  background-color: white;
+  padding: 20px;
   border-radius: 8px;
   text-align: center;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  cursor: default;
-}
-
-.cliente img {
-  max-width: 100%;
-  height: 140px;
-  object-fit: contain;
-  margin-bottom: 10px;
-  border-radius: 4px;
-}
-
-.cliente p {
-  font-weight: 600;
-  color: var(--color-principal);
 }
 
 .cliente:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  cursor: pointer;
+  transform: translateY(-5px);
+}
+
+.cliente img {
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.cliente p {
+  color: var(--color-texto);
+  font-weight: 500;
 }
 
 .testimonios {
-  background-color: var(--color-fondo-suave);
-  padding: 20px;
+  margin-top: 40px;
+  padding: 30px;
+  background-color: white;
   border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonios h2 {
+  color: var(--color-principal);
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 2rem;
 }
 
 .testimonios blockquote {
+  margin: 25px 0;
+  padding: 25px;
+  background-color: var(--color-fondo-suave);
+  border-left: 4px solid var(--color-accion);
+  border-radius: 4px;
+}
+
+.testimonios blockquote p {
   font-style: italic;
-  margin-bottom: 20px;
-  position: relative;
-  padding-left: 20px;
-  border-left: 5px solid var(--color-principal);
-  color: var(--color-texto);
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 .testimonios blockquote footer {
-  font-style: normal;
   font-weight: bold;
-  margin-top: 8px;
   color: var(--color-principal);
-  text-align: right;
+  font-size: 1.1rem;
+}
+
+/* Video Testimonials Section */
+.video-testimonios {
+  margin-top: 60px;
+  padding: 30px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-testimonios h2 {
+  color: var(--color-principal);
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.video-item {
+  background-color: var(--color-fondo-suave);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.video-item:hover {
+  transform: translateY(-5px);
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-item h3 {
+  color: var(--color-principal);
+  padding: 20px 20px 10px;
+  font-size: 1.3rem;
+}
+
+.video-item p {
+  color: var(--color-texto);
+  padding: 0 20px 20px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  main {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .video-item {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .testimonios h2,
+  .video-testimonios h2 {
+    font-size: 1.8rem;
+  }
 }
 
 footer {
