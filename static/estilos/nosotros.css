@@ -1,12 +1,36 @@
+/* Importar fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');
+
+/* Variables de color */
 :root {
-  --color-principal: #800000;     /* Rojo oscuro */
-  --color-secundario: #990000;    /* Rojo intermedio */
-  --color-destacado: #cc0000;     /* Rojo más claro */
-  --color-accion: #ff3300;        /* Botones, hover */
-  --color-accion-hover: #cc2900;  /* Hover oscuro */
-  --color-fondo-suave: #fff5f5;   /* Fondo claro */
-  --color-texto: #800000;         /* Texto principal */
+  --color-principal: #800000;
+  --color-secundario: #990000;
+  --color-destacado: #cc0000;
+  --color-accion: #ff3300;
+  --color-accion-hover: #cc2900;
+  --color-fondo-suave: #fff5f5;
+  --color-texto: #800000;
   --color-blanco: #ffffff;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+/* Estilos generales */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--color-texto);
+  background-color: var(--color-fondo-suave);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
 }
 
 /*                 */
@@ -102,11 +126,133 @@ nav ul li a.activ {
   color: var(--color-blanco);
 }
 
+/* Animations */
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(rgba(128, 0, 0, 0.8), rgba(128, 0, 0, 0.8)), url('../media/img/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: var(--color-blanco);
+  padding: 120px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 120px 20px;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+}
+
+.hero-content .section-title {
+  font-size: 3.5rem;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--color-destacado);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: var(--color-blanco);
+}
+
+/* Secciones con fondo completo */
+.mission-vision,
+.objectives,
+.values,
+.products-services,
+.why-us {
+  width: 100%;
+  padding: 120px 20px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Elementos dentro de las secciones */
+.mission, .vision, .objective-item, .value-item, .product-item, .benefit-item {
+  background: transparent;
+  padding: 40px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Estilos de texto */
+.mission h3, .vision h3, .objective-item h3, .value-item h3, .product-item h3, .benefit-item h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: var(--color-principal);
+}
+
+.mission p, .vision p, .objective-item p, .value-item p, .product-item p, .benefit-item p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: var(--color-texto);
+}
+
+/* Efectos hover */
+.objective-item:hover {
+  transform: translateY(-10px);
+}
+
+.product-item:hover, .benefit-item:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
 /* Contenido principal */
 main {
-  max-width: 1200px;
-  margin: 30px auto;
-  padding: 20px 30px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .quienes-somos-container {
@@ -156,6 +302,65 @@ main {
   font-size: 1.1rem;
 }
 
+/* Section Titles */
+.section-title {
+  text-align: center;
+  color: var(--color-principal);
+  margin-bottom: 60px;
+  font-size: 2.8em;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--color-principal);
+  border-radius: 2px;
+}
+
+/* Quote */
+.quote {
+  text-align: center;
+  font-style: italic;
+  margin-top: 60px;
+  font-size: 1.4em;
+  color: var(--color-secundario);
+  position: relative;
+  padding: 20px;
+}
+
+.quote::before {
+  content: open-quote;
+  font-size: 4em;
+  color: var(--color-principal);
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  opacity: 0.2;
+}
+
+.quote::after {
+  content: close-quote;
+  font-size: 4em;
+  color: var(--color-principal);
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  opacity: 0.2;
+}
+
+.quote cite {
+  display: block;
+  margin-top: 20px;
+  font-size: 1em;
+  color: var(--color-destacado);
+}
+
 /* Footer */
 footer {
   background-color: var(--color-principal);
@@ -188,4 +393,55 @@ footer {
 
 .whatsapp-float:hover {
   transform: scale(1.1);
+}
+
+/* Clases de animación */
+.sobre-nosotros-content, .mission, .vision, .objective-item, .value-item, .product-item, .benefit-item {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.sobre-nosotros-content.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.mission.hidden, .vision.hidden {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.objective-item.hidden, .value-item.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.product-item.hidden, .benefit-item.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+  
+  .mission-vision .container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .hero-section {
+    padding: 80px 15px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
 }
