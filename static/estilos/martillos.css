@@ -1,0 +1,292 @@
+.martillos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.martillo-card {
+  background: white;
+  border-radius: 10px;
+  height: 380px;
+  width: 350px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.martillo-card:hover {
+  transform: translateY(-10px);
+}
+
+.martillo-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.btn-martillo {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background-color: #B51922;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 0 0 10px 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cotizar-martillo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
+  background-color: #B51922;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  gap: 0.5rem;
+}
+
+.btn-cotizar-martillo:hover {
+  background-color: #99141A;
+}
+
+.btn-cotizar-martillo i {
+  font-size: 1.2rem;
+}
+
+.btn-martillo:hover {
+  background-color: #99141A;
+}
+
+/* New layout styles */
+main {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.martillo-detalle {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 1400px;
+  width: 98%;
+  padding: 3rem;
+}
+
+.martillo-imagen {
+  flex: 0 0 45%;
+  position: relative;
+  min-height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.martillo-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.martillo-info {
+  flex: 0 0 55%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.info-martillo {
+  margin: 0;
+  padding: 0;
+}
+
+.info-martillo h1, .info-martillo h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.info-martillo p {
+  margin: 0.5rem 0;
+  padding: 0;
+}
+
+.descarga-pdf, .cotizar-pdf {
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.descarga-pdf a {
+  display: inline-flex;
+  background: transparent;
+  color: #B51922;
+  border: 2px solid #B51922;
+  padding: 0.8rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  width: auto;
+  min-width: auto;
+}
+
+.descarga-pdf a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(181, 25, 34, 0.2);
+}
+
+.cotizar-pdf a {
+  display: inline-flex;
+  background-color: #B51922;
+  color: white;
+  padding: 0.8rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  width: auto;
+  min-width: auto;
+}
+
+.cotizar-pdf a:hover {
+  background-color: #99141A;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(153, 20, 26, 0.2);
+}
+
+.info-martillo h1 {
+  font-size: 1.8rem;
+  color: #B51922;
+  margin-bottom: 1rem;
+}
+
+.info-martillo h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.info-martillo p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.info-martillo strong {
+  color: #B51922;
+  font-weight: 600;
+}
+
+.descarga-pdf, .cotizar-pdf {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Estilos para los enlaces de navegación */
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 2px 12px;
+  color: var(--color-texto);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--color-accion-hover);
+}
+
+/* Iconos de navegación */
+.nav-icon {
+  font-size: 14px;
+  color: var(--color-accion-hover);
+  opacity: 0;
+  position: absolute;
+  top: -10px; /* Posición más baja del icono */
+  left: 50%;
+  transform: translateX(-50%) translateY(100%); /* Inicia dentro del texto */
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover .nav-icon {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-25%); /* Sale un poco hacia arriba */
+}
+
+.nav-link span {
+  display: block;
+  margin-top: 0;
+  position: relative;
+  z-index: 1; /* Para que el texto esté por encima del icono */
+}
+
+nav ul li a {
+  color: #2F353A; /* Color especificado por el usuario */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem; /* Hacemos un poco más pequeño */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Mismo font que la barra de contacto */
+  padding: 4px 12px; /* Reducimos el padding vertical de los enlaces */
+  border-radius: 4px;
+  transition: color 0.3s ease; /* Transición suave para el color */
+  text-shadow: none; /* Removemos la sombra ya que no es necesaria en fondo blanco */
+  position: relative; /* Para el pseudo-elemento */
+}
+
+/* Cotizar button styles */
+.btn-cotizar-martillo {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.btn-cotizar-martillo i {
+  font-size: 1.2rem;
+}
+
+.btn-cotizar-martillo:hover {
+  background-color: #45a049;
+  transform: translateX(5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  text-decoration: none;
+}

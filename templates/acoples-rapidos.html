@@ -2,18 +2,18 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Hydromenn - Productos</title>
+  <title>Acoples Rápidos - Hydromenn</title>
   <link rel="stylesheet" href="../static/estilos/productos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<a href="https://wa.link/u46549" class="whatsapp-float" target="_blank">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
 <body>
+  <!-- WhatsApp float -->
+  <a href="https://wa.link/u46549" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
-  <!-- Contenedor de fondo plomo para la barra de contacto -->
+  <!-- Barra de contacto -->
   <div class="contenedor-barra-contacto">
     <div class="barra-contacto">
       <div class="contacto-izquierda">
@@ -40,15 +40,12 @@
     </div>
   </div>
 
-  <!-- Contenedor de fondo blanco para el nav -->
+  <!-- Navegación -->
   <div class="contenedor-nav">
     <nav>
-    <!-- Logo a la izquierda -->
-    <a href="index.html">
-      <img src="../media/img/logolyc.png" alt="Logo Hydromenn" width="120">
-    </a>
-
-    <!-- Enlaces de navegación -->
+      <a href="index.html">
+        <img src="../media/img/logolyc.png" alt="Logo Hydromenn" width="120">
+      </a>
       <ul>
         <li class="nav-item">
           <a href="index.html" class="nav-link">
@@ -84,46 +81,41 @@
     </nav>
   </div>
 
-  <h1>Productos Hydromenn</h1>
+  <h1>Acoples Rápidos</h1>
 
-  <section class="product-section">
-    <div class="product-card">
-      <img src="../media/img/Productos/MH.jpeg" alt="Martillo Hidráulico">
-      <a href="martillos-hidraulicos.html" class="product-btn">
-        <span>Martillos Hidráulicos</span>
-        <i class="fas fa-arrow-right"></i>
-      </a>
+  <div class="productos-grid">
+    <div class="producto">
+      <img src="../static/imagenes/acople-1.jpg" alt="Acople Rápido 1" />
+      <h3>Acople Rápido 1</h3>
+      <p>Descripción del acople rápido 1.</p>
     </div>
-    <div class="product-card">
-      <img src="../media/img/Productos/AC.png" alt="Acoples Rápidos">
-      <a href="acoples-rapidos.html" class="product-btn">
-        <span>Acoples Rápidos</span>
-        <i class="fas fa-arrow-right"></i>
-      </a>
+    <div class="producto">
+      <img src="../static/imagenes/acople-2.jpg" alt="Acople Rápido 2" />
+      <h3>Acople Rápido 2</h3>
+      <p>Descripción del acople rápido 2.</p>
     </div>
-    <div class="product-card">
-      <img src="../media/img/Productos/RM.png" alt="Repuestos para Martillos">
-      <a href="repuestos-martillos-hidraulicos.html" class="product-btn">
-        <span>Repuestos para Martillos</span>
-        <i class="fas fa-arrow-right"></i>
-      </a>
+    <div class="producto">
+      <img src="../static/imagenes/acople-3.jpg" alt="Acople Rápido 3" />
+      <h3>Acople Rápido 3</h3>
+      <p>Descripción del acople rápido 3.</p>
     </div>
-    <div class="product-card">
-      <img src="../media/img/Productos/SM.png" alt="Servicio de Mantenimiento">
-      <a href="servicio-mantenimiento.html" class="product-btn">
-        <span>Servicio de Mantenimiento</span>
-        <i class="fas fa-arrow-right"></i>
-      </a>
-    </div>
-  </section>
+  </div>
 
-
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="cerrar-btn" id="cerrarBtn">&times;</span>
+      <h2 id="modalTitulo"></h2>
+      <img id="modalImagen" src="" alt="Imagen ampliada" />
+      <p id="modalDescripcion"></p>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Hydromenn | Lima, Perú</p>
+    <p> 2025 Hydromenn | Lima, Perú</p>
   </footer>
 
-  <script src="../static/jscript/productos.js"></script>
+  <script src="../static/js/modal.js"></script>
 </body>
 </html>

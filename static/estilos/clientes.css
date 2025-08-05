@@ -11,16 +11,13 @@
 
 /* Reset básico */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: var(--color-fondo-suave);
-  color: var(--color-texto);
-  line-height: 1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html, body {
@@ -29,91 +26,230 @@ html, body {
 }
 
 /* El contenido principal (lo que está entre nav y footer) debe crecer */
-main, section {
+/* main, section {
   flex: 1;
+} */
+
+/* Contenedor de fondo plomo para la barra de contacto */
+.contenedor-barra-contacto {
+  background-color: #2F353A; /* Color especificado por el usuario */
+  width: 100%;
+  padding: 40px 0; /* Aumentamos más la altura del contenedor */
 }
 
+/* Contenedor de fondo blanco para el nav */
+.contenedor-nav {
+  background-color: white;
+  width: 95%; /* Hacemos el contenedor más ancho */
+  margin: 0 auto; /* Centra el contenedor */
+  border-radius: 0; /* Sin bordes redondeados, rectángulo normal */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  padding: 2px 0; /* Reducimos aún más el padding vertical */
+  position: relative;
+  z-index: 10; /* Para que esté por encima del contenedor de contacto */
+  margin-top: -20px; /* Lo movemos hacia arriba para que se superponga */
+}
+
+/* Barra de contacto arriba */
 .barra-contacto {
   color: white;
-  text-align: center;
-  padding: 8px 10px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.7);
   width: 100%;
+  background-color: transparent; /* Ahora es transparente porque el contenedor padre tiene el fondo */
+  backdrop-filter: none; /* Removemos el blur ya que no es necesario */
+  -webkit-backdrop-filter: none;
   margin-top: 5px;
-  background: transparent;
-  z-index: 2;
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
 
-nav {
-  background-color: rgba(128, 128, 128, 0.6);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+.contacto-izquierda {
+  display: flex;
+  gap: 30px;
+  margin-left: 80px;
+  margin-top: -20px;
+}
+
+.contacto-item {
   display: flex;
   align-items: center;
-  padding: 10px 40px;
+  gap: 8px;
+}
+
+.contacto-item i {
+  font-size: 1.1rem;
+}
+
+.contacto-item span {
+  margin: 0;
+  text-align: left;
+  color: white;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.7);
+}
+
+.contacto-derecha {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Aumentamos el espaciado entre elementos */
+  margin-right: 80px; /* Aumentamos el espaciado desde la derecha */
+  margin-top: -20px; /* Movemos un poco más arriba */
+}
+
+.redes-sociales {
+  display: flex;
+  gap: 15px;
+}
+
+.red-social {
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.red-social:hover {
+  color: #B51922; /* Color especificado por el usuario */
+}
+
+.btn-cotizar {
+  background-color: #B51922; /* Color especificado por el usuario */
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1.1rem; /* Hacemos un poco más grande */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Mismo font que la barra de contacto */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cotizar:hover {
+  background-color: #8B1419; /* Color similar pero más oscuro para el hover */
+}
+
+.btn-cotizar i {
+  font-size: 1rem;
+}
+
+/* Navegación */
+nav {
+  display: flex;
+  align-items: center;
+  padding: 2px 40px; /* Reducimos aún más el padding vertical */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin-top: -55px;
+  margin-top: 0; /* Removemos el margin-top negativo */
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 100%;
+  background-color: transparent; /* El nav es transparente, el contenedor padre tiene el fondo blanco */
+}
+
+/* CAMBIO DE TAMAÑO DE IMAGEN */
+nav a img {
+  height: 60px; /* Reducimos significativamente la altura */
+  width: 220px; /* Aumentamos un poco más el ancho */
+  margin-right: 20px;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   gap: 30px;
-  margin-left: 0;
+  margin-left: 0; /* para que no se superponga con la imagen */
   padding: 0;
-  background-color: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  background-color: transparent; /* Ahora es transparente */
   border-radius: 8px;
-  padding: 20px 25px;
-  animation: menuFadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 5px 25px; /* Reducimos aún más el padding vertical */
 }
 
-@keyframes menuFadeIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+/* Estilos para los enlaces de navegación */
+.nav-item {
+  position: relative;
 }
 
-nav a img {
-  height: 210px;
-  width: 350px;
-  margin-right: 20px;
+.nav-link {
+  display: inline-block;
+  padding: 2px 12px;
+  color: var(--color-texto);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--color-accion-hover);
+}
+
+/* Iconos de navegación */
+.nav-icon {
+  font-size: 14px;
+  color: var(--color-accion-hover);
+  opacity: 0;
+  position: absolute;
+  top: -10px; /* Posición más baja del icono */
+  left: 50%;
+  transform: translateX(-50%) translateY(100%); /* Inicia dentro del texto */
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover .nav-icon {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-25%); /* Sale un poco hacia arriba */
+}
+
+.nav-link span {
+  display: block;
+  margin-top: 0;
+  position: relative;
+  z-index: 1; /* Para que el texto esté por encima del icono */
 }
 
 nav ul li a {
-  color: white;
+  color: #2F353A; /* Color especificado por el usuario */
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.3rem;
-  padding: 8px 12px;
+  font-size: 0.9rem; /* Hacemos un poco más pequeño */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Mismo font que la barra de contacto */
+  padding: 4px 12px; /* Reducimos el padding vertical de los enlaces */
   border-radius: 4px;
-  transition: background-color 0.3s ease;
-  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.7);
+  transition: color 0.3s ease; /* Transición suave para el color */
+  text-shadow: none; /* Removemos la sombra ya que no es necesaria en fondo blanco */
+  position: relative; /* Para el pseudo-elemento */
+}
+
+nav ul li a::before {
+  content: '';
+  position: absolute;
+  top: -24px; /* Línea más pegada al tope del contenedor nav */
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #B51922;
+  transition: width 0.3s ease; /* Transición suave para la línea */
+}
+
+nav ul li a:hover::before,
+nav ul li a.active::before {
+  width: 100%; /* La línea se extiende del ancho de la palabra */
 }
 
 nav ul li a:hover,
-nav ul li a.activ {
-  background-color: var(--color-accion-hover);
-  color: var(--color-blanco);
+nav ul li a.active {
+  color: #B51922; /* Color principal especificado */
 }
 
 main {
   max-width: 600px;
   background-color: var(--color-fondo-suave);
-  margin: 30px auto;
-  padding: 20px 30px;
+  margin: 25px auto; /* Reducimos el margin */
+  padding: 18px 25px; /* Reducimos el padding */
   border-radius: 6px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
@@ -127,13 +263,13 @@ h1 {
 .clientes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  margin-bottom: 40px;
+  gap: 20px; /* Reducimos el gap */
+  margin-bottom: 35px; /* Reducimos el margin bottom */
 }
 
 .cliente {
   background-color: var(--color-fondo-suave);
-  padding: 15px;
+  padding: 12px; /* Reducimos el padding */
   border-radius: 8px;
   text-align: center;
   box-shadow: 0 1px 5px rgba(0,0,0,0.1);
@@ -143,7 +279,7 @@ h1 {
 
 .cliente img {
   max-width: 100%;
-  height: 140px;
+  height: 120px; /* Reducimos la altura de las imágenes */
   object-fit: contain;
   margin-bottom: 10px;
   border-radius: 4px;
