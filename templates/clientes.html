@@ -44,14 +44,14 @@
   <div class="contenedor-nav">
     <nav>
     <!-- Logo a la izquierda -->
-    <a href="index.html">
+    <a href="../index.html">
       <img src="../media/img/logolyc.png" alt="Logo Hydromenn" width="120">
     </a>
 
     <!-- Enlaces de navegación -->
       <ul>
         <li class="nav-item">
-          <a href="index.html" class="nav-link">
+          <a href="../index.html" class="nav-link">
             <i class="fas fa-home nav-icon"></i>
             <span>INICIO</span>
           </a>
@@ -64,7 +64,7 @@
         </li>
         <li class="nav-item">
           <a href="productos.html" class="nav-link">
-            <i class="fas fa-hammer nav-icon"></i>
+            <i class="fas fa-tools nav-icon"></i>
             <span>PRODUCTOS</span>
           </a>
         </li>
@@ -84,38 +84,119 @@
     </nav>
   </div>
 
-  <main>
-    <h1>Nuestros Clientes</h1>
+  <!-- Hero Image Section -->
+  <div class="hero-image">
+    <img src="../media/img/Nosotros/nosotros.webp" alt="Nuestros Clientes">
+    <div class="hero-overlay">
+      <h1>Nuestros Clientes</h1>
+      <p>Empresas que confían en nuestra calidad y servicio</p>
+    </div>
+  </div>
 
-    <section class="clientes-grid">
-      <div class="cliente">
-        <img src="../imagenes/clientes/empresa1.png" alt="Empresa 1" />
-        <p>Empresa 1 - Construcción y minería</p>
+  <main class="clientes-container">
+    <div class="testimonios-slider">
+      <div class="slider-container">
+        <!-- Slide 1 -->
+        <div class="slider-slide active">
+          <div class="slide-content">
+            <div class="cliente-imagen">
+              <img src="../media/img/Clientes/cliente1.png" alt="Constructora Andina S.A.">
+            </div>
+            <div class="cliente-contenido">
+              <h2>Constructora Andina S.A.</h2>
+              <p class="cliente-sector">Construcción y Minería</p>
+              <div class="cliente-testimonio">
+                <i class="fas fa-quote-left"></i>
+                <p>"Los martillos hidráulicos Hydromenn han sido fundamentales para nuestros proyectos de construcción pesada. Su durabilidad y rendimiento superan nuestras expectativas."</p>
+                <div class="cliente-info">
+                  <p class="cliente-nombre">Ing. Carlos Mendoza</p>
+                  <p class="cliente-cargo">Gerente de Operaciones</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slider-slide">
+          <div class="slide-content">
+            <div class="cliente-imagen">
+              <img src="../media/img/Clientes/cliente2.png" alt="Minera del Sur">
+            </div>
+            <div class="cliente-contenido">
+              <h2>Minera del Sur</h2>
+              <p class="cliente-sector">Minería a Gran Escala</p>
+              <div class="cliente-testimonio">
+                <i class="fas fa-quote-left"></i>
+                <p>"La eficiencia de los equipos Hydromenn ha optimizado nuestras operaciones mineras. El soporte técnico y repuestos inmediatos son un valor agregado que apreciamos."</p>
+                <div class="cliente-info">
+                  <p class="cliente-nombre">Ing. Laura Quispe</p>
+                  <p class="cliente-cargo">Superintendente de Maquinaria</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slider-slide">
+          <div class="slide-content">
+            <div class="cliente-imagen">
+              <img src="../media/img/Clientes/cliente3.png" alt="Demoliciones Progreso">
+            </div>
+            <div class="cliente-contenido">
+              <h2>Demoliciones Progreso</h2>
+              <p class="cliente-sector">Demolición Controlada</p>
+              <div class="cliente-testimonio">
+                <i class="fas fa-quote-left"></i>
+                <p>"La potencia y precisión de los martillos Hydromenn nos permiten completar proyectos de demolición con mayor rapidez y seguridad. La relación calidad-precio es inmejorable."</p>
+                <div class="cliente-info">
+                  <p class="cliente-nombre">Ing. Roberto Salas</p>
+                  <p class="cliente-cargo">Director de Operaciones</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slider-slide">
+          <div class="slide-content">
+            <div class="cliente-imagen">
+              <img src="../media/img/Clientes/cliente4.png" alt="Vial del Perú">
+            </div>
+            <div class="cliente-contenido">
+              <h2>Vial del Perú</h2>
+              <p class="cliente-sector">Construcción Vial</p>
+              <div class="cliente-testimonio">
+                <i class="fas fa-quote-left"></i>
+                <p>"Desde que implementamos los equipos Hydromenn en nuestra flota, hemos visto un aumento significativo en la productividad. El servicio post-venta es excepcional."</p>
+                <div class="cliente-info">
+                  <p class="cliente-nombre">Ing. Diego Ramírez</p>
+                  <p class="cliente-cargo">Gerente de Maquinaria</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="cliente">
-        <img src="../imagenes/clientes/empresa2.png" alt="Empresa 2" />
-        <p>Empresa 2 - Obras civiles</p>
+      <!-- Navigation Buttons -->
+      <button class="slider-nav prev" aria-label="Anterior">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="slider-nav next" aria-label="Siguiente">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+
+      <!-- Pagination Dots -->
+      <div class="slider-pagination">
+        <span class="dot active" data-slide="0"></span>
+        <span class="dot" data-slide="1"></span>
+        <span class="dot" data-slide="2"></span>
+        <span class="dot" data-slide="3"></span>
       </div>
-
-      <div class="cliente">
-        <img src="../imagenes/clientes/empresa3.png" alt="Empresa 3" />
-        <p>Empresa 3 - Servicios industriales</p>
-      </div>
-    </section>
-
-    <section class="testimonios">
-      <h2>Testimonios</h2>
-      <blockquote>
-        <p>"Los martillos Hydromenn nos han ayudado a mejorar la productividad y seguridad en nuestras obras."</p>
-        <footer>- Juan Pérez, Gerente de Operaciones</footer>
-      </blockquote>
-      <blockquote>
-        <p>"Excelente calidad y servicio postventa, muy recomendados."</p>
-        <footer>- María Gómez, Jefa de Proyecto</footer>
-      </blockquote>
-    </section>
-
+    </div>
   </main>
 
   <!-- Footer -->
@@ -123,6 +204,69 @@
     <p>© 2025 Hydromenn | Lima, Perú</p>
   </footer>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const slides = document.querySelectorAll('.slider-slide');
+      const dots = document.querySelectorAll('.dot');
+      const prevBtn = document.querySelector('.slider-nav.prev');
+      const nextBtn = document.querySelector('.slider-nav.next');
+      let currentSlide = 0;
+      const slideCount = slides.length;
+
+      // Initialize slider
+      function showSlide(index) {
+        // Hide all slides
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        // Show current slide and update dot
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+        currentSlide = index;
+      }
+
+      // Next slide
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slideCount;
+        showSlide(currentSlide);
+      }
+
+      // Previous slide
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+        showSlide(currentSlide);
+      }
+
+      // Event listeners
+      nextBtn.addEventListener('click', nextSlide);
+      prevBtn.addEventListener('click', prevSlide);
+
+      // Dot navigation
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => showSlide(index));
+      });
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') nextSlide();
+        if (e.key === 'ArrowLeft') prevSlide();
+      });
+
+      // Auto-advance slides (optional)
+      let slideInterval = setInterval(nextSlide, 8000);
+
+      // Pause auto-advance on hover
+      const slider = document.querySelector('.testimonios-slider');
+      slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
+      slider.addEventListener('mouseleave', () => {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 8000);
+      });
+
+      // Initialize first slide
+      showSlide(0);
+    });
+  </script>
   <script src="../static/jscript/clientes.js"></script>
 </body>
 </html>

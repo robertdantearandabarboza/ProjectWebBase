@@ -25,11 +25,139 @@ html, body {
 }
 
 
+/* Hero Background with Carousel */
+.hero-background {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  overflow: hidden;
+  margin-top: -52px; /* Pull up further to align with bottom of contact bar */
+  padding-top: -50px; /* Push content down to compensate */
+  z-index: 1; /* Below nav, above contact bar */
+}
+
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.carousel-slide .slide-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1);
+  transition: transform 15s linear;
+  will-change: transform;
+  z-index: 1;
+}
+
+.carousel-slide.active .slide-bg {
+  animation: zoomIn 12s linear forwards;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 30%;
+  left: 10%;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  max-width: 600px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 0.8s ease-out;
+  z-index: 3; /* Ensure captions are above the zooming image */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  pointer-events: none; /* Make sure clicks go through to the slide */
+}
+
+.carousel-caption h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: 600;
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  margin: 0;
+  color: white;
+  font-weight: 400;
+}
+
+.carousel-slide.active .carousel-caption {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0.5s;
+}
+
+/* Navigation and Contact Bar */
+.contenedor-barra-contacto {
+  background-color: #2F353A;
+  width: 100%;
+  padding: 10px 0;
+  position: relative;
+  z-index: 10; /* Above hero-background, below nav */
+}
+
+.contenedor-nav {
+  background-color: white;
+  width: 100%;
+  position: relative;
+  z-index: 20; /* Highest z-index, above everything */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: -20px; /* Slight overlap with contact bar */
+}
+
+/* Reset main content styles */
+.main-content {
+  position: relative;
+  z-index: 10;
+}
+
+/* Remove any extra padding/margin that might affect layout */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 /* Contenedor de fondo plomo para la barra de contacto */
 .contenedor-barra-contacto {
   background-color: #2F353A; /* Color especificado por el usuario */
   width: 100%;
   padding: 40px 0; /* Aumentamos más la altura del contenedor */
+  position: relative;
+  z-index: 10; /* Above hero-background, below nav */
 }
 
 /* Contenedor de fondo blanco para el nav */
@@ -41,7 +169,7 @@ html, body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 2px 0;
   position: relative;
-  z-index: 2;
+  z-index: 20; /* Highest z-index, above everything */
 }
 
 @keyframes fadeIn {

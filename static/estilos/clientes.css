@@ -350,3 +350,311 @@ footer {
 .whatsapp-float:hover {
   transform: scale(1.1);
 }
+
+/* Main Content */
+.clientes-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  position: relative;
+}
+
+/* Testimonials Slider */
+.testimonios-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 40px 0;
+}
+
+.slider-container {
+  width: 100%;
+  position: relative;
+  min-height: 500px;
+}
+
+.slider-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transform: translateX(100%);
+  z-index: 1;
+}
+
+.slider-slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 2;
+}
+
+.slider-slide.prev {
+  transform: translateX(-100%);
+}
+
+.slide-content {
+  display: flex;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+/* Client Card Styles */
+.cliente-imagen {
+  flex: 1;
+  min-height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cliente-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.slider-slide:hover .cliente-imagen img {
+  transform: scale(1.05);
+}
+
+.cliente-contenido {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.cliente-contenido h2 {
+  font-size: 2rem;
+  color: var(--color-principal);
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.cliente-sector {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  font-weight: 500;
+  position: relative;
+  z-index: 2;
+}
+
+.cliente-testimonio {
+  position: relative;
+  padding: 25px 25px 25px 45px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  font-style: italic;
+  line-height: 1.7;
+  z-index: 2;
+}
+
+.cliente-testimonio i {
+  position: absolute;
+  top: 25px;
+  left: 15px;
+  font-size: 1.8rem;
+  color: rgba(128, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.cliente-testimonio p {
+  margin-bottom: 20px;
+  color: #444;
+  position: relative;
+  z-index: 2;
+}
+
+.cliente-info {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  position: relative;
+  z-index: 2;
+}
+
+.cliente-nombre {
+  font-weight: 600;
+  color: var(--color-principal);
+  margin-bottom: 5px;
+  font-style: normal;
+}
+
+.cliente-cargo {
+  color: #777;
+  font-size: 0.9rem;
+  font-style: normal;
+}
+
+/* Navigation Buttons */
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-principal);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.slider-nav:hover {
+  background: var(--color-principal);
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slider-nav.prev {
+  left: 10px;
+}
+
+.slider-nav.next {
+  right: 10px;
+}
+
+/* Pagination Dots */
+.slider-pagination {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 10;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: var(--color-principal);
+  transform: scale(1.2);
+}
+
+/* Hero Image Section - Efecto de zoom suave */
+.hero-image {
+  width: 100%;
+  height: 750px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: scale(1.1);
+  animation: gentleZoomIn 1.5s cubic-bezier(0.16, 0.61, 0.5, 1) forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes gentleZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%; /* Adjusted to show more of the middle part */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.hero-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(30px) rotate(-5deg);
+  animation: slideDownRotate 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes slideDownRotate {
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-overlay p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: 0.7s;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}

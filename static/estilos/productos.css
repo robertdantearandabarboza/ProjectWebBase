@@ -499,3 +499,99 @@ footer {
 .whatsapp-float:hover {
   transform: scale(1.1);
 }
+
+/* Hero Image Section - Animación de desvanecimiento desde la izquierda */
+.hero-image {
+  width: 100%;
+  height: 750px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideInFromLeft 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes slideInFromLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%; /* Adjusted to show more of the middle part */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.hero-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: scale(0.9);
+  animation: scaleIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes scaleIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-overlay p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(20px) rotate(-2deg);
+  animation: slideUpRotate 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes slideUpRotate {
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
+}
