@@ -25,15 +25,16 @@ document.addEventListener('DOMContentLoaded', function() {
         if (slides.length > 0) {
             const firstSlide = slides[0];
             
-            // Mostrar con fade-in más rápido (300 ms)
+            // Mostrar primer slide sin transición
             firstSlide.classList.add('active');
-            firstSlide.style.opacity = '0'; // Estado inicial
-            firstSlide.style.transition = 'opacity 700ms ease-in-out';
+            firstSlide.style.opacity = '1';
+            firstSlide.style.transition = 'none';
 
-            // Forzar reflow y luego aplicar el cambio de opacidad
-            requestAnimationFrame(() => {
-                firstSlide.style.opacity = '1';
-            });
+            // Activar transición después para los siguientes slides
+            setTimeout(() => {
+                firstSlide.style.transition = `opacity ${transitionDuration}ms ease-in-out`;
+            }, 50);
+
         
             // Luego empieza la secuencia de slides normalmente
             slideTimer = setTimeout(() => {
