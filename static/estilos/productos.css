@@ -492,12 +492,38 @@ footer {
   font-size: 30px;
   z-index: 999;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   text-decoration: none;
 }
 
+.whatsapp-float .whatsapp-text {
+  position: absolute;
+  right: 70px;
+  background-color: #128C7E;
+  padding: 8px 15px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  color: white;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  letter-spacing: 0.3px;
+}
+
 .whatsapp-float:hover {
-  transform: scale(1.1);
+  background-color: #128C7E;
+  scale: 1.1;
+}
+
+.whatsapp-float:hover .whatsapp-text {
+  opacity: 1;
+  transform: translateX(0);
+  right: 75px;
 }
 
 /* Hero Image Section - Animación de desvanecimiento desde la izquierda */
