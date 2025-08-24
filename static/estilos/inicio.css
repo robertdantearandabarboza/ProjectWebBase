@@ -2,8 +2,8 @@
   --color-principal: #800000;     /* Rojo oscuro */
   --color-secundario: #990000;    /* Rojo intermedio */
   --color-destacado: #cc0000;     /* Rojo más claro */
-  --color-accion: #ff3300;        /* Botones, hover */
-  --color-accion-hover: #cc2900;  /* Hover oscuro */
+  --color-accion: #dd3333;        /* Botones, hover */
+  --color-accion-hover: #2E3D4F;  /* Hover oscuro */
   --color-fondo-suave: #fff5f5;   /* Fondo claro */
   --color-texto: #800000;         /* Texto principal */
   --color-blanco: #ffffff;
@@ -71,7 +71,13 @@ img {
 }
 
 /* Utilidades */
-.text-center { text-align: center; }
+.text-center {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 20px 0;
+}
 .text-white { color: var(--color-blanco); }
 .bg-principal { background-color: var(--color-principal); }
 .bg-secundario { background-color: var(--color-secundario); }
@@ -341,11 +347,114 @@ img {
 
 /* About Section */
 .about-section {
-  padding: 100px 0;
-  background-color: var(--color-blanco);
-  width: 100%;
-  box-sizing: border-box;
-  justify-content: center;
+  padding: 80px 0;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+/* Animations for about section */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Estilos para las animaciones de productos destacados - Versión más fluida */
+.featured-products .section-header {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 1s cubic-bezier(0.22, 0.61, 0.36, 1), 
+              transform 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: transform, opacity;
+}
+
+.featured-products .product-card {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.9s cubic-bezier(0.22, 0.61, 0.36, 1), 
+              transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: transform, opacity;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+}
+
+/* Efecto hover más fluido */
+.product-card {
+  transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1), 
+              box-shadow 0.4s cubic-bezier(0.22, 0.61, 0.36, 1),
+              filter 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+  backface-visibility: hidden;
+  will-change: transform, box-shadow, filter;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  filter: drop-shadow(0 15px 20px rgba(0, 0, 0, 0.12));
+}
+
+/* Animaciones para la sección about - Se activan vía JavaScript */
+.about-text h2 {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.about-text p {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.about-text .features-list li {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.about-btn {
+  opacity: 0;
+  transform: scale(0.9);
+  display: inline-block;
+}
+
+.about-image-container {
+  opacity: 0;
+  transform: translateX(30px);
 }
 
 .about-content {
@@ -502,9 +611,12 @@ img {
 }
 
 .about-btn {
-  width: 100%;
-  max-width: 300px;
+  display: block;
+  width: auto;
+  min-width: 260px;
+  max-width: 340px;
   text-align: center;
+  margin-right: auto;
   padding: 10px 25px;
   font-size: 1rem;
   font-weight: 600;
@@ -559,7 +671,7 @@ img {
   margin: 0;
   padding: 100px 0;
   background-color: var(--color-fondo-suave);
-  max-width: 1900px;
+  max-width: 2120px;
 }
 
 .section-header {
@@ -978,6 +1090,8 @@ html, body {
   position: relative;
   width: 100%;
   height: 85vh;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards 0.3s;
   overflow: hidden;
   margin-top: -52px; /* Pull up further to align with bottom of contact bar */
   padding-top: -50px; /* Push content down to compensate */
@@ -1101,11 +1215,13 @@ body {
 
 /* Contenedor de fondo plomo para la barra de contacto */
 .contenedor-barra-contacto {
-  background-color: #2F353A; /* Color especificado por el usuario */
+  background-color: #2F353A;
   width: 100%;
-  padding: 40px 0; /* Aumentamos más la altura del contenedor */
+  padding: 40px 0;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards 0.2s;
   position: relative;
-  z-index: 10; /* Above hero-background, below nav */
+  z-index: 10;
 }
 
 /* Contenedor de fondo blanco para el nav */
@@ -1122,7 +1238,7 @@ body {
 
 @keyframes fadeIn {
   0% {
-    opacity: 0;
+  opacity: 0;
     transform: translateY(-10px);
   }
   100% {
@@ -1290,7 +1406,7 @@ nav ul {
 }
 
 .nav-link:hover {
-  color: var(--color-accion-hover);
+  color: var(--color-destacado);
 }
 
 /* Iconos de navegación */
@@ -1306,6 +1422,7 @@ nav ul {
 }
 
 .nav-link:hover .nav-icon {
+  color: var(--color-destacado);
   opacity: 1;
   transform: translateX(-50%) translateY(-25%); /* Sale un poco hacia arriba */
 }
