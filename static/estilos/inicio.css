@@ -1813,6 +1813,116 @@ section.quienes-somos {
   right: 10px;
 }
 
+.testimonios {
+  background-color: var(--color-fondo-suave);
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--color-texto);
+  max-width: 100%;
+}
+
+.testimonios h2 {
+  font-size: 2rem;
+  margin-bottom: 80px; /* antes era 40px */
+  color: var(--color-principal);
+}
+
+/* GRID centrado */
+.testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;              /* más espacio entre las tarjetas */
+  max-width: 1200px;      /* límite del ancho del grid */
+  margin: 0 auto;         /* centra el grid */
+  width: 100%;            /* asegura que ocupe todo hasta el máximo */
+}
+
+.testimonio {
+  background-color: var(--color-blanco);
+  padding: 50px 20px 25px; /* más padding arriba porque la foto ocupará ese espacio */
+  border-radius: var(--borde-redondeado);
+  box-shadow: var(--sombra);
+  transition: var(--transicion);
+  text-align: center;
+  position: relative; /* necesario para que la foto se posicione respecto a la tarjeta */
+}
+
+.testimonio:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.foto-wrapper {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* foto circular */
+.foto-cliente {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-principal);
+  box-shadow: var(--sombra);
+  transition: transform 0.3s ease; /* animación suave */
+}
+
+/* efecto hover: solo escala, sin mover */
+.foto-cliente:hover {
+  transform: scale(1.1);
+}
+
+.testimonio p {
+  font-style: italic;
+  color: var(--color-oscuro);
+  margin-bottom: 12px;
+}
+
+.testimonio h4 {
+  font-size: 0.95rem;
+  color: var(--color-gris);
+}
+
+/* BOTÓN CENTRADO */
+.ver-mas {
+  margin-top: 40px;
+  text-align: center; /* fuerza el botón al centro */
+}
+
+.btn-ver-mas {
+  background-color: var(--color-accion);
+  color: var(--color-blanco);
+  padding: 12px 25px;
+  border: none;
+  border-radius: var(--borde-redondeado);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease; /* animación suave */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.btn-ver-mas:hover {
+  background-color: var(--color-accion-hover);
+  transform: scale(1.08); /* agranda un poco */
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25); /* sombra más intensa */
+}
+
+/* Responsive: tablets = 2 columnas, móviles = 1 */
+@media (max-width: 900px) {
+  .testimonios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonios-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* ===== FOOTER CORPORATIVO ===== */
 .footer {
