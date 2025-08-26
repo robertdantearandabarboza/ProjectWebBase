@@ -500,6 +500,7 @@ img {
   line-height: 1.8;
   margin-bottom: 4rem;
   color: var(--color-oscuro);
+  text-align: left; /* 👈 fuerza la alineación a la izquierda */
 }
 
 .features-list {
@@ -727,6 +728,7 @@ img {
   box-shadow: var(--sombra);
   transition: var(--transicion);
   position: relative;
+  height: 600px;
 }
 
 .product-card:hover {
@@ -737,7 +739,7 @@ img {
 .product-image {
   position: relative;
   overflow: hidden;
-  height: 250px;
+  height: 400px;
 }
 
 .product-image img {
@@ -765,8 +767,12 @@ img {
   transition: var(--transicion);
 }
 
-.product-card:hover .product-overlay {
+.product-card:hover .product-overlay{
   opacity: 1;
+}
+
+.product-card .btn-small {
+  color: white;
 }
 
 .product-info {
@@ -808,35 +814,59 @@ img {
 }
 
 /* Why Choose Us */
+/* Sección principal */
 .why-choose-us {
-  padding: 100px 0;
-  background-color: white;
-}
-.section-header {
+  position: relative;
+  padding: 80px 0;
+  min-height: 800px;
   text-align: center;
+  max-width: 100%;
+
+  /* imagen de fondo solo para esta sección */
+  background-image: url('../../media/img/Inicio/fondo-original.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* aquí está la magia */
+  background-attachment: fixed;
 }
 
-.section-header h2 {
-  font-size: 3rem;
-  color: var(--color-destacado);
+.why-choose-us .section-header {
+  max-width: 100%;
+  text-align: center;
+
+  /* padding arriba */
+  padding-top: 60px; /* ajusta el valor a tu gusto */
 }
 
-.section-header p {
-  font-size: 1.3rem;
-  color: var(--color-gris);
+.why-choose-us .section-header h2 {
+  font-size: 2.5rem;
+  color: var(--color-blanco);
+  text-shadow:
+    1px 1px 1px #000,
+    3px 3px 3px #000,
+    4px 5px 6px rgba(0, 0, 0, 0.6);
 }
 
+.why-choose-us .section-header p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-blanco);
+  text-shadow:
+  1px 1px 1px #000,
+  3px 3px 3px #000,
+  4px 5px 6px rgba(0, 0, 0, 0.6);
+}
 
 .features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  display: inline-grid;
   gap: 30px;
-  max-width: 1800px;
-  width: 100%;
-  margin: 0 auto 3rem;
-  padding: 0 20px;
-  margin-bottom: 35px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  width: 90%;           /* ocupa más espacio horizontal */
+  max-width: 1650px;    /* opcional, evita que sea demasiado grande */
 }
+
 
 /* En pantallas grandes (ej: desktops grandes) -> 4 columnas */
 @media (min-width: 1200px) {
@@ -852,9 +882,8 @@ img {
   border-radius: var(--borde-redondeado);
   background: white;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: var(--transicion);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  overflow: hidden;
   z-index: 1;
 }
 
@@ -871,13 +900,19 @@ img {
 }
 
 .feature:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-10px) scale(1.1); /* ahora sí se agranda */
+  box-shadow: 
+    0 15px 30px rgba(0, 0, 0, 0.1),
+    0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 .feature:hover::before {
   height: 100%;
   opacity: 0.1;
+}
+
+.feature, .feature * {
+  overflow: visible !important;
 }
 
 .feature-icon {
@@ -919,6 +954,7 @@ img {
   text-align: center;
   position: relative;
   overflow: hidden;
+  max-width: 100%;
 }
 
 .cta-section::before {
@@ -930,16 +966,18 @@ img {
   height: 100%;
   opacity: 0.1;
   z-index: 1;
+  max-width: 100%;
 }
 
 .cta-content {
   position: relative;
   z-index: 2;
-  max-width: 800px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
 .cta-content h2 {
+  max-width: 100%;
   font-size: 2.8rem;
   margin-bottom: 1.5rem;
   color: white;
@@ -1822,7 +1860,7 @@ section.quienes-somos {
 }
 
 .testimonios h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 80px; /* antes era 40px */
   color: var(--color-principal);
 }
@@ -1877,12 +1915,13 @@ section.quienes-somos {
 
 .testimonio p {
   font-style: italic;
+  font-size: 1.2rem;
   color: var(--color-oscuro);
   margin-bottom: 12px;
 }
 
 .testimonio h4 {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--color-gris);
 }
 
@@ -2163,6 +2202,7 @@ section.quienes-somos {
   background-color: var(--color-blanco);
   overflow: hidden;
   max-width: 2120px;
+  height: 480px;
 }
 
 .client-logos-section .section-header {
