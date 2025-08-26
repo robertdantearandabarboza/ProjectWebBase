@@ -1185,12 +1185,12 @@ html, body {
 .carousel-caption {
   position: absolute;
   bottom: 25%;
-  left: -1%;
+  left: 2%;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   max-width: 45%;
   padding: 25px 25px 25px 80px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: none;
   border-radius: 30px;
   transform: translateY(30px);
   opacity: 0;
@@ -1223,7 +1223,7 @@ html, body {
 
 .carousel-caption .btn {
   padding: 10px 25px;
-  border-radius: 4%;
+  border-radius: 1%;
   font-weight: 600;
   text-transform: uppercase;
   font-size: 0.9rem;
@@ -1233,23 +1233,31 @@ html, body {
 }
 
 .carousel-caption .btn-primary {
+  border-radius: 4px;
   background-color: var(--color-accion);
   color: white;
+  padding: 8px 16px;
 }
 
 .carousel-caption .btn-secondary {
-  background-color: transparent;
+  background-color: var(--color-accion);
   color: white;
-  border: 2px solid white;
-  border-radius: 20px; /* Ajusta el valor según qué tan redondeado lo quieras */
+  border-radius: 4px; /* Ajusta el valor según qué tan redondeado lo quieras */
   padding: 8px 16px;  /* opcional: mejora el espacio dentro del botón */
 }
 
 .carousel-caption .btn-primary:hover {
-  border-radius: 20px;
+  border-radius: 30px;
   color: whitesmoke;
   background-color: var(--color-accion-hover);
 }
+
+.carousel-caption .btn-secondary:hover {
+  border-radius: 30px;
+  color: whitesmoke;
+  background-color: var(--color-accion-hover);
+}
+
 
 .carousel-slide.active .carousel-caption {
   transform: translateY(0);
