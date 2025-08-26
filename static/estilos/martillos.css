@@ -117,11 +117,13 @@ main {
 .info-martillo {
   margin: 0;
   padding: 0;
+  text-align: left;
 }
 
 .info-martillo h1, .info-martillo h2 {
   margin: 0;
   padding: 0;
+  text-align: left;
 }
 
 .info-martillo p {

@@ -821,16 +821,32 @@ img {
   min-height: 800px;
   text-align: center;
   max-width: 100%;
-
-  /* imagen de fondo solo para esta sección */
+  
   background-image: url('../../media/img/Inicio/fondo-original.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  /* aquí está la magia */
   background-attachment: fixed;
 }
+
+/* Capa negra encima del fondo */
+.why-choose-us::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* negro con 50% de opacidad */
+  z-index: 1;
+}
+
+/* Para que el contenido esté encima de la capa negra */
+.why-choose-us > * {
+  position: relative;
+  z-index: 2;
+}
+
 
 .why-choose-us .section-header {
   max-width: 100%;
@@ -856,7 +872,7 @@ img {
   text-shadow:
   1px 1px 1px #000,
   3px 3px 3px #000,
-  4px 5px 6px rgba(0, 0, 0, 0.6);
+  3px 3px 4px rgba(0, 0, 0, 0.6);
 }
 
 .features-grid {
