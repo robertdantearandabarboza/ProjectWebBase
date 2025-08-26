@@ -443,6 +443,7 @@ footer {
 }
 
 .hero-overlay h1 {
+  color: white;
   font-size: 3rem;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -452,6 +453,7 @@ footer {
   animation-delay: 0.6s;
   position: relative;
   display: inline-block;
+  z-index: 3;
 }
 
 @keyframes tileDrop {
