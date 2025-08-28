@@ -1,29 +1,30 @@
 .martillos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 5rem;
   padding: 2rem;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .martillo-card {
   background: white;
   border-radius: 10px;
-  height: 380px;
-  width: 350px;
+  height: 480px;
+  width: 450px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .martillo-card:hover {
-  transform: translateY(-10px);
+  transform: scale(1.04);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .martillo-card img {
   width: 100%;
-  height: 320px;
+  height: 425px;
   object-fit: cover;
 }
 
@@ -89,6 +90,7 @@ main {
 }
 
 .martillo-imagen {
+  background-color: white;
   flex: 0 0 45%;
   position: relative;
   min-height: 300px;

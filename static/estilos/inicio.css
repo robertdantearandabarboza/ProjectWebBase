@@ -217,6 +217,46 @@ img {
 .delay-3 { animation-delay: 0.6s; }
 .delay-4 { animation-delay: 0.8s; }
 
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;   /* 👈 asegúrate de poner esto */
+  left: 0;
+  background: white;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  min-width: 180px;
+  z-index: 1000;
+}
+
+.nav-item.dropdown {
+  position: relative;
+}
+
+.nav-item:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 8px 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-menu li a:hover {
+  background: #f5f5f5;
+  text-decoration: none;
+}
+
+.dropdown-menu li a::before {
+  content: none !important;
+}
+
 /* Hero Section */
 .hero {
   position: relative;
