@@ -316,8 +316,7 @@ nav ul li a.active {
 /* Contenido principal */
 main {
   max-width: 1200px;
-  margin: 30px auto;
-  padding: 20px 30px;
+  padding: 0;
 }
 
 .quienes-somos-container {
@@ -374,6 +373,359 @@ main {
   height: 85vh;
   position: relative;
   z-index: 1;
+}
+
+main{
+  max-width: 100%;
+}
+
+/* Hero Section */
+.hero-nosotros {
+  background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.hero-nosotros::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.05"><polygon points="0,0 1000,100 1000,0"/></svg>') no-repeat;
+  background-size: cover;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-nosotros h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-nosotros p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+/* Historia Section */
+.historia-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1a365d;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(45deg, #3182ce, #63b3ed);
+  margin: 20px auto;
+  border-radius: 2px;
+}
+
+.historia-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.historia-texto {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4a5568;
+}
+
+.historia-imagen {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.historia-imagen img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: 50% 80%; /* 👈 mueve el recorte hacia abajo */
+  transition: transform 0.3s ease;
+}
+
+.historia-imagen:hover img {
+  transform: scale(1.05);
+}
+
+/* Misión y Visión Section */
+.mision-vision-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.mision-vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.mision-card, .vision-card {
+  background: linear-gradient(135deg, #BB1922 0%, #16213e 100%);
+  color: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mision-card:hover, .vision-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+.mision-card::before, .vision-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mision-card:hover::before, .vision-card:hover::before {
+  opacity: 1;
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.card-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Valores Section */
+.valores-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #0F3460 0%, #16213e 100%);
+  color: white;
+}
+
+.valores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.valor-item {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.valor-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.valor-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.valor-titulo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.valor-descripcion {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* Equipo Section */
+.equipo-section {
+  padding: 80px 0;
+  background: #f7fafc;
+}
+
+.equipo-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.equipo-imagen {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.equipo-imagen:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+}
+
+.equipo-imagen img {
+  width: 100%;
+  height: 800px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.equipo-imagen:hover img {
+  transform: scale(1.05);
+}
+
+.equipo-texto {
+  padding: 20px;
+}
+
+.equipo-descripcion {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4a5568;
+  margin-bottom: 30px;
+}
+
+.equipo-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.stat-item {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.stat-numero {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #3182ce;
+  margin-bottom: 5px;
+  position: relative; /* ← Agregar esto */
+}
+
+.stat-label {
+  color: #4a5568;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-nosotros h1 {
+      font-size: 2.5rem;
+  }
+
+  .hero-nosotros p {
+      font-size: 1.1rem;
+  }
+
+  .historia-content {
+      grid-template-columns: 1fr;
+      gap: 40px;
+  }
+
+  .mision-vision-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+  }
+
+  .equipo-content {
+      grid-template-columns: 1fr;
+      gap: 40px;
+  }
+
+  .equipo-stats {
+      grid-template-columns: 1fr;
+      gap: 15px;
+  }
+
+  .section-title {
+      font-size: 2rem;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
 }
 
 /* Footer */
