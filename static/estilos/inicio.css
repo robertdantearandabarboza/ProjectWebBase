@@ -39,6 +39,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -55,6 +56,7 @@ p {
 }
 
 a {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--color-accion);
   text-decoration: none;
   transition: var(--transicion);
@@ -537,9 +539,10 @@ img {
 
 .about-text p {
   font-size: 1.1rem;
+  font-weight: 400;
   line-height: 1.8;
   margin-bottom: 4rem;
-  color: var(--color-oscuro);
+  color: black;
   text-align: left; /* 👈 fuerza la alineación a la izquierda */
 }
 
@@ -565,7 +568,7 @@ img {
   font-weight: 900; /* para solid */
   position: absolute;
   left: 0;
-  top: 3px;
+  top: -2px;
   color: var(--color-destacado);
   font-size: 1.4rem;
 }
@@ -665,7 +668,7 @@ img {
   transition: all 0.3s ease;
   background-color: var(--color-oscuro);
   color: white;
-  border: 2px solid var(--color-oscuro);
+  border: 2px;
   box-sizing: border-box; /* 👈 asegura que el borde se incluya en el cálculo */
 }
 
@@ -2420,8 +2423,8 @@ section.quienes-somos {
 
 @media (max-width: 576px) {
   .logo-item {
-    width: 100px;
-    height: 60px;
+    width: 160px;
+    height: 110px;
   }
   
   .logo-track {
