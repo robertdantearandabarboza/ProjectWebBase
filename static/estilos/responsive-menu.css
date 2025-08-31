@@ -1,0 +1,118 @@
+  /* Menú en desktop */
+  .nav-menu {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  /* Hamburguesa oculta en desktop */
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  /* --- Responsive --- */
+  @media (max-width: 992px) {
+
+    .contenedor-nav nav {
+        display: flex;
+        justify-content: space-between; /* Logo a la izq, menú/hamburguesa a la der */
+        align-items: center;
+        padding: 0 20px;
+      }
+
+    .menu-toggle {
+        display: block;
+      }
+    
+      /* Menú oculto por defecto */
+      .nav-menu {
+        position: absolute;
+        top: 70px;     /* debajo del nav */
+        right: 0;
+        background: white;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    
+        display: none; /* oculto */
+      }
+    
+      /* Cuando se abre (ej: con JS añades la clase "active") */
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-item {
+        position: relative;
+      }
+    
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        min-width: 200px;
+        border-radius: 6px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        z-index: 1000;
+      }
+    
+      .nav-item:hover > .dropdown-menu {
+        display: block;
+      }
+    }
+    @media (max-width: 992px) {
+        .dropdown-menu {
+            display: block;       /* siempre visible */
+            position: static;     /* que ya no sea absoluto */
+            box-shadow: none;
+            padding-left: 1rem;
+          }
+      
+        .nav-item.open > .dropdown-menu {
+          display: block; /* se abre al hacer click */
+        }
+
+        nav ul li a::before {
+            display: none;
+            content: none; /* aseguras que no genere nada */
+          }
+      }
+
+      @media (max-width: 992px) {
+        .contenedor-barra-contacto .contacto-derecha .btn-cotizar {
+            margin-left: auto !important;
+          }
+        /* Ocultar correo y teléfono */
+        .contacto-izquierda {
+            display: none; /* ocultar correo/teléfono */
+          }
+        
+          .contacto-derecha {
+            display: flex;
+            justify-content: space-between; /* redes a la izq, botón a la der */
+            align-items: center;
+            width: 100%;
+            padding: 0;
+          }
+        
+          /* Redes sociales a la izquierda */
+          .contacto-derecha .redes-sociales {
+            order: 1;
+            margin-left: 35px; /* pegadas a la izq */
+          }
+        
+          /* Botón cotizar a la derecha */
+          .contacto-derecha .btn-cotizar {
+            order: 2;
+            margin-left: auto;
+        }
+      }
+  

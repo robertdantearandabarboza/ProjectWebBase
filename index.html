@@ -11,6 +11,7 @@
   <meta name="author" content="LYC Technology">
 
   <link rel="stylesheet" href="static/estilos/inicio.css">
+  <link rel="stylesheet" href="static/estilos/responsive-menu.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="icon" href="media/img/favicon.png" type="image/png">
 </head>
@@ -53,13 +54,17 @@
   <div class="contenedor-nav">
     <nav>
       <!-- Logo a la izquierda -->
-      <a href="index.html">
+      <a href="index.html" class="logo">
         <img src="media/img/logolyc.png" alt="Logo Hydromenn" width="120">
       </a>
-      
-
+  
+      <!-- Botón hamburguesa -->
+      <button class="menu-toggle" aria-label="Abrir menú">
+        <i class="fas fa-bars"></i>
+      </button>
+  
       <!-- Enlaces de navegación -->
-      <ul>
+      <ul class="nav-menu">
         <li class="nav-item">
           <a href="index.html" class="nav-link">
             <i class="fas fa-home nav-icon"></i>
@@ -99,6 +104,7 @@
       </ul>
     </nav>
   </div>
+  
 
   <!-- Hero Background with Carousel -->
   <div class="hero-background">
@@ -621,5 +627,6 @@
     <script src="static/jscript/inicio.js"></script>
     <script src="static/jscript/hero-carousel.js"></script>
     <script src="static/jscript/testimonials.js" defer></script>
+    <script src="static/jscript/responsive.js"></script>
 </body>
 </html>
