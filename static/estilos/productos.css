@@ -32,9 +32,11 @@ html, body {
 
 /* Contenedor de fondo plomo para la barra de contacto */
 .contenedor-barra-contacto {
-  background-color: #2F353A; /* Color especificado por el usuario */
+  background-color: #2F353A;
   width: 100%;
-  padding: 40px 0; /* Aumentamos más la altura del contenedor */
+  padding: 43px 0;
+  position: relative;
+  z-index: 10; /* Above hero-background, below nav */
 }
 
 /* Contenedor de fondo blanco para el nav */
@@ -58,7 +60,7 @@ html, body {
   padding: 2rem;
   max-width: 100%;
   margin: 0 auto;
-  flex-wrap: nowrap;
+  flex-wrap: wrap; /* 👈 permite que se acomoden en varias filas */
 }
 
 .product-card {
@@ -69,6 +71,22 @@ html, body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
+  flex: 1 1 calc(33.333% - 1.5rem); /* 👈 por defecto 3 en fila */
+  max-width: 370px; /* evita que se estiren demasiado */
+}
+
+/* Tablet: 2 en fila */
+@media (max-width: 992px) {
+  .product-card {
+    flex: 1 1 calc(50% - 1.5rem);
+  }
+}
+
+/* Celular: 1 en fila */
+@media (max-width: 576px) {
+  .product-card {
+    flex: 1 1 100%;
+  }
 }
 
 .product-card:hover {
@@ -163,6 +181,9 @@ html, body {
 .redes-sociales {
   display: flex;
   gap: 15px;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeIn 0.4s ease-out forwards 0.4s;
 }
 
 .red-social {
@@ -189,6 +210,9 @@ html, body {
   align-items: center;
   gap: 8px;
   transition: background-color 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeIn 0.4s ease-out forwards 0.4s;
 }
 
 .btn-cotizar:hover {
@@ -288,7 +312,7 @@ nav ul li a {
 nav ul li::before, nav ul li a::before {
   content: '';
   position: absolute;
-  top: -24px; /* Línea más pegada al tope del contenedor nav */
+  top: -26px; /* Línea más pegada al tope del contenedor nav */
   left: 0;
   width: 0;
   height: 3px;
@@ -903,8 +927,20 @@ footer {
       gap: 40px;
   }
 
-  h1 {
+  .hero-section h1 {
+      text-align: center;
       font-size: 2.5rem;
+  }
+
+  .hero-section p {
+      text-align: center;
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(20px) rotate(-2deg);
+      animation: slideUpRotate 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+      animation-delay: 0.4s;
   }
 
   .hammer-image {

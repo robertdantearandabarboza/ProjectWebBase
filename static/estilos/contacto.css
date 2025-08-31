@@ -26,9 +26,11 @@ html, body {
 
 /* Contenedor de fondo plomo para la barra de contacto */
 .contenedor-barra-contacto {
-  background-color: #2F353A; /* Color especificado por el usuario */
+  background-color: #2F353A;
   width: 100%;
-  padding: 40px 0; /* Aumentamos más la altura del contenedor */
+  padding: 43px 0;
+  position: relative;
+  z-index: 10; /* Above hero-background, below nav */
 }
 
 /* Contenedor de fondo blanco para el nav */
@@ -96,6 +98,9 @@ html, body {
 .redes-sociales {
   display: flex;
   gap: 15px;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeIn 0.4s ease-out forwards 0.4s;
 }
 
 .red-social {
@@ -121,6 +126,9 @@ html, body {
   display: flex;
   align-items: center;
   gap: 8px;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeIn 0.4s ease-out forwards 0.4s;
   transition: background-color 0.3s ease;
 }
 
@@ -232,7 +240,7 @@ nav ul li a {
 nav ul li a::before {
   content: '';
   position: absolute;
-  top: -24px; /* Línea más pegada al tope del contenedor nav */
+  top: -26px; /* Línea más pegada al tope del contenedor nav */
   left: 0;
   width: 0;
   height: 3px;

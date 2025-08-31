@@ -259,6 +259,16 @@ img {
   content: none !important;
 }
 
+.nav-item .dropdown-icon {
+  margin-left: 6px;
+  font-size: 0.7rem;
+  transition: transform 0.3s;
+}
+
+.nav-item:hover .dropdown-icon {
+  transform: rotate(180deg); /* gira la flechita al pasar el mouse */
+}
+
 /* Hero Section */
 .hero {
   position: relative;
@@ -334,7 +344,7 @@ img {
 .carousel-caption {
   position: relative;
   z-index: 3;
-  max-width: 800px;
+  max-width: 1200px;
   padding: 0 20px;
   animation: fadeInUp 1s ease-out;
 }
@@ -1086,6 +1096,12 @@ img {
 }
 
 @media (max-width: 768px) {
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
   .hero {
     height: 80vh;
     min-height: 500px;
@@ -1096,6 +1112,7 @@ img {
   }
   
   .carousel-caption p {
+    text-align: center;
     font-size: 1.1rem;
   }
   
@@ -1231,6 +1248,8 @@ html, body {
   transition: transform 15s linear;
   will-change: transform;
   z-index: 1;
+  background-color: rgba(0, 0, 0, 0.1); /* 👈 ajusta opacidad */
+  background-blend-mode: darken;
 }
 
 .carousel-slide.active .slide-bg {
@@ -1258,6 +1277,36 @@ html, body {
   z-index: 3; /* Ensure captions are above the zooming image */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   pointer-events: none; /* Make sure clicks go through to the slide */
+}
+
+@media (max-width: 576px) {
+  .carousel-caption {
+    bottom: auto;                /* anula el "bottom: 25%" */
+    top: 30%;                    /* lo llevamos al medio */
+    left: 5%;                   /* centramos horizontal */
+    transform: translate(-50%, -50%); /* centro exacto */
+    max-width: 90%;              /* más ancho que en PC */
+    padding: 15px;               /* menos padding para móviles */
+    text-align: center;          /* centramos el contenido */
+  }
+  .carousel-caption .button-container {
+    display: flex;
+    justify-content: center; /* centra horizontal */
+    margin-top: 1rem;        /* espacio arriba si lo necesitas */
+  }
+
+  .carousel-caption h1 {
+    font-size: 1.6rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+  
+  .carousel-caption h1,
+  .carousel-caption p {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  }
 }
 
 .carousel-caption h2 {
@@ -1336,15 +1385,6 @@ html, body {
   z-index: 10; /* Above hero-background, below nav */
 }
 
-.contenedor-nav {
-  background-color: white;
-  width: 100%;
-  position: relative;
-  z-index: 20; /* Highest z-index, above everything */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  margin-top: -20px; /* Slight overlap with contact bar */
-}
-
 /* Reset main content styles */
 .main-content {
   position: relative;
@@ -1367,18 +1407,6 @@ body {
   animation: fadeInUp 0.8s ease-out forwards 0.2s;
   position: relative;
   z-index: 10;
-}
-
-/* Contenedor de fondo blanco para el nav */
-.contenedor-nav {
-  background-color: white;
-  width: 100%;
-  margin: 0 auto;
-  border-radius: 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 2px 0;
-  position: relative;
-  z-index: 20; /* Highest z-index, above everything */
 }
 
 @keyframes fadeIn {
@@ -1495,7 +1523,8 @@ body {
 }
 
 .btn-cotizar:hover {
-  background-color: #8B1419; /* Color similar pero más oscuro para el hover */
+  color: white;
+  background-color: #8B1419;
 }
 
 .btn-cotizar i {
@@ -1617,7 +1646,7 @@ nav ul li a {
 nav ul li a::before {
   content: '';
   position: absolute;
-  top: -24px; /* Línea más pegada al tope del contenedor nav */
+  top: -21px; /* Línea más pegada al tope del contenedor nav */
   left: 0;
   width: 0;
   height: 3px;

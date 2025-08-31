@@ -26,9 +26,11 @@ html, body {
 
 /* Contenedor de fondo plomo para la barra de contacto */
 .contenedor-barra-contacto {
-  background-color: #2F353A; /* Color especificado por el usuario */
+  background-color: #2F353A;
   width: 100%;
-  padding: 40px 0; /* Aumentamos más la altura del contenedor */
+  padding: 43px 0;
+  position: relative;
+  z-index: 10; /* Above hero-background, below nav */
 }
 
 /* Contenedor de fondo blanco para el nav */
@@ -96,6 +98,9 @@ html, body {
 .redes-sociales {
   display: flex;
   gap: 15px;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeIn 0.5s ease-out forwards 0.4s;
 }
 
 .red-social {
@@ -122,6 +127,9 @@ html, body {
   align-items: center;
   gap: 8px;
   transition: background-color 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeIn 0.4s ease-out forwards 0.4s;
 }
 
 .btn-cotizar:hover {
@@ -296,7 +304,7 @@ nav ul li a {
 nav ul li::before, nav ul li a::before {
   content: '';
   position: absolute;
-  top: -24px; /* Línea más pegada al tope del contenedor nav */
+  top: -26px; /* Línea más pegada al tope del contenedor nav */
   left: 0;
   width: 0;
   height: 3px;
@@ -509,12 +517,19 @@ main{
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* sombra con color base */
+  box-shadow: 0 8px 20px rgba(187, 25, 34, 0.4),   /* rojo del inicio */
+              0 8px 20px rgba(22, 33, 62, 0.4);   /* azul oscuro del final */
+  border: none;
 }
 
 .mision-card:hover, .vision-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+  box-shadow: 0 20px 50px rgba(187, 25, 34, 0.5),   /* rojo más intenso */
+              0 20px 50px rgba(22, 33, 62, 0.5);   /* azul más intenso */
 }
+
 
 .mision-card::before, .vision-card::before {
   content: '';
@@ -523,7 +538,7 @@ main{
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  background: none;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -585,13 +600,13 @@ main{
 }
 
 .valor-titulo {
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
 .valor-descripcion {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   opacity: 0.9;
 }
 
@@ -640,7 +655,7 @@ main{
 .equipo-descripcion {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #4a5568;
+  color: black;
   margin-bottom: 30px;
 }
 

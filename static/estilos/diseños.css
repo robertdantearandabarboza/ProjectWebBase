@@ -1,0 +1,9 @@
+.nav-item .dropdown-icon {
+    margin-left: 6px;
+    font-size: 0.7rem;
+    transition: transform 0.3s;
+}
+
+.nav-item:hover .dropdown-icon {
+  transform: rotate(180deg); /* gira la flechita al pasar el mouse */
+}

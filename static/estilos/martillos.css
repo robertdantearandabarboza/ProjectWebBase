@@ -87,10 +87,14 @@
 
 /* New layout styles */
 main {
-  width: 100%;
   max-width: 100%;
-  margin: 0 auto;
-  padding: 0 1rem;
+  background-color: var(--color-fondo-suave);
+  margin: 25px auto; /* Reducimos el margin */
+  padding: 18px 25px; /* Reducimos el padding */
+  padding-top: 50px;
+  margin-top: -50px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .martillo-detalle {
