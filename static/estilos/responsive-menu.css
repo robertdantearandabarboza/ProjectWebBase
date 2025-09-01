@@ -23,6 +23,21 @@ nav ul li:nth-child(5) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) fo
   0% { opacity: 0; transform: translateY(-10px); }
   100% { opacity: 1; transform: translateY(0); }
 }
+
+.redes-sociales {
+  display: flex;
+  gap: 25px;
+}
+
+.red-social {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeIn 0.6s ease-out forwards 0.2s;
+}
   /* Menú en desktop */
   .nav-menu {
     display: flex;
