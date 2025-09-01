@@ -1504,12 +1504,12 @@ body {
 
 .redes-sociales {
   display: flex;
-  gap: 15px;
+  gap: 25px;
 }
 
 .red-social {
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   text-decoration: none;
   transition: color 0.3s ease;
   opacity: 0;

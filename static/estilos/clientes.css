@@ -601,6 +601,7 @@ footer {
   transform: scale(1.1);
   animation: gentleZoomIn 1.5s cubic-bezier(0.16, 0.61, 0.5, 1) forwards;
   animation-delay: 0.3s;
+  margin-top: -55px;
 }
 
 @keyframes gentleZoomIn {

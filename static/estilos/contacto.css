@@ -602,7 +602,7 @@ textarea {
   font-family: inherit;
 }
 
-button {
+button[type="submit"] {
   background: linear-gradient(135deg, #2b77e6 0%, #1e40af 100%);
   color: white;
   border: none;
@@ -616,12 +616,12 @@ button {
   letter-spacing: 0.025em;
 }
 
-button:hover {
+button[type="submit"]:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(43, 119, 230, 0.3);
 }
 
-button:active {
+button[type="submit"]:active {
   transform: translateY(0);
 }
 
@@ -790,7 +790,7 @@ button:active {
       padding: 0.8rem;
   }
 
-  button {
+  button[type="submit"] {
       padding: 1rem;
   }
 }

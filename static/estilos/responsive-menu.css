@@ -1,9 +1,104 @@
+nav ul li {
+  opacity: 0;
+  transform: translateY(5px);
+}
+nav ul li:nth-child(1) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.1s; }
+nav ul li:nth-child(2) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.2s; }
+nav ul li:nth-child(3) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.3s; }
+nav ul li:nth-child(4) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.4s; }
+nav ul li:nth-child(5) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.5s; }
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
   /* Menú en desktop */
   .nav-menu {
     display: flex;
     gap: 1.5rem;
   }
+
+  .nav-menu.active .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px); /* un poquito más abajo */
+    transition: all 0.3s ease;
+    display: block; /* 👈 mantenemos block para que se pueda animar */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    min-width: 180px;
+    z-index: 1000;
+    pointer-events: none; /* evita clics mientras está oculto */
+  }
   
+  .nav-item.dropdown {
+    position: relative;
+  }
+
+  .nav-item:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  nav ul li::before, nav ul li ul .dropdown-menu::before {
+    display: none;
+    content: none; /* aseguras que no genere nada */
+  }
+
+  .dropdown-menu li a {
+    display: block;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: #333;
+  }
+
+  .dropdown-menu li a:hover {
+    background: #f5f5f5;
+    text-decoration: none;
+  }
+
+  .dropdown-menu li a::before {
+    content: none !important;
+  }
+
+  .nav-item .dropdown-icon {
+    margin-left: 6px;
+    font-size: 0.7rem;
+    transition: transform 0.3s;
+  }
+
+  .nav-item:hover .dropdown-icon {
+    transform: rotate(180deg); /* gira la flechita al pasar el mouse */
+  }
+    
   /* Hamburguesa oculta en desktop */
   .menu-toggle {
     display: none;
@@ -53,19 +148,29 @@
       }
     
       .dropdown-menu {
-        display: none;
-        position: absolute;
+        display: block;
+        position: static;
         top: 100%;
         left: 0;
         background: white;
         min-width: 200px;
         border-radius: 6px;
         box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        z-index: 1000;
+        z-index: 1;
+      }
+
+      .nav-item > a {
+        display: inline-block;   /* o block si quieres que ocupe toda la fila */
+        position: relative;
+        z-index: 2;  /* asegúrate de que quede encima del dropdown */
       }
     
       .nav-item:hover > .dropdown-menu {
         display: block;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+        pointer-events: auto !important;
       }
     }
     @media (max-width: 992px) {
@@ -80,7 +185,7 @@
           display: block; /* se abre al hacer click */
         }
 
-        nav ul li a::before {
+        nav ul li::before, nav ul li a::before {
             display: none;
             content: none; /* aseguras que no genere nada */
           }
@@ -90,6 +195,11 @@
         .contenedor-barra-contacto .contacto-derecha .btn-cotizar {
             margin-left: auto !important;
           }
+
+        .contenedor-barra-contacto {
+            padding: 35px 0; /* aún más compacto en pantallas chicas */
+          }
+
         /* Ocultar correo y teléfono */
         .contacto-izquierda {
             display: none; /* ocultar correo/teléfono */
@@ -97,6 +207,7 @@
         
           .contacto-derecha {
             display: flex;
+            margin-right: 0 !important;
             justify-content: space-between; /* redes a la izq, botón a la der */
             align-items: center;
             width: 100%;
@@ -106,13 +217,13 @@
           /* Redes sociales a la izquierda */
           .contacto-derecha .redes-sociales {
             order: 1;
-            margin-left: 35px; /* pegadas a la izq */
+            margin-left: 15px; /* pegadas a la izq */
           }
         
           /* Botón cotizar a la derecha */
           .contacto-derecha .btn-cotizar {
             order: 2;
-            margin-left: auto;
+            margin-right: 15px;
         }
       }
   

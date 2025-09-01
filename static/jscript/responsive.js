@@ -26,9 +26,7 @@
     const submenu = item.querySelector('.dropdown-menu');
   
     if (submenu) {
-      link.addEventListener('click', (e) => {
-        e.preventDefault(); // evita que navegue
-        item.classList.toggle('open');
+      link.addEventListener('click', () => {
       });
     }
   });

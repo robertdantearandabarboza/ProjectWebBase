@@ -85,6 +85,21 @@
   background-color: #99141A;
 }
 
+@media (max-width: 992px) {
+  .martillos-grid {
+    justify-content: center; /* centra los elementos en la grid */
+    gap: 2rem; /* reduce el gap para que no se vea tan grande */
+    padding: 1.5rem;
+  }
+
+  .martillo-card {
+    width: 100%; /* cards más estrechas y centradas */
+    max-width: 450px; /* no se expanden demasiado */
+    margin: 0 auto; /* centra cada card individual si hay una columna */
+  }
+}
+
+
 /* New layout styles */
 main {
   max-width: 100%;
@@ -227,6 +242,40 @@ main {
   margin-top: 1rem;
 }
 
+@media (max-width: 900px) and (min-width: 769px) {
+  .martillo-detalle {
+    flex-direction: row;
+    flex-wrap: wrap; /* permite que los elementos bajen si no caben */
+    gap: 1.5rem;
+  }
+
+  .martillo-imagen {
+    flex: 0 0 100%; /* imagen toma todo el ancho */
+    min-height: 250px;
+  }
+
+  .martillo-info {
+    flex: 0 0 100%; /* info debajo de la imagen */
+  }
+}
+
+/* Mobile: menos de 768px */
+@media (max-width: 768px) {
+  .martillo-detalle {
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .martillo-imagen,
+  .martillo-info {
+    flex: 1 1 100%;
+  }
+
+  .martillo-imagen {
+    min-height: 200px;
+  }
+}
 /* Estilos para los enlaces de navegación */
 .nav-item {
   position: relative;
@@ -281,6 +330,17 @@ nav ul li a {
   transition: color 0.3s ease; /* Transición suave para el color */
   text-shadow: none; /* Removemos la sombra ya que no es necesaria en fondo blanco */
   position: relative; /* Para el pseudo-elemento */
+}
+
+nav ul li::before, nav ul li a::before {
+  content: '';
+  position: absolute;
+  top: -26px; /* Línea más pegada al tope del contenedor nav */
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #B51922;
+  transition: width 0.3s ease; /* Transición suave para la línea */
 }
 
 /* Cotizar button styles */

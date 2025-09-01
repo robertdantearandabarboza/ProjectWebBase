@@ -6,6 +6,7 @@
   <meta name="robots" content="noindex, nofollow">
   <title>Acoples Rápidos - Hydromenn</title>
   <link rel="stylesheet" href="../static/estilos/productos.css" />
+  <link rel="stylesheet" href="../static/estilos/responsive-menu.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -46,10 +47,18 @@
   <!-- Navegación -->
   <div class="contenedor-nav">
     <nav>
-      <a href="../index.html">
+      <!-- Logo a la izquierda -->
+      <a href="../index.html" class="logo">
         <img src="../media/img/logolyc.png" alt="Logo Hydromenn" width="120">
       </a>
-      <ul>
+  
+      <!-- Botón hamburguesa -->
+      <button class="menu-toggle" aria-label="Abrir menú">
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <!-- Enlaces de navegación -->
+      <ul class="nav-menu">
         <li class="nav-item">
           <a href="../index.html" class="nav-link">
             <i class="fas fa-home nav-icon"></i>
@@ -65,8 +74,14 @@
         <li class="nav-item">
           <a href="productos.html" class="nav-link active">
             <i class="fas fa-tools nav-icon"></i>
-            <span>PRODUCTOS</span>
+            <span>PRODUCTOS <i class="fas fa-chevron-down dropdown-icon"></i></span>
           </a>
+          <ul class="dropdown-menu">
+            <li><a href="martillos-hidraulicos.html">Martillos Hidráulicos</a></li>
+            <li><a href="acoples-rapidos.html">Acoples Rápidos</a></li>
+            <li><a href="repuestos-martillos-hidraulicos.html">Repuestos para Martillo</a></li>
+            <li><a href="servicio-mantenimiento.html">Servicio de mantenimiento</a></li>
+          </ul>
         </li>
         <li class="nav-item">
           <a href="clientes.html" class="nav-link">
@@ -129,5 +144,6 @@
   </footer>
 
   <script src="../static/js/modal.js"></script>
+  <script src="../static/jscript/responsive.js"></script>
 </body>
 </html>
