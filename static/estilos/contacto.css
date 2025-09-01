@@ -761,19 +761,15 @@ button[type="submit"]:active {
   .img1 {
       grid-column: 1;
       grid-row: 1;
-      height: 200px;
+      height: 450px;
   }
 
   .img2 {
-      grid-column: 1;
-      grid-row: 2;
-      height: 180px;
+      display: none;
   }
 
   .img3 {
-      grid-column: 1;
-      grid-row: 3;
-      height: 160px;
+      display: none;
   }
 }
 
@@ -807,24 +803,21 @@ button[type="submit"]:active {
       grid-template-rows: 200px 180px 160px;
       padding: 2rem 1.5rem;
       gap: 1.5rem;
+      height: 365px;
   }
 
   .img1 {
       grid-column: 1;
       grid-row: 1;
-      height: 200px;
+      height: 300px;
   }
 
   .img2 {
-      grid-column: 1;
-      grid-row: 2;
-      height: 180px;
+      display: none;
   }
 
   .img3 {
-      grid-column: 1;
-      grid-row: 3;
-      height: 160px;
+      display: none;
   }
 }
 
