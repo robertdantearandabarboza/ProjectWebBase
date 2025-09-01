@@ -85,6 +85,21 @@
   background-color: #99141A;
 }
 
+@media (max-width: 1500px) {
+  .martillos-grid {
+    max-width: 95%;
+    justify-content: center; /* centra los elementos en la grid */
+    gap: 1.5rem; /* reduce el gap para que no se vea tan grande */
+    padding: 1.5rem;
+  }
+
+  .martillo-card {
+    width: 100%; /* cards más estrechas y centradas */
+    max-width: 100%; /* no se expanden demasiado */
+    margin: 0 auto; /* centra cada card individual si hay una columna */
+  }
+}
+
 @media (max-width: 992px) {
   .martillos-grid {
     justify-content: center; /* centra los elementos en la grid */
@@ -99,7 +114,42 @@
   }
 }
 
+@media (max-width: 550px) {
+  .martillos-grid {
+    max-width: 100%;
+    justify-content: center; /* centra los elementos en la grid */
+    gap: 2rem; /* reduce el gap para que no se vea tan grande */
+    padding: 0;
+  }
 
+  .martillo-card {
+    width: 100%; /* cards más estrechas y centradas */
+    height: 358px;
+    max-width: 550px; /* no se expanden demasiado */
+    margin: 0 auto; /* centra cada card individual si hay una columna */
+  }
+
+  .martillo-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  .btn-martillo {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: #B51922;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 0 0 10px 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+}
 /* New layout styles */
 main {
   max-width: 100%;
@@ -110,6 +160,7 @@ main {
   margin-top: -50px;
   border-radius: 6px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-bottom: -75px;
 }
 
 .martillo-detalle {

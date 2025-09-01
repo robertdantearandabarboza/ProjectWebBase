@@ -125,7 +125,8 @@ nav ul li:nth-child(5) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) fo
   }
   
   /* --- Responsive --- */
-  @media (max-width: 992px) {
+  @media (max-width: 992px) ,
+  (max-width: 1010px){
 
     .contenedor-nav nav {
         display: flex;
@@ -188,7 +189,8 @@ nav ul li:nth-child(5) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) fo
         pointer-events: auto !important;
       }
     }
-    @media (max-width: 992px) {
+    @media (max-width: 992px) ,
+    (max-width: 1010px){
         .dropdown-menu {
             display: block;       /* siempre visible */
             position: static;     /* que ya no sea absoluto */

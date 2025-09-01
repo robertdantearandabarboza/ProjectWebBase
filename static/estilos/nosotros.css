@@ -326,6 +326,7 @@ nav ul li a.active {
 main {
   max-width: 1200px;
   padding: 0;
+  margin-bottom: -55px;
 }
 
 .quienes-somos-container {

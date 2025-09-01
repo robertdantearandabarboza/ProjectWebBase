@@ -1279,12 +1279,45 @@ html, body {
   pointer-events: none; /* Make sure clicks go through to the slide */
 }
 
-@media (max-width: 992px) {
+@media (max-width: 992px) ,
+(max-width: 1010px){
+  .carousel-caption {
+    bottom: auto;                /* anula el "bottom: 25%" */
+    top: 30%;                    /* lo llevamos al medio */
+    left: 12%;                   /* centramos horizontal */
+    max-width: 90%;              /* más ancho que en PC */
+    padding: 15px;               /* menos padding para móviles */
+    text-align: center;          /* centramos el contenido */
+  }
+  .carousel-caption .button-container {
+    display: flex;
+    justify-content: center; /* centra horizontal */
+    margin-top: 1rem;        /* espacio arriba si lo necesitas */
+  }
+}
+
+
+@media (max-width: 970px) {
+  .carousel-caption {
+    bottom: auto;                /* anula el "bottom: 25%" */
+    top: 30%;                    /* lo llevamos al medio */
+    left: 11%;                   /* centramos horizontal */
+    max-width: 90%;              /* más ancho que en PC */
+    padding: 15px;               /* menos padding para móviles */
+    text-align: center;          /* centramos el contenido */
+  }
+  .carousel-caption .button-container {
+    display: flex;
+    justify-content: center; /* centra horizontal */
+    margin-top: 1rem;        /* espacio arriba si lo necesitas */
+  }
+}
+
+@media (max-width: 880px) {
   .carousel-caption {
     bottom: auto;                /* anula el "bottom: 25%" */
     top: 30%;                    /* lo llevamos al medio */
     left: 5%;                   /* centramos horizontal */
-    transform: translate(-50%, -50%); /* centro exacto */
     max-width: 90%;              /* más ancho que en PC */
     padding: 15px;               /* menos padding para móviles */
     text-align: center;          /* centramos el contenido */
@@ -1301,11 +1334,11 @@ html, body {
     bottom: auto;                /* anula el "bottom: 25%" */
     top: 30%;                    /* lo llevamos al medio */
     left: 5%;                   /* centramos horizontal */
-    transform: translate(-50%, -50%); /* centro exacto */
     max-width: 90%;              /* más ancho que en PC */
     padding: 15px;               /* menos padding para móviles */
     text-align: center;          /* centramos el contenido */
   }
+  
   .carousel-caption .button-container {
     display: flex;
     justify-content: center; /* centra horizontal */
@@ -1406,6 +1439,7 @@ html, body {
 .main-content {
   position: relative;
   z-index: 10;
+  margin-bottom: -75px;
 }
 
 /* Remove any extra padding/margin that might affect layout */
