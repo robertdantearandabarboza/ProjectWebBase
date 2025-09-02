@@ -205,18 +205,86 @@ main {
   text-align: left;
 }
 
-.info-martillo h1, .info-martillo h2 {
+.info-martillo {
+  display: grid;
+  gap: 1rem;
+  max-width: 600px;
+}
+
+.info-martillo .modelo {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111;
+}
+
+.info-martillo .titulo {
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #444;
+}
+
+/* Estilo tarjetas tipo imagen */
+.info-martillo .item {
+  position: relative;           /* necesario para posicionar la franja */
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;             /* mantiene la franja dentro de las esquinas redondeadas */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  padding: 1rem 1rem 1rem 1rem; /* el icono ya tiene margen */
+  gap: 1rem;
+}
+
+.info-martillo .item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;        /* <- hace que cubra toda la altura */
+  width: 10px;
+  background: #c00;
+}
+
+.info-martillo .item.diagonal::before {
+  width: 55px;                 /* un poco más ancha */
+  background: #c00;
+  clip-path: polygon(0 0, 100% 0, 40px 100%, 0 100%);
+  /*            izq sup, der sup,  corte diag , izq inf  */
+}
+
+.info-martillo .icon {
+  font-size: 2rem;
+  color: #000;
+  margin: 0 4rem;
+  margin-right: 20px;
+}
+
+.info-martillo .label {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.info-martillo .value {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #000;
+}
+
+.descarga-pdf{
   margin: 0;
   padding: 0;
-  text-align: left;
+  display: inline-flex;
+  align-items: center;
 }
 
-.info-martillo p {
-  margin: 0.5rem 0;
-  padding: 0;
-}
-
-.descarga-pdf, .cotizar-pdf {
+.cotizar-pdf {
   margin: 0;
   padding: 0;
   display: inline-flex;
@@ -225,6 +293,7 @@ main {
 
 .descarga-pdf a {
   display: inline-flex;
+  font-size: 1.1rem;
   background: transparent;
   color: #B51922;
   border: 2px solid #B51922;
@@ -235,7 +304,7 @@ main {
   gap: 0.5rem;
   transition: all 0.3s ease;
   font-weight: 500;
-  width: auto;
+  width: 50%;
   min-width: auto;
 }
 
@@ -246,6 +315,7 @@ main {
 
 .cotizar-pdf a {
   display: inline-flex;
+  font-size: 1.1rem;
   background-color: #B51922;
   color: white;
   padding: 0.8rem 1rem;
@@ -255,42 +325,67 @@ main {
   gap: 0.5rem;
   transition: all 0.3s ease;
   font-weight: 500;
-  width: auto;
+  width: 50%;
   min-width: auto;
 }
 
 .cotizar-pdf a:hover {
+  color: white;
   background-color: #99141A;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(153, 20, 26, 0.2);
 }
 
-.info-martillo h1 {
-  font-size: 1.8rem;
-  color: #B51922;
-  margin-bottom: 1rem;
-}
-
-.info-martillo h2 {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 1rem;
-}
-
-.info-martillo p {
-  margin: 0.5rem 0;
+/* Cotizar button styles */
+.btn-cotizar-martillo {
+  display: flex;
+  justify-content: flex-start; /* 👈 alinea ícono y texto a la izquierda */
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
   font-size: 1.1rem;
-  color: #555;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: 60%;
+  margin-top: 1rem;
 }
 
-.info-martillo strong {
-  color: #B51922;
-  font-weight: 600;
+.btn-cotizar-martillo i {
+  font-size: 1.2rem;
+}
+
+.btn-cotizar-martillo:hover {
+  background-color: #45a049;
+  transform: translateX(5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  text-decoration: none;
 }
 
 .descarga-pdf, .cotizar-pdf {
   text-align: center;
   margin-top: 1rem;
+}
+
+
+@media (max-width: 1440px) {
+  .descarga-pdf, 
+  .cotizar-pdf {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .descarga-pdf a, 
+  .cotizar-pdf a, 
+  .btn-cotizar-martillo {
+    width: 100%;
+    max-width: none;
+  }
 }
 
 @media (max-width: 900px) and (min-width: 769px) {
@@ -307,6 +402,20 @@ main {
 
   .martillo-info {
     flex: 0 0 100%; /* info debajo de la imagen */
+  }
+
+  .descarga-pdf, 
+  .cotizar-pdf {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .descarga-pdf a, 
+  .cotizar-pdf a, 
+  .btn-cotizar-martillo {
+    width: 100%;
+    max-width: none;
   }
 }
 
@@ -325,6 +434,20 @@ main {
 
   .martillo-imagen {
     min-height: 200px;
+  }
+
+  .descarga-pdf, 
+  .cotizar-pdf {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .descarga-pdf a, 
+  .cotizar-pdf a, 
+  .btn-cotizar-martillo {
+    width: 100%;
+    max-width: none;
   }
 }
 /* Estilos para los enlaces de navegación */
@@ -394,34 +517,6 @@ nav ul li::before, nav ul li a::before {
   transition: width 0.3s ease; /* Transición suave para la línea */
 }
 
-/* Cotizar button styles */
-.btn-cotizar-martillo {
-  display: inline-block;
-  padding: 1rem 2rem;
-  background-color: #4CAF50;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.btn-cotizar-martillo i {
-  font-size: 1.2rem;
-}
-
-.btn-cotizar-martillo:hover {
-  background-color: #45a049;
-  transform: translateX(5px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  color: #fff;
-  text-decoration: none;
-}
 
 .whatsapp-float {
   position: fixed;
@@ -470,4 +565,72 @@ nav ul li::before, nav ul li a::before {
   opacity: 1;
   transform: translateX(0);
   right: 75px;
+}
+
+/* Bounce + fade para la imagen */
+@keyframes bounceUpFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  35% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  58% {
+    opacity: 1;
+    transform: scale(0.94);
+  }
+  85% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Fade + slide + scale para info */
+@keyframes fadeSlideScale {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Fade + pop para botones */
+@keyframes fadePop {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Clases iniciales */
+.martillo-imagen,
+.martillo-info,
+.descarga-pdf,
+.cotizar-pdf,
+.btn-cotizar-martillo {
+  opacity: 0;
+}
+
+/* Clases animadas */
+.fade-bounce {
+  animation: bounceUpFade 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.fade-slide-scale {
+  animation: fadeSlideScale 0.8s ease-out forwards;
+}
+.fade-pop {
+  animation: fadePop 0.6s ease-out forwards;
 }

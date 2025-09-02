@@ -213,42 +213,37 @@ function setupClientLogosAnimations() {
   const logos = logosSection.querySelectorAll('.logo-item');
 
   // Ocultar inicialmente
-  sectionHeader.style.opacity = '0';
-  sectionHeader.style.transform = 'translateY(30px)';
-
+  if (sectionHeader) {
+    sectionHeader.style.opacity = '0';
+    sectionHeader.style.transform = 'translateY(30px)';
+  }
   logos.forEach(logo => {
     logo.style.opacity = '0';
     logo.style.transform = 'translateY(30px)';
   });
 
-  // Animar el header
-  const headerObserver = new IntersectionObserver((entries) => {
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.style.animation = 'fadeInUp 1s ease-out forwards';
-        entry.target.style.transform = 'translateY(0)';
-        headerObserver.unobserve(entry.target);
+        // Animar el header primero
+        if (sectionHeader) {
+          sectionHeader.style.animation = 'fadeInUp 1s ease-out forwards';
+          sectionHeader.style.transform = 'translateY(0)';
+        }
+
+        // Animar los logos escalonadamente
+        logos.forEach((logo, index) => {
+          setTimeout(() => {
+            logo.classList.add('bounce-up');
+          }, index * 150);
+        });
+
+        observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.1 });
 
-  headerObserver.observe(sectionHeader);
-
-  // Animar cada logo individualmente con escalonado
-  const logoObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const index = Array.from(logos).indexOf(entry.target);
-        setTimeout(() => {
-          entry.target.classList.add('bounce-up'); // o fadeInUp si prefieres
-          entry.target.style.transform = 'translateY(0)';
-        }, index * 150); // cada logo tarda 150ms más que el anterior
-        logoObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  logos.forEach(logo => logoObserver.observe(logo));
+  observer.observe(logosSection);
 }
 
 // Función para manejar la animación de la sección CTA

@@ -2215,6 +2215,11 @@ section.quienes-somos {
   overflow: hidden;
 }
 
+.footer-logo-box img {
+  max-height: 160%;  /* o auto */
+  max-width: 160%;
+  object-fit: contain;
+}
 .footer-logo {
   height: 200%;     /* El logo crece dentro de la caja */
   width: auto;
