@@ -200,16 +200,6 @@ img {
 }
 
 /* Animación del footer */
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 .footer-col-animate {
   opacity: 0; /* oculto inicialmente */

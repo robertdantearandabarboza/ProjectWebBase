@@ -375,7 +375,6 @@ function setupTestimoniosAnimations() {
 }
 
 
-
 // Inicializar animaciones cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
   setupAboutAnimations();
