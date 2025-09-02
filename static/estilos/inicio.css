@@ -199,6 +199,47 @@ img {
   }
 }
 
+/* Animación del footer */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer-col-animate {
+  opacity: 0; /* oculto inicialmente */
+}
+
+.footer-col-animate.fade-up {
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+/* Animaciones CTA */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cta-animate {
+  opacity: 0; /* Oculto inicialmente */
+}
+
+.cta-animate.fade-slide-up {
+  animation: fadeSlideUp 0.8s ease-out forwards;
+}
+
+
 .fade-in {
   opacity: 0;
   animation: fadeInUp 0.6s ease-out forwards;
@@ -212,6 +253,33 @@ img {
 .slide-in-right {
   opacity: 0;
   animation: slideInRight 0.6s ease-out forwards;
+}
+
+@keyframes fadeScaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.testimonio-animate {
+  opacity: 0; /* Oculto inicialmente */
+}
+
+.testimonio-animate.fade-scale-up {
+  animation: fadeScaleUp 0.8s ease-out forwards;
+}
+
+.btn-animate {
+  opacity: 0;
+}
+
+.btn-animate.pop-up {
+  animation: fadeScaleUp 0.8s ease-out forwards;
 }
 
 .delay-1 { animation-delay: 0.2s; }
@@ -2309,6 +2377,30 @@ section.quienes-somos {
     transform: translateY(0);
   }
 }
+
+@keyframes bounceUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bounce-up {
+  animation: bounceUp 1.5s ease forwards; 
+}
+
 
 .whatsapp-float {
   position: fixed;
