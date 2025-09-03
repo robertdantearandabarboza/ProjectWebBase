@@ -216,6 +216,10 @@ main {
   font-size: 2rem;
   font-weight: 800;
   color: #111;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
 }
 
 .info-martillo .titulo {
@@ -223,8 +227,10 @@ main {
   font-size: 1.3rem;
   font-weight: 600;
   color: #444;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
-
 /* Estilo tarjetas tipo imagen */
 .info-martillo .item {
   position: relative;           /* necesario para posicionar la franja */

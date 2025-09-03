@@ -24,6 +24,7 @@ body {
 html, body {
   height: 100%;
   width: 100%;
+  padding-top: 80px;
 }
 
 /* El contenido principal (lo que está entre nav y footer) debe crecer */
@@ -36,8 +37,9 @@ html, body {
   background-color: #2F353A;
   width: 100%;
   padding: 43px 0;
-  position: relative;
-  z-index: 10; /* Above hero-background, below nav */
+  position: fixed;
+  z-index: 999;
+  top: 0;
 }
 
 /* Contenedor de fondo blanco para el nav */
@@ -47,10 +49,14 @@ html, body {
   margin: 0 auto; /* Centra el contenedor */
   border-radius: 0; /* Sin bordes redondeados, rectángulo normal */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  padding: 2px 0; /* Reducimos aún más el padding vertical */
-  position: relative;
-  z-index: 10; /* Para que esté por encima del contenedor de contacto */
-  margin-top: -20px; /* Lo movemos hacia arriba para que se superponga */
+  padding: 3px 0; /* Reducimos aún más el padding vertical */
+  position: fixed;
+  z-index: 1000; 
+  top: 40px;
+  margin-top: 50px; /* Lo movemos hacia arriba para que se superponga */
+
+  left: 0;
+  right: 0;
 }
 
 /* Estilos para la sección de productos */
