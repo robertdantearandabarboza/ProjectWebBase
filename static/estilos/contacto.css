@@ -46,7 +46,7 @@ html, body {
   padding: 3px 0; /* Reducimos aún más el padding vertical */
   position: fixed;
   z-index: 1000; 
-  top: 40px;
+  top: 25px;
   margin-top: 50px; /* Lo movemos hacia arriba para que se superponga */
 
   left: 0;
@@ -63,7 +63,7 @@ html, body {
   background-color: transparent; /* Ahora es transparente porque el contenedor padre tiene el fondo */
   backdrop-filter: none; /* Removemos el blur ya que no es necesario */
   -webkit-backdrop-filter: none;
-  margin-top: 5px;
+  margin-top: 1.5px;
   display: flex;
   justify-content: space-between;
   align-items: center;

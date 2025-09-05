@@ -1262,7 +1262,7 @@ html, body {
 .hero-background {
   position: relative;
   width: 100%;
-  height: 85vh;
+  height: 110vh;
   opacity: 0;
   animation: fadeIn 1s ease-out forwards 0.3s;
   overflow: hidden;
@@ -1300,15 +1300,37 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
   background-size: cover;
   background-position: center;
   transform: scale(1);
   transition: transform 15s linear;
   will-change: transform;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.1); /* 👈 ajusta opacidad */
   background-blend-mode: darken;
 }
+
+.carousel-slide .slide-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2; /* encima de la imagen */
+  background: linear-gradient(
+  to bottom,
+  rgba(0,0,0,0.9) 0%,   /* negro casi sólido justo arriba */
+  rgba(0,0,0,0.8) 12%,  /* todavía oscuro en un tramo corto */
+  rgba(0,0,0,0.3) 25%,  /* empieza a desvanecerse */
+  rgba(0,0,0,0) 40%     /* ya transparente */
+  ),
+  linear-gradient(
+    to right,
+    rgba(0,0,0,0.6) 0%,   /* oscuro en el lado izquierdo */
+    rgba(0,0,0,0) 50%,    /* transparente en el centro */
+    rgba(0,0,0,0.6) 100%  /* oscuro en el lado derecho */
+  );
+}
+
 
 .carousel-slide.active .slide-bg {
   animation: zoomIn 12s linear forwards;
@@ -1341,7 +1363,7 @@ html, body {
 (max-width: 1010px){
   .carousel-caption {
     bottom: auto;                /* anula el "bottom: 25%" */
-    top: 30%;                    /* lo llevamos al medio */
+    top: 45%;                    /* lo llevamos al medio */
     left: 12%;                   /* centramos horizontal */
     max-width: 90%;              /* más ancho que en PC */
     padding: 15px;               /* menos padding para móviles */
@@ -1358,7 +1380,7 @@ html, body {
 @media (max-width: 970px) {
   .carousel-caption {
     bottom: auto;                /* anula el "bottom: 25%" */
-    top: 30%;                    /* lo llevamos al medio */
+    top: 45%;                    /* lo llevamos al medio */
     left: 11%;                   /* centramos horizontal */
     max-width: 90%;              /* más ancho que en PC */
     padding: 15px;               /* menos padding para móviles */
@@ -1374,7 +1396,7 @@ html, body {
 @media (max-width: 880px) {
   .carousel-caption {
     bottom: auto;                /* anula el "bottom: 25%" */
-    top: 30%;                    /* lo llevamos al medio */
+    top: 45%;                    /* lo llevamos al medio */
     left: 5%;                   /* centramos horizontal */
     max-width: 90%;              /* más ancho que en PC */
     padding: 15px;               /* menos padding para móviles */
@@ -1390,7 +1412,7 @@ html, body {
 @media (max-width: 576px) {
   .carousel-caption {
     bottom: auto;                /* anula el "bottom: 25%" */
-    top: 30%;                    /* lo llevamos al medio */
+    top: 40%;                    /* lo llevamos al medio */
     left: 5%;                   /* centramos horizontal */
     max-width: 90%;              /* más ancho que en PC */
     padding: 15px;               /* menos padding para móviles */
@@ -1484,15 +1506,6 @@ html, body {
   transition-delay: 0.5s;
 }
 
-/* Navigation and Contact Bar */
-.contenedor-barra-contacto {
-  background-color: #2F353A;
-  width: 100%;
-  padding: 10px 0;
-  position: fixed;
-  z-index: 999; /* Above hero-background, below nav */
-}
-
 /* Reset main content styles */
 .main-content {
   position: relative;
@@ -1505,12 +1518,12 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  padding-top: 150px;
+  padding-top: 0px;
 }
 
 /* Contenedor de fondo plomo para la barra de contacto */
 .contenedor-barra-contacto {
-  background-color: #2F353A;
+  background-color: transparent;
   width: 100%;
   padding: 40px 0;
   opacity: 0;
@@ -1518,6 +1531,11 @@ body {
   position: fixed;
   z-index: 999;
   top: 0;
+  transition: background-color 0.3s ease;
+}
+
+.contenedor-barra-contacto.scrolled {
+  background-color: #2F353A; /* color sólido al hacer scroll */
 }
 
 @keyframes fadeIn {
@@ -1533,7 +1551,7 @@ body {
 
 /* Contenedor de fondo blanco para el nav */
 .contenedor-nav {
-  background-color: white;
+  background: transparent;
   left: 0;
   width: 95%; /* Hacemos el contenedor más ancho */
   margin: 0 auto; /* Centra el contenedor */
@@ -1542,13 +1560,17 @@ body {
   padding: 3px 0; /* Reducimos aún más el padding vertical */
   position: fixed;
   z-index: 1000; 
-  top: 40px;
+  top: 25px;
   margin-top: 50px; /* Lo movemos hacia arriba para que se superponga */
 
   left: 0;
   right: 0;
+  transition: background-color 0.4s ease;
 }
 
+.contenedor-nav.scrolled {
+  background: white; /* al hacer scroll */
+}
 /* Barra de contacto arriba */
 .barra-contacto {
   color: white;
@@ -1559,7 +1581,7 @@ body {
   background-color: transparent; /* Ahora es transparente porque el contenedor padre tiene el fondo */
   backdrop-filter: none; /* Removemos el blur ya que no es necesario */
   -webkit-backdrop-filter: none;
-  margin-top: 5px;
+  margin-top: 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1657,6 +1679,7 @@ nav {
   justify-content: space-between;
   flex-wrap: wrap;
   background-color: transparent; /* El nav es transparente, el contenedor padre tiene el fondo blanco */
+  margin-bottom: 1px;
 }
 
 /* CAMBIO DE TAMAÑO DE IMAGEN */
@@ -1688,14 +1711,23 @@ nav ul {
 .nav-link {
   display: inline-block;
   padding: 2px 12px;
-  color: var(--color-texto);
+  color: white; /* color inicial */
   text-decoration: none;
   transition: color 0.3s ease;
   font-weight: 500;
   position: relative;
 }
 
+nav.scrolled .nav-link {
+  color: var(--color-texto); /* color al hacer scroll */
+}
+
 .nav-link:hover {
+  color: white;
+}
+
+/* Estado después del scroll */
+nav.scrolled .nav-link:hover {
   color: var(--color-destacado);
 }
 
@@ -1711,10 +1743,16 @@ nav ul {
   transition: all 0.3s ease;
 }
 
+
 .nav-link:hover .nav-icon {
-  color: var(--color-destacado);
+  color: white;
   opacity: 1;
-  transform: translateX(-50%) translateY(-25%); /* Sale un poco hacia arriba */
+  transform: translateX(-50%) translateY(-25%);
+}
+
+/* Estado después del scroll */
+nav.scrolled .nav-link:hover .nav-icon {
+  color: var(--color-destacado);
 }
 
 .nav-link span {
@@ -1766,8 +1804,12 @@ nav ul li a::before {
   left: 0;
   width: 0;
   height: 3px;
-  background-color: #B51922;
-  transition: width 0.3s ease; /* Transición suave para la línea */
+  background-color: transparent; /* al inicio transparente */
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+nav.scrolled ul li a::before {
+  background-color: #B51922; /* al hacer scroll toma el color */
 }
 
 nav ul li a:hover::before,
@@ -1775,8 +1817,23 @@ nav ul li a.active::before {
   width: 100%; /* La línea se extiende del ancho de la palabra */
 }
 
-nav ul li a:hover,
 nav ul li a.active {
+  color: white;
+  text-shadow:
+    -1px -1px 0 #344CBA,
+     1px -1px 0 #344CBA,
+    -1px  1px 0 #344CBA,
+     1px  1px 0 #344CBA;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Estado después del scroll */
+nav.scrolled ul li a.active {
+  color: #B51922;
+  text-shadow: none;
+}
+
+nav ul li a:hover {
   color: #B51922; /* Color principal especificado */
 }
 
@@ -2309,9 +2366,6 @@ section.quienes-somos {
   color: #bbb;
   letter-spacing: 0.5px;
 }
-
-
-
 
 
 /* Responsive para móviles */

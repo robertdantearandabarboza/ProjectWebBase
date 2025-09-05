@@ -17,6 +17,34 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+window.addEventListener("scroll", function() {
+  const barra = document.querySelector(".contenedor-barra-contacto");
+  if (window.scrollY > 0) {
+    barra.classList.add("scrolled");
+  } else {
+    barra.classList.remove("scrolled");
+  }
+});
+
+window.addEventListener("scroll", function() {
+  const nav = document.querySelector(".contenedor-nav");
+  if (window.scrollY > 0) {
+    nav.classList.add("scrolled");
+  } else {
+    nav.classList.remove("scrolled");
+  }
+});
+
+window.addEventListener("scroll", function() {
+  const nav = document.querySelector("nav");
+  if (window.scrollY > 0) {
+    nav.classList.add("scrolled");
+  } else {
+    nav.classList.remove("scrolled");
+  }
+});
+
+
 // Función para manejar la animación de la sección about
 function setupAboutAnimations() {
   const aboutSection = document.querySelector('.about-section');
