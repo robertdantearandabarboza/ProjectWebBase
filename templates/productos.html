@@ -100,7 +100,6 @@
   </div>
 
 <main>
-  <h1>PRODUCTOS HYDROMENN</h1>
 
   <section class="hero-section">
       <div class="container">
@@ -139,9 +138,10 @@
   </section>
 
   <section class="carousel-section">
-    <h2 class="carousel-title">Galería de Productos</h2>
+    
   
     <div class="carousel-container">
+      <h2 class="carousel-title">GALERÍA DE MARTILLOS</h2>
       <div class="carousel-track" id="carouselTrack">
         <div class="carousel-slide" id="currentSlide">
   
@@ -186,6 +186,8 @@
       <span class="dot" onclick="currentSlide(6)"></span>
     </div>
   </section>
+
+  <div class="spacer"></div>
   
   <section class="acoples-section">
     <div class="acoples-container">
@@ -193,10 +195,10 @@
       <!-- Imágenes con diseño atractivo -->
       <div class="acoples-images">
         <div class="img-wrapper img-top">
-          <img src="../media/img/martillos-hidraulicos/LC400/LC400.png" alt="Acople Rápido 1">
+          <img src="../media/img/Productos/Acoples/Acople-Rápido-1.webp" alt="Acople Rápido 1">
         </div>
         <div class="img-wrapper img-bottom">
-          <img src="../media/img/martillos-hidraulicos/LC400/LC400.png" alt="Acople Rápido 2">
+          <img src="../media/img/Productos/Acoples/Acople-Rápido-2.webp" alt="Acople Rápido 2">
         </div>
         <!-- Decoración con formas -->
         <div class="shape shape-1"></div>
@@ -223,49 +225,85 @@
 
   <section class="puntas-section">
     <div class="puntas-title">
-      <h2>Puntas</h2>
+      <h2>Nuestras Puntas</h2>
+      <p>Especializadas para martillos hidráulicos <strong>LC3500</strong> y <strong>LC400</strong>, diseñadas con materiales de alta resistencia para garantizar máxima durabilidad y eficiencia en tus proyectos.</p>
     </div>
-    <div class="puntas-container">
   
-      <!-- Tarjeta 1 -->
+    <div class="puntas-container">
+      <!-- Punta Cónica -->
       <div class="punta-card">
-        <img src="punta1.jpg" alt="Punta Cónica">
+        <div class="punta-image">
+          <img src="../media/img/Productos/Puntas/Punta-conica.webp" alt="Punta Cónica">
+        </div>
         <div class="punta-info">
           <h3>Punta Cónica</h3>
-          <p>Ideal para romper superficies duras como roca y concreto sólido.</p>
+          <p>Ideal para romper superficies extremadamente duras como roca y concreto sólido. Su diseño permite un impacto concentrado y potente.</p>
         </div>
       </div>
   
-      <!-- Tarjeta 2 -->
+      <!-- Punta Chisel -->
       <div class="punta-card">
-        <img src="punta2.jpg" alt="Punta Chisel">
+        <div class="punta-image">
+          <img src="../media/img/Productos/Puntas/Punta-chisel.webp" alt="Punta Chisel">
+        </div>
         <div class="punta-info">
           <h3>Punta Chisel</h3>
-          <p>Perfecta para cortes y trabajos de precisión en materiales específicos.</p>
+          <p>Perfecta para cortes y trabajos precisos en materiales específicos como concreto reforzado y áreas que requieren detalle.</p>
         </div>
       </div>
+    </div>
   
-      <!-- Tarjeta 3 -->
-      <div class="punta-card">
-        <img src="punta3.jpg" alt="Punta Piramidal">
-        <div class="punta-info">
-          <h3>Punta Piramidal</h3>
-          <p>Diseñada para demoliciones intensivas en superficies duras.</p>
-        </div>
+    <!-- Sección extra con beneficios -->
+    <div class="puntas-extra">
+      <h3>¿Por qué elegir nuestras puntas?</h3>
+      <ul>
+        <li>
+          <i class="fas fa-hammer"></i>
+          Fabricadas con acero de alta calidad para máxima resistencia.
+        </li>
+        <li>
+          <i class="fas fa-wrench"></i>
+          Compatibles específicamente con martillos LC3500 y LC400.
+        </li>
+        <li>
+          <i class="fas fa-shield-alt"></i>
+          Mayor durabilidad y reducción de desgaste en el equipo.
+        </li>
+        <li>
+          <i class="fas fa-industry"></i>
+          Diseñadas para demolición, excavación y trabajos industriales.
+        </li>
+      </ul>
+      <div class="cta">
+        <a href="#contacto" class="cta-btn">Solicita una cotización</a>
       </div>
-  
-      <!-- Tarjeta 4 -->
-      <div class="punta-card">
-        <img src="punta4.jpg" alt="Punta Especial">
-        <div class="punta-info">
-          <h3>Punta Especial</h3>
-          <p>Versátil y adaptable para diferentes tipos de trabajos hidráulicos.</p>
-        </div>
-      </div>
-  
     </div>
   </section>
+  
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <defs>
+        <!-- 🌊 Degradado -->
+        <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#bc1922" />   <!-- rojo arriba -->
+          <stop offset="100%" stop-color="#2a0b0d" /> <!-- oscuro abajo -->
+        </linearGradient>
+  
+        <!-- 🌑 Sombra -->
+        <filter id="waveShadow" height="200%">
+          <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="rgba(0,0,0,0.4)" />
+        </filter>
+      </defs>
+  
+      <!-- Aplicamos el degradado con url(#waveGradient) -->
+      <path d="M0,40 C360,100 1080,0 1440,60 L1440,0 L0,0 Z"
+            fill="url(#waveGradient)"
+            filter="url(#waveShadow)"></path>
+    </svg>
+  </div>
+  
 
+  
   <section class="repuestos-section">
     <div class="repuestos-container">
       
@@ -283,26 +321,26 @@
       <!-- Galería pequeña representativa -->
       <div class="repuestos-gallery">
         <div class="gallery-item">
-          <img src="../../media/img/repuestos/piston.png" alt="Pistón">
+          <img src="../media/img/Productos/Repuestos/Repuesto-1.webp" alt="Pistón">
           <span>Pistones</span>
         </div>
         <div class="gallery-item">
-          <img src="../../media/img/repuestos/sellos.png" alt="Sellos">
+          <img src="../media/img/Productos/Repuestos/Repuesto-2.webp" alt="Sellos">
           <span>Sellos</span>
         </div>
         <div class="gallery-item">
-          <img src="../../media/img/repuestos/pernos.png" alt="Pernos">
+          <img src="../media/img/Productos/Repuestos/Repuesto-3.webp" alt="Pernos">
           <span>Pernos</span>
         </div>
         <div class="gallery-item">
-          <img src="../../media/img/repuestos/casquillos.png" alt="Casquillos">
+          <img src="../media/img/Productos/Repuestos/Repuesto-4.webp" alt="Casquillos">
           <span>Casquillos</span>
         </div>
       </div>
   
     </div>
   </section>
-  
+
   <section class="mantenimiento-section">
     <div class="mantenimiento-container">
       
@@ -346,7 +384,7 @@
       <a href="cotizacion.html" class="cta-button">Solicitar Cotización</a>
     </div>
   </section>
-
+  
   <section class="product-section">
     <div class="product-card">
       <a href="martillos-hidraulicos.html">
@@ -359,7 +397,7 @@
     </div>
     <div class="product-card">
       <a href="acoples-rapidos.html">
-      <img src="../media/img/Productos/AC.png" alt="Acoples Rápidos">
+      <img src="../media/img/Productos/Acoples/Acoples-General.webp" alt="Acoples Rápidos">
       </a>
       <a href="acoples-rapidos.html" class="product-btn">
         <span>ACOPLES RÁPIDOS</span>
@@ -368,7 +406,7 @@
     </div>
     <div class="product-card">
       <a href="repuestos-martillos-hidraulicos.html">
-      <img src="../media/img/Productos/RM.png" alt="Repuestos para Martillos">
+      <img src="../media/img/Productos/Repuestos/Repuestos-Completo.webp" alt="Repuestos para Martillos">
       </a>
       <a href="repuestos-martillos-hidraulicos.html" class="product-btn">
         <span>REPUESTOS PARA MARTILLOS</span>
@@ -377,7 +415,7 @@
     </div>
     <div class="product-card">
       <a href="servicio-mantenimiento.html">
-      <img src="../media/img/Productos/SM.png" alt="Servicio de Mantenimiento">
+      <img src="../media/img/Productos/Mantenimiento/Mantenimiento.webp" alt="Servicio de Mantenimiento">
       </a>
       <a href="servicio-mantenimiento.html" class="product-btn">
         <span>SERVICIO DE MANTENIMIENTO</span>

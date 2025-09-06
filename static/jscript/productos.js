@@ -23,38 +23,33 @@ document.querySelectorAll('.producto').forEach(producto => {
 
 const images = [
   {
-      src: "../../media/img/martillos-hidraulicos/LC350/LC350.png",
+      src: "../../media/img/martillos-hidraulicos/LC350/LC350-A.webp",
       alt: "Espacio de trabajo moderno",
       href: "../../templates/Martillos Hidraulicos/lc350.html"
   },
   {
-      src: "../../media/img/martillos-hidraulicos/LC380/LC380.png",
+      src: "../../media/img/martillos-hidraulicos/LC400/LC400-A.webp",
       alt: "Configuración de desarrollo",
-      href: "../../templates/Martillos Hidraulicos/lc380.html"
-  },
-  {
-      src: "../../media/img/martillos-hidraulicos/LC400/LC400.png",
-      alt: "Auriculares premium",
       href: "../../templates/Martillos Hidraulicos/lc400.html"
   },
   {
-      src: "../../media/img/martillos-hidraulicos/LC900/LC900.webp",
-      alt: "Oficina moderna",
+      src: "../../media/img/martillos-hidraulicos/LC900/LC900-A.webp",
+      alt: "Auriculares premium",
       href: "../../templates/Martillos Hidraulicos/lc900.html"
   },
   {
-      src: "../../media/img/martillos-hidraulicos/LC1500/LC1500.png",
-      alt: "Tecnología",
+      src: "../../media/img/martillos-hidraulicos/LC1500/LC1500-A.webp",
+      alt: "Oficina moderna",
       href: "../../templates/Martillos Hidraulicos/lc1500.html"
   },
   {
-      src: "../../media/img/martillos-hidraulicos/LC2100/LC2100.png",
-      alt: "Calzado deportivo",
+      src: "../../media/img/martillos-hidraulicos/LC2100/LC2100-A.webp",
+      alt: "Tecnología",
       href: "../../templates/Martillos Hidraulicos/lc2100.html"
   },
   {
-      src: "../../media/img/martillos-hidraulicos/LC3500/LC3500.png",
-      alt: "Tienda moderna",
+      src: "../../media/img/martillos-hidraulicos/LC3500/LC3500-A.webp",
+      alt: "Calzado deportivo",
       href: "../../templates/Martillos Hidraulicos/lc3500.html"
   }
 ];
