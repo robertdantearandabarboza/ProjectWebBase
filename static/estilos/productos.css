@@ -367,6 +367,795 @@ h1 {
   text-align: center;
 }
 
+/*CARRUSEL*/
+
+.carousel-section {
+  width: 100%;
+  max-width: 1500px;
+  padding: 60px 20px;
+  margin: 0 auto;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  background: rgba(26, 26, 46, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 50px;
+}
+
+.carousel-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  min-width: 100%;
+  height: 100%;
+  padding: 40px 0;
+}
+
+.image-card {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  position: relative;
+  background: white;
+}
+
+.image-card.side {
+  display: block;
+  width: 400px;
+  height: 400px;
+  opacity: 0.7;
+  transform: scale(0.9);
+  filter: brightness(0.8);
+}
+
+.image-card.center {
+  width: 380px;
+  height: 380px;
+  opacity: 1;
+  transform: scale(1.1);
+  filter: brightness(1);
+  z-index: 5;
+}
+
+.image-card a {
+  position: relative;
+  z-index: 2; /* Más alto que el ::before */
+}
+
+.image-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(44, 83, 100, 0.3), rgba(15, 32, 39, 0.3));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.image-card:hover::before {
+  opacity: 1;
+}
+
+.image-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.image-card.center:hover {
+  transform: translateY(-8px) scale(1.15);
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.image-card:hover img {
+  transform: scale(1.05);
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.dot.active {
+  background: #f66464;
+  transform: scale(1.4);
+  box-shadow: 0 0 15px rgba(100, 181, 246, 0.6);
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(1.2);
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 20px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  font-weight: bold;
+}
+
+.carousel-nav:hover {
+  background: rgba(100, 181, 246, 0.3);
+  border-color: rgba(100, 181, 246, 0.5);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.nav-prev {
+  left: 15px;
+}
+
+.nav-next {
+  right: 15px;
+}
+
+.carousel-title {
+  text-align: center;
+  color: black;
+  font-size: 2.2em;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.image-counter {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 5;
+}
+
+@media (max-width: 768px) {
+  .image-card.side {
+      display: none;
+      width: 120px;
+      height: 120px;
+  }
+
+  .image-card.center {
+      transform: scale(1);
+      width: 250px;
+      height: 250px;
+      margin: 0 auto;
+  }
+
+  .carousel-container {
+      height: 400px;
+  }
+
+  .carousel-title {
+      font-size: 1.8em;
+  }
+
+  .carousel-slide {
+      justify-content: center;
+      gap: 0;
+      padding: 20px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-card.side {
+      width: 80px;
+      height: 80px;
+  }
+
+  .image-card.center {
+      width: 120px;
+      height: 120px;
+  }
+
+  .carousel-slide {
+      gap: 10px;
+  }
+}
+
+.acoples-section {
+  max-width: 100%;
+  padding: 180px 20px;;
+  background: linear-gradient(135deg, #f8f8f8, #ffffff);
+  position: relative;
+  overflow: hidden;
+}
+
+.acoples-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Imágenes --- */
+.acoples-images {
+  position: relative;
+  flex: 1;
+  min-width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-wrapper {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: transform 0.4s ease;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #fff;
+}
+
+/* Imagen superior */
+.img-top {
+  top: 0;
+  left: 0;
+  transform: rotate(-5deg);
+}
+
+/* Imagen inferior */
+.img-bottom {
+  bottom: 0;
+  left: 120px;
+  transform: rotate(5deg);
+}
+
+/* Hover efecto */
+.img-wrapper:hover {
+  transform: scale(1.05);
+}
+
+/* --- Formas decorativas detrás --- */
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+.shape-1 {
+  width: 180px;
+  height: 180px;
+  background: var(--color-accion);
+  top: -40px;
+  left: -50px;
+}
+
+.shape-2 {
+  width: 140px;
+  height: 140px;
+  background: var(--color-accion-hover);
+  bottom: -30px;
+  right: 20px;
+}
+
+/* --- Texto a la derecha --- */
+.acoples-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.acoples-text h2 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  color: #222;
+  position: relative;
+}
+
+.acoples-text p {
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: #444;
+  font-size: 1rem;
+}
+
+.acoples-text button {
+  background: var(--color-accion);
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.acoples-text button:hover {
+  background: var(--color-accion-hover);
+  transform: translateY(-2px);
+}
+
+/* --- Responsivo --- */
+@media (max-width: 900px) {
+  .acoples-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .acoples-images {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .img-wrapper {
+    position: relative;
+    transform: rotate(0);
+    margin: 0 auto;
+    width: 220px;
+    height: 220px;
+  }
+
+  .img-bottom {
+    margin-top: 30px;
+    left: 0;
+  }
+
+  .shape {
+    display: none;
+  }
+}
+
+
+
+/* --- Sección de puntas --- */
+.puntas-section {
+  padding: 60px 20px;
+  background: #f4f4f4;
+}
+
+.puntas-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.puntas-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+/* --- Tarjetas individuales --- */
+.punta-card {
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.punta-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.punta-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 2px solid #000;
+}
+
+.punta-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.punta-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.punta-info p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* --- Responsivo --- */
+@media (max-width: 1024px) {
+  .puntas-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .puntas-container {
+    grid-template-columns: 1fr;
+  }
+
+  .punta-card img {
+    height: 200px;
+  }
+}
+
+
+.repuestos-section {
+  background: #f4f4f4;
+  padding: 80px 20px;
+}
+
+.repuestos-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* --- Texto --- */
+.repuestos-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.repuestos-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.repuestos-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+.repuestos-text button {
+  background: var(--color-accion);
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.repuestos-text button:hover {
+  background: var(--color-accion-hover);
+}
+
+/* --- Galería --- */
+.repuestos-gallery {
+  flex: 1;
+  min-width: 280px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.gallery-item {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.gallery-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.gallery-item span {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* --- Responsivo --- */
+@media (max-width: 768px) {
+  .repuestos-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .repuestos-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+.mantenimiento-section {
+  padding: 90px 20px;
+  background: #ffffff;
+}
+
+.mantenimiento-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* --- Imagen con overlay --- */
+.mantenimiento-image {
+  flex: 1;
+  min-width: 320px;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.mantenimiento-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.5));
+  opacity: 0.3;
+}
+
+/* --- Texto y contenido --- */
+.mantenimiento-content {
+  flex: 1;
+  min-width: 320px;
+}
+
+.mantenimiento-content h2 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.mantenimiento-content p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+/* --- Lista de beneficios --- */
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.benefits-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.benefits-list i {
+  color: var(--color-accion);
+  font-size: 1.2rem;
+}
+
+/* --- Botón --- */
+.mantenimiento-content button {
+  background: var(--color-accion);
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.mantenimiento-content button:hover {
+  background: var(--color-accion-hover);
+}
+
+/* --- Responsivo --- */
+@media (max-width: 768px) {
+  .mantenimiento-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .benefits-list {
+    text-align: left;
+    margin: 0 auto 30px;
+    max-width: 320px;
+  }
+}
+
+/* --- Banner General --- */
+/* --- Banner General --- */
+.cta-banner {
+  background: linear-gradient(135deg, #0066FF, #7928CA); /* Azul vivo → Morado vibrante */
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  margin: 60px auto;
+  max-width: 1200px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* --- Contenido --- */
+.cta-content h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #fff;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+  color: #f2f2f2;
+}
+
+/* --- Botón rojo destacado --- */
+.cta-button {
+  display: inline-block;
+  background: #B5151D; /* Color corporativo */
+  color: #fff;
+  padding: 14px 35px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(181, 21, 29, 0.5);
+}
+
+.cta-button:hover {
+  background: #8E1117; /* Versión más oscura en hover */
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* --- Efecto decorativo (círculos luminosos) --- */
+.cta-banner::before,
+.cta-banner::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  filter: blur(30px);
+  z-index: 0;
+}
+
+.cta-banner::before {
+  width: 180px;
+  height: 180px;
+  top: -40px;
+  left: -40px;
+}
+
+.cta-banner::after {
+  width: 250px;
+  height: 250px;
+  bottom: -60px;
+  right: -60px;
+}
+
+/* --- Asegurar que el texto quede arriba --- */
+.cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Responsivo --- */
+@media (max-width: 768px) {
+  .cta-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .cta-content p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .cta-button {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+}
+
 /* Grid para productos */
 .productos-grid {
   display: grid;
@@ -996,7 +1785,7 @@ h1 {
 .hammer-image {
   width: 600px;
   height: 600px;
-  background: url('../../media/img/martillos-hidraulicos/LC380/LC380-Pro.png') center/contain no-repeat;
+  background: url('../../media/img/martillos-hidraulicos/LC400/LC400-T.png') center/contain no-repeat;
   position: relative;
   animation: float 3s ease-in-out infinite;
   filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
