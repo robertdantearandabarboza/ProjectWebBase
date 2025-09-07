@@ -31,3 +31,43 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+const form = document.getElementById('contact-form');
+const respuesta = document.getElementById('respuesta');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault(); // Evita que se recargue la página
+
+  const nombre = form.nombre.value.trim();
+  const email = form.email.value.trim();
+  const mensaje = form.mensaje.value.trim();
+
+  if(!nombre || !email || !mensaje){
+    respuesta.style.color = 'red';
+    respuesta.innerText = "Por favor completa todos los campos obligatorios.";
+    return;
+  }
+
+  const formData = new FormData(form);
+
+  fetch(form.action, {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => {
+    if (response.ok) {
+      respuesta.style.color = 'green';
+      respuesta.innerText = "Mensaje enviado correctamente ✅";
+      form.reset();
+    } else {
+      respuesta.style.color = 'red';
+      respuesta.innerText = "Hubo un error al enviar el mensaje ❌";
+    }
+  })
+  .catch(() => {
+    respuesta.style.color = 'red';
+    respuesta.innerText = "Hubo un error al enviar el mensaje ❌";
+  });
+});

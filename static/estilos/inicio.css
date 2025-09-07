@@ -1359,8 +1359,17 @@ html, body {
   pointer-events: none; /* Make sure clicks go through to the slide */
 }
 
-@media (max-width: 992px) ,
-(max-width: 1010px){
+@media (max-width: 1500px){
+  .carousel-caption {
+    bottom: auto;
+    top: 45%;
+    left: 5%;
+    padding: 15px;
+    text-align: left;
+  }
+}
+
+@media (max-width: 1010px) {
   .carousel-caption {
     bottom: auto;                /* anula el "bottom: 25%" */
     top: 45%;                    /* lo llevamos al medio */

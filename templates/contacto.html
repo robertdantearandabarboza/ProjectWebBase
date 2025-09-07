@@ -106,44 +106,42 @@
           <p>
               Hydromenn fue fundada el 19 de noviembre del 2019 con la misión de ofrecer equipos hidráulicos de la más alta calidad para la industria de construcción y minería en el Perú.
           </p>
-          <form name="contact" method="POST" data-netlify="true">
-              <input type="hidden" name="form-name" value="contact" />
-              <input type="hidden" name="_next" value="../templates/contacto.html" />
+          <form id="contact-form" action="https://formspree.io/f/xblaqadv" method="POST">
+            <div>
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" name="nombre" required />
+            </div>
+          
+            <div>
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+          
+            <div>
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" />
+            </div>
+          
+            <div>
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" name="empresa" />
+            </div>
+          
+            <div>
+              <label for="ruc">RUC</label>
+              <input type="text" id="ruc" name="ruc" pattern="\d{11}" title="Debe ser un RUC válido de 11 dígitos" />
+            </div>
+          
+            <div>
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+            </div>
 
-              <div>
-                  <label for="nombre">Nombre completo</label>
-                  <input type="text" id="nombre" name="name" required />
-              </div>
-
-              <div>
-                  <label for="email">Correo electrónico</label>
-                  <input type="email" id="email" name="email" required />
-              </div>
-
-              <div>
-                  <label for="telefono">Teléfono</label>
-                  <input type="tel" id="telefono" name="telefono" />
-              </div>
-
-              <div>
-                  <label for="empresa">Empresa</label>
-                  <input type="text" id="empresa" name="empresa" />
-              </div>
-
-              <div>
-                  <label for="ruc">RUC</label>
-                  <input type="text" id="ruc" name="ruc" 
-                      pattern="\d{11}" 
-                      title="Debe ser un RUC válido de 11 dígitos" />
-              </div>
-
-              <div>
-                  <label for="mensaje">Mensaje</label>
-                  <textarea id="mensaje" name="message" rows="5" required></textarea>
-              </div>
-
-              <button type="submit">Enviar mensaje</button>
-          </form>
+            <div class="g-recaptcha" data-sitekey="TU_SITE_KEY"></div>
+          
+            <button type="submit">Enviar mensaje</button>
+            <div id="respuesta" style="margin-top:10px; color:green;"></div>
+          </form>               
       </section>
 
       <!-- Columna derecha: Imágenes -->

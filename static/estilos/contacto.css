@@ -849,6 +849,7 @@ button[type="submit"]:active {
   z-index: 1;
 }
 
+
 @media (max-width: 1200px) {
   .contact-container {
     grid-template-columns: 1fr 1fr;
