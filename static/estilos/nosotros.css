@@ -28,7 +28,7 @@ html, body {
 
 /* Contenedor de fondo plomo para la barra de contacto */
 .contenedor-barra-contacto {
-  background-color: #2F353A;
+  background-color: var(--color-oscuro);
   width: 100%;
   padding: 43px 0;
   position: fixed;

@@ -1310,6 +1310,16 @@ html, body {
   background-blend-mode: darken;
 }
 
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Hace que el video cubra todo el div */
+  z-index: 1; /* Envía el video al fondo */
+}
+
 .carousel-slide .slide-bg::before {
   content: "";
   position: absolute;
@@ -1330,7 +1340,6 @@ html, body {
     rgba(0,0,0,0.6) 100%  /* oscuro en el lado derecho */
   );
 }
-
 
 .carousel-slide.active .slide-bg {
   animation: zoomIn 12s linear forwards;
@@ -1544,7 +1553,7 @@ body {
 }
 
 .contenedor-barra-contacto.scrolled {
-  background-color: #2F353A; /* color sólido al hacer scroll */
+  background: var(--color-oscuro); /* color sólido al hacer scroll */
 }
 
 @keyframes fadeIn {
