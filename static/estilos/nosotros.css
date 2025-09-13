@@ -800,7 +800,7 @@ main{
 
 /* Footer */
 .footer {
-  background: linear-gradient(180deg, var(--color-oscuro), #7A0E15); /* Rojo vino degradado más elegante */
+  background: linear-gradient(180deg, var(--color-oscuro), #253546); /* Rojo vino degradado más elegante */
   color: #f5f5f5;
   padding: 70px 50px 30px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

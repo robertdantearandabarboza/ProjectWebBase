@@ -142,41 +142,53 @@ function setupProductsAnimations() {
   const sectionHeader = productsSection.querySelector('.section-header');
   const productCards = productsSection.querySelectorAll('.product-card');
 
-  // Ocultar inicialmente
+  // Configuración inicial
   sectionHeader.style.opacity = '0';
-  sectionHeader.style.transform = 'translateY(30px)';
+  sectionHeader.style.transform = 'translateY(20px)';
+  sectionHeader.style.transition = 'opacity 1.2s ease-out, transform 1.2s ease-out';
 
-  productCards.forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-  });
-
-  // Animar el header cuando entre en pantalla
+  // Configurar observador para el header
   const headerObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.style.animation = 'fadeInUp 1s ease-out forwards';
+        entry.target.style.opacity = '1';
         entry.target.style.transform = 'translateY(0)';
         headerObserver.unobserve(entry.target);
       }
     });
   }, { threshold: 0.1 });
-
+  
   headerObserver.observe(sectionHeader);
 
-  // Animar cada tarjeta individualmente
-  const cardObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+  // Configurar observador individual para cada tarjeta
+  const cardObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add('bounce-up');
-        }, 200 * Array.from(productCards).indexOf(entry.target)); // escalonado según posición
-        cardObserver.unobserve(entry.target);
+        // Usar un pequeño retraso basado en la posición de la tarjeta
+        const cardIndex = Array.from(productCards).indexOf(entry.target);
+        const row = Math.floor(cardIndex / 3);
+        const col = cardIndex % 3;
+        const delay = 0.05 + (row * 0.05) + (col * 0.03);
+        
+        entry.target.style.transition = `opacity 1.2s cubic-bezier(0.22, 0.61, 0.36, 1) ${delay}s, 
+                                      transform 1.2s cubic-bezier(0.22, 0.61, 0.36, 1) ${delay}s`;
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        
+        observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { 
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
 
-  productCards.forEach(card => cardObserver.observe(card));
+  // Aplicar estilos iniciales y observar cada tarjeta
+  productCards.forEach((card) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    cardObserver.observe(card);
+  });
 }
 
 // Función para manejar la animación de la sección Why Choose Us
