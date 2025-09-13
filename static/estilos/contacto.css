@@ -23,7 +23,26 @@ html, body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   height: 100%;
   width: 100%;
-  padding-top: 80px;
+  padding-top: 75px;
+}
+
+body {
+  background-image: url('../../media/img/Contacto/extremidad.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4); /* oscurece la imagen ligeramente */
+  z-index: -1; /* queda detrás de todo */
 }
 
 /* Contenedor de fondo plomo para la barra de contacto */
@@ -326,6 +345,94 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: var(--color-accion-hover);
+}
+
+/* ===== IMAGEN DESTACADA ===== */
+.featured-image {
+  position: relative;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0; /* Añadido padding vertical */
+  overflow: hidden;
+  border-radius: 12px;
+  height: auto;
+  margin: 0;
+  max-height: 100%; /* Altura máxima del 90% del contenedor */
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 430px; /* Reducido de 450px */
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  padding: 2rem 1.5rem;
+  color: white;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.image-container:hover .image-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.image-overlay h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.image-overlay p {
+  font-size: 1rem;
+  margin: 0;
+  opacity: 0.9;
+  color: #f0f0f0;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 430px; /* Reducido de 450px */
+  border: none;
+  display: block;
+  margin-top: 1rem; /* Espacio adicional arriba del mapa */
+}
+.map-container {
+  margin-top: 2.25rem; /* Aumentado de 2rem */
+}
+@media (max-width: 600px) {
+  .map-container iframe {
+    height: 300px; /* Mantenido para móviles */
+  }
 }
 
 /* ===== FOOTER CORPORATIVO ===== */
@@ -641,21 +748,25 @@ button[type="submit"]:hover {
   background-color: white;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 100vh;
+  height: 115vh;
   max-width: 80%;
-  margin: 0 auto;
-  gap: 0;
-  margin-top: 15px;
+  margin: 30px auto; /* Reducido de 40px */
+  gap: 30px; /* Reducido de 40px */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  align-items: flex-start; /* Alineación superior para que no estiren */
 }
 
 
 .form-section {
-  padding: 4rem 3rem;
+  padding: 3rem 2.5rem; /* Mínimo padding */
   display: flex;
   flex-direction: column;
-  justify-content: center;
   background: white;
   position: relative;
+  height: auto;
+  box-sizing: border-box;
 }
 
 .form-section::after {
@@ -677,38 +788,74 @@ h1 {
   text-align: left;
 }
 
+.form-section h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0; /* Aumentado margen inferior a 1rem */
+  color: #1a202c;
+  letter-spacing: -0.025em;
+  text-align: left;
+  line-height: 1.1;
+  padding: 0;
+  padding-bottom: 0.1rem; /* Mínimo espacio inferior */
+}
+
 .form-section p {
   font-size: 1.1rem;
   color: #4a5568;
-  margin-bottom: 3rem;
+  margin: 0 0 2rem 0; /* Aumentado margen inferior a 2rem */
   line-height: 1.7;
-  max-width: 90%;
+  max-width: 100%;
+  padding: 0;
 }
 
 form {
   display: grid;
-  gap: 1.5rem;
+  gap: 0.05rem;
   max-width: 500px;
+  margin-top: -0.5rem;
+  padding-top: 0.75rem; /* Reducido a 0.75rem */
+}
+
+/* Estilo para los campos en fila (empresa/ruc) */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Ajuste para los campos de formulario */
+form > div {
+  margin-bottom: 0.1rem; /* Reducido de 0.25rem */
+}
+
+/* Ajuste para el botón de enviar */
+button[type="submit"] { 
+  margin-top: 0.5rem; /* Reducido de 0.75rem */
+  padding: 0.7rem 1.5rem; /* Ajuste de padding */
 }
 
 label {
-  font-size: 0.9rem;
+  font-size: 0.85rem; /* Reducido de 0.9rem */
   font-weight: 600;
   color: #2d3748;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.1rem; /* Reducido de 0.25rem */
   display: block;
-  letter-spacing: 0.025em;
+  letter-spacing: 0.02em; /* Reducido de 0.025em */
 }
 
 input, textarea {
   width: 100%;
-  padding: 1rem;
+  padding: 0.6rem 0.75rem; /* Reducido vertical de 0.75rem a 0.6rem */
   border: 2px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
+  border-radius: 6px; /* Reducido de 8px */
+  font-size: 0.9rem; /* Reducido de 0.95rem */
+  transition: all 0.15s ease; /* Transición más rápida */
   background: #ffffff;
   color: #2d3748;
+  margin: 0;
+  line-height: 1.2; /* Reducido de 1.5 */
 }
 
 input:focus, textarea:focus {
@@ -855,6 +1002,7 @@ button[type="submit"]:active {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
     max-width: 1100px; /* aumentas el ancho máximo */
+    height: 115vh;
     margin: 0 auto;    /* lo centras */
   }
 
@@ -901,12 +1049,28 @@ button[type="submit"]:active {
   .contact-container {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
+    height: 240vh;
+  }
+  
+  .featured-image {
+    display: block !important;
+    width: 100%;
+    margin-top: -4rem;
+  }
+  
+  .featured-image .image-container {
+    width: 100%;
+    height: 350px;
+  }
+  
+  
+  .contact-container {
     max-width: 600px; /* aumentas el ancho máximo */
     margin: 0 auto;    /* lo centras */
   }
 
   .form-section {
-      padding: 3rem 2rem;
+    padding: 6rem 2rem 1rem 2rem; /* reduce el padding inferior */
   }
 
   .form-section::after {
@@ -946,9 +1110,8 @@ button[type="submit"]:active {
 
 @media (max-width: 480px) {
   .form-section {
-      padding: 2rem 1.5rem;
+    padding: 1rem 2rem 2rem 2rem; /* reduce el padding inferior */
   }
-
   h1 {
       font-size: 1.8rem;
   }

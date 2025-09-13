@@ -71,3 +71,11 @@ form.addEventListener('submit', function(e) {
     respuesta.innerText = "Hubo un error al enviar el mensaje ❌";
   });
 });
+
+const direccion = "Otr. Marko Jara Schenone 1ra e Mza. T Lote. 02 a.V. Civil Militar Ep, Lima, Perú";
+  
+  // Codifica la dirección para URL
+  const direccionURL = encodeURIComponent(direccion);
+  
+  // Inserta la dirección en el iframe
+  document.getElementById("googleMap").src = `https://www.google.com/maps?q=${direccionURL}&output=embed`;

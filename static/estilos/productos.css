@@ -21,6 +21,22 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Typography normalization (site-wide consistency) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.2;
+}
+
+/* Default paragraph size; specific sections can override if needed */
+p {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Default heading sizes; hero or special sections may override */
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.5rem; }
+
 html, body {
   height: 100%;
   width: 100%;

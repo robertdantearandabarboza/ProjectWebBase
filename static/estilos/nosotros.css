@@ -26,6 +26,22 @@ html, body {
   padding-top: 82px;
 }
 
+/* Typography normalization (site-wide consistency) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.2;
+}
+
+/* Default paragraph size; specific sections can override if needed */
+p {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Default heading sizes; hero or special sections may override */
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.5rem; }
+
 /* Contenedor de fondo plomo para la barra de contacto */
 .contenedor-barra-contacto {
   background-color: var(--color-oscuro);
@@ -453,7 +469,7 @@ main{
 
 .section-title {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   color: #000000;
   margin-bottom: 20px;
   position: relative;
@@ -480,7 +496,13 @@ main{
 .historia-texto {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #4a5568;
+  color: black;
+}
+
+/* Make historia paragraphs match section description size (1.2rem) */
+.historia-texto p {
+  font-size: 1.2rem;
+  line-height: 1.7;
 }
 
 .historia-imagen {

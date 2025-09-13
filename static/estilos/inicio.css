@@ -38,6 +38,11 @@ body {
   background-color: #fff;
 }
 
+/* Ensure primary font is used everywhere by inheritance */
+button, input, select, textarea, .btn, a, p, li, label {
+  font-family: inherit;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 700;
@@ -459,8 +464,11 @@ img {
 .about-section {
   padding: 80px 0;
   background-color: #fff;
-  overflow: hidden;
+  display: flex;               /* centra el contenedor interno */
+  justify-content: center;     /* centra horizontal */
+  align-items: center;         /* centra verticalmente el bloque */
 }
+
 
 /* Animations for about section */
 @keyframes slideInLeft {
@@ -542,6 +550,7 @@ img {
 
 /* Animaciones para la sección about - Se activan vía JavaScript */
 .about-text h2 {
+  text-align: left;
   opacity: 0;
   transform: translateX(-30px);
 }
@@ -563,32 +572,69 @@ img {
 }
 
 .about-image-container {
-  opacity: 0;
-  transform: translateX(30px);
+  opacity: 1;                /* visible por defecto */
+  transform: none;           /* evita corrimiento a la derecha */
 }
 
 .about-content {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 60px;
-  max-width: 1800px;
-  margin: 0 auto;
-  padding: 0 20px;
   position: relative;
+  justify-content: space-between; /* reparte columnas internas */
+  align-items: center;
   width: 100%;
+  max-width: 1300px;
+  padding: 0 20px; /* espacio igual a ambos lados */
   box-sizing: border-box;
+  gap: 50px;
 }
 
-.about-text {
-  flex: 0 1 50%;
-  max-width: 1200px;
+
+
+/* Igualar columnas y evitar desbordes que empujen a la derecha */
+.about-content .about-text,
+.about-content .about-image-container {
+  min-width: 0;
+}
+
+/* Centrar imagen y hacerla responsive */
+.about-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-image-container img,
+.about-image img,
+.about-image .featured-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Evitar desplazamientos iniciales por transform que generan desbalance visual */
+.about-section .about-text h2,
+.about-section .about-text p,
+.about-section .about-text .features-list li,
+.about-section .about-btn {
+  flex: initial;
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+/* Asegura que los hijos no tengan desplazamientos horizontales por defecto */
+.about-content .about-text,
+.about-content .about-image-container {
+  transform: none !important;
+}
+
+.about-text {   /* cada columna ocupa la mitad */
   padding: 10px;
   box-sizing: border-box;
+  max-width: 600px; /* si quieres limitar texto */
 }
 
+
 .about-text h2 {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   margin-bottom: 4rem;
   color: black;
   position: relative;
@@ -649,14 +695,11 @@ img {
 
 
 .about-image-container {
-  flex: 0 1 45%;
-  max-width: 500px;
+  flex: 0 0 50%;
+  max-width: 600px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 25px;
-  padding: 20px;
-  box-sizing: border-box;
 }
 
 .about-image {
@@ -708,8 +751,8 @@ img {
 }
 
 .overlay-text {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 500;
   text-align: center;
   padding: 15px 25px;
   background: var(--color-destacado);
@@ -796,7 +839,7 @@ img {
 }
 
 .section-header h2 {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   margin-bottom: 1rem;
   color: var(--color-principal);
   position: relative;
@@ -818,15 +861,19 @@ img {
   font-size: 1.2rem;
   color: var(--color-gris);
   margin-top: 1rem;
+  max-width: 700px; /* keep paragraphs readable */
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
 }
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 450px)); /* más grandes */
+  grid-template-columns: repeat(auto-fit, minmax(310px, 425px)); /* columnas 300–400px */
   justify-content: center;
   text-align: center;
-  gap: 30px;
-  max-width: 1600px;
+  gap: 20px; /* espaciado entre tarjetas */
+  max-width: 1500px; /* constrain inner content */
   width: 100%;
   margin: 0 auto 3rem;
   padding: 0 20px;
@@ -992,7 +1039,7 @@ img {
   gap: 30px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   width: 90%;           /* ocupa más espacio horizontal */
-  max-width: 1650px;    /* opcional, evita que sea demasiado grande */
+  max-width: 1400px;    /* opcional, evita que sea demasiado grande */
 }
 
 
@@ -1107,7 +1154,7 @@ img {
 
 .cta-content h2 {
   max-width: 100%;
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   margin-bottom: 1.5rem;
   color: white;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
@@ -1127,6 +1174,194 @@ img {
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
+}
+
+/* =====================================================
+   Overrides: Carousel buttons to match Acoples styles
+   Scope: only buttons inside the hero carousel caption
+   ===================================================== */
+.hero-background .carousel-caption {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  bottom: auto !important;
+  transform: translate(-50%, -50%) !important;
+  width: 90% !important;
+  max-width: 900px !important;
+  padding: 0 20px !important; /* elimina padding-left asimétrico */
+  text-align: center !important;
+  pointer-events: auto !important; /* habilita interacción */
+}
+.hero-background .carousel-caption h1,
+.hero-background .carousel-caption h2 {
+  margin-bottom: 1.75rem !important;
+  font-size: 3.5rem !important; /* Acoples hero title size */
+  line-height: 1.2 !important;
+  color: #ffffff !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5) !important;
+}
+.hero-background .carousel-caption p {
+  margin-top: 0.75rem !important;
+  margin-bottom: 2rem !important;
+  font-size: 1.5rem !important; /* Acoples hero paragraph size */
+  font-weight: 300 !important;
+  color: #ffffff !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5) !important;
+}
+
+/* Responsive adjustments for caption typography (keep Acoples feel) */
+@media (max-width: 992px) {
+  .hero-background .carousel-caption h1,
+  .hero-background .carousel-caption h2 { font-size: 2.8rem !important; }
+  .hero-background .carousel-caption p { font-size: 1.2rem !important; }
+}
+
+@media (max-width: 768px) {
+  .hero-background .carousel-caption h1,
+  .hero-background .carousel-caption h2 { font-size: 2.2rem !important; }
+  .hero-background .carousel-caption p { font-size: 1.1rem !important; }
+}
+
+@media (max-width: 576px) {
+  .hero-background .carousel-caption h1,
+  .hero-background .carousel-caption h2 { font-size: 1.8rem !important; }
+  .hero-background .carousel-caption p { font-size: 1rem !important; }
+}
+.hero-background .carousel-caption .button-container,
+.hero-background .carousel-caption .button-container .btn,
+.hero-background .carousel-caption .button-container a {
+  pointer-events: auto !important; /* el contenedor caption tiene pointer-events:none */
+}
+.hero-background .carousel-caption .button-container {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 28px !important; /* más separación izquierda-derecha */
+  column-gap: 28px !important; /* refuerza espacio horizontal al romper línea */
+  flex-wrap: wrap !important;
+  margin-top: 1.5rem !important;
+  row-gap: 16px !important; /* más espacio vertical si se quiebran en dos líneas */
+}
+.hero-background .carousel-caption .button-container a,
+.hero-background .carousel-caption .button-container button {
+  display: inline-flex !important;
+}
+.hero-background .carousel-caption .button-container .btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 48px !important;
+  padding: 0.8rem 2rem !important;
+  border-radius: 8px !important; /* similar a var(--radio-borde) en acoples */
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease-in-out !important; /* var(--transicion-rapida) equivalente */
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  font-size: 1rem !important;
+  line-height: 1.2 !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  position: relative !important;
+  overflow: visible !important; /* desactivar efectos de recorte */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important; /* var(--sombra-boton) de acoples */
+}
+
+/* Efecto hover genérico (levantado + sombra), igual que Acoples */
+.hero-background .carousel-caption .button-container .btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Presionado: regresa y reduce sombra */
+.hero-background .carousel-caption .button-container .btn:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Desactiva los pseudo-elementos globales del .btn para estos botones */
+.hero-background .carousel-caption .button-container .btn::before,
+.hero-background .carousel-caption .button-container .btn::after {
+  content: none !important;
+}
+
+.hero-background .carousel-caption .button-container .btn.btn-primary {
+  background-color: #B51922 !important; /* Rojo corporativo */
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.hero-background .carousel-caption .button-container .btn.btn-primary:hover {
+  background-color: #8B1419 !important; /* Rojo corporativo oscuro */
+  transform: translateY(-3px) !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Ajusta btn-secondary para que luzca como el outline blanco de acoples */
+.hero-background .carousel-caption .button-container .btn.btn-secondary {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+}
+
+.hero-background .carousel-caption .button-container .btn.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Scroll Down indicator (matching Acoples) */
+.hero-background .scroll-down {
+  position: absolute;
+  bottom: 28px; /* similar a var(--espaciado-lg) */
+  left: 0;
+  right: 0;
+  color: #ffffff;
+  font-size: 0.9rem;
+  z-index: 3;
+  text-align: center;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+  pointer-events: auto; /* habilita clic como en Acoples */
+}
+
+.hero-background .scroll-down span {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.hero-background .scroll-down svg {
+  margin: 0 auto;
+  display: block;
+  animation: bounce 2s infinite;
+}
+
+/* Asegura que el enlace herede color y sea clickeable */
+.hero-background .scroll-down a {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero-background .scroll-down:hover {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+#main-content {
+  scroll-margin-top: 80px; /* se detendrá 80px antes */
+}
+
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-6px); }
+  60% { transform: translateY(-3px); }
 }
 
 /* Responsive Design */
@@ -1258,12 +1493,17 @@ html, body {
   width: 100%;
 }
 
+/* Main content container constraints */
+.main-content {
+  width: 100%;
+}
+
 
 /* Hero Background with Carousel */
 .hero-background {
   position: relative;
   width: 100%;
-  height: 110vh;
+  height: 108vh;
   opacity: 0;
   animation: fadeIn 1s ease-out forwards 0.3s;
   overflow: hidden;
@@ -1330,20 +1570,26 @@ html, body {
   background: linear-gradient(
   to bottom,
   rgba(0,0,0,0.9) 0%,   /* negro casi sólido justo arriba */
-  rgba(0,0,0,0.8) 12%,  /* todavía oscuro en un tramo corto */
-  rgba(0,0,0,0.3) 25%,  /* empieza a desvanecerse */
-  rgba(0,0,0,0) 40%     /* ya transparente */
-  ),
-  linear-gradient(
-    to right,
-    rgba(0,0,0,0.6) 0%,   /* oscuro en el lado izquierdo */
-    rgba(0,0,0,0) 50%,    /* transparente en el centro */
-    rgba(0,0,0,0.6) 100%  /* oscuro en el lado derecho */
+  rgba(0,0,0,0.8) 12%,
+  rgba(0,0,0,0.6) 22%,  /* todavía oscuro en un tramo corto */
+  rgba(0,0,0,0.5) 25%,  /* empieza a desvanecerse */
+  rgba(0,0,0,0.3) 40%,
+  rgba(0,0,0,0.4) 52%,
+  rgba(0,0,0,0.4) 67%,
+  rgba(0,0,0,0.3) 75%,
+  rgba(0,0,0,0.1) 80%,
+  rgba(0,0,0,0.5) 95%,     /* ya transparente */
+  rgba(0,0,0,0.6) 100%     /* ya transparente */
   );
 }
 
 .carousel-slide.active .slide-bg {
   animation: zoomIn 12s linear forwards;
+}
+
+/* Suppress only the first entry animation of slide background */
+.hero-background .hero-carousel.suppress-entry-anim .carousel-slide.active .slide-bg {
+  animation: none !important;
 }
 
 @keyframes zoomIn {
@@ -1537,7 +1783,6 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  padding-top: 0px;
 }
 
 /* Contenedor de fondo plomo para la barra de contacto */
@@ -2552,9 +2797,11 @@ section.quienes-somos {
 
 .client-logos-section p {
   color: var(--color-gris);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  line-height: 1.7;
   max-width: 700px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .logo-carousel {
