@@ -81,6 +81,7 @@ html, body {
   justify-content: center;
   gap: 1.5rem;
   padding: 2rem;
+  padding-bottom: 60px;
   max-width: 100%;
   margin: 0 auto;
   flex-wrap: wrap; /* 👈 permite que se acomoden en varias filas */
@@ -369,6 +370,7 @@ main {
   border-radius: 0;
   box-shadow: none;
   background-color: var(--color-fondo-suave);
+  margin-bottom: -80px;
 }
 
 h1 {
@@ -1627,8 +1629,8 @@ h1 {
   align-items: center;
   margin-right: 15px;
   font-size: 20px;             /* tamaño del ícono */
-  color: #fff;
-  background: rgba(255,255,255,0.1); /* fondo circular suave */
+  background: rgb(255, 255, 255); /* fondo circular suave */
+  color: #BC1922;
   width: 40px;
   height: 40px;
   border-radius: 50%;          /* círculo */

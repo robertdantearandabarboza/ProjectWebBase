@@ -1,0 +1,861 @@
+/* Estilos para la página de Servicio de Mantenimiento */
+:root {
+  --color-primario: #B51922;
+  --color-secundario: #2c3e50;
+  --color-texto: #333;
+  --color-texto-claro: #666;
+  --color-fondo: #f9f9f9;
+  --color-blanco: #ffffff;
+  --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transicion: all 0.3s ease;
+}
+
+/* Estilos generales */
+.mantenimiento-main {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--color-texto);
+  overflow-x: hidden;
+  background-color: var(--color-fondo);
+}
+
+/* Proceso de Mantenimiento */
+.proceso-mantenimiento {
+  padding: 6rem 2rem;
+  background-color: var(--color-blanco);
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-title {
+  text-align: center;
+  color: var(--color-secundario);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--color-primario);
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--color-texto-claro);
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+.proceso-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.proceso-pasos {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.paso {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background: var(--color-blanco);
+  border-radius: 10px;
+  padding: 1.8rem;
+  box-shadow: var(--sombra);
+  transition: var(--transicion);
+  border-left: 4px solid var(--color-primario);
+}
+
+.paso:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.paso-numero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.paso-contenido h3 {
+  color: var(--color-secundario);
+  margin: 0 0 0.8rem 0;
+  font-size: 1.3rem;
+}
+
+.paso-contenido p {
+  margin: 0;
+  color: var(--color-texto-claro);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Sección de Video */
+.proceso-video {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  height: fit-content;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--sombra);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-info {
+  background: var(--color-blanco);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  box-shadow: var(--sombra);
+}
+
+.video-info h3 {
+  color: var(--color-secundario);
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+}
+
+.video-info p {
+  color: var(--color-texto-claro);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.garantia {
+  background-color: #f0f9f0;
+  border-left: 4px solid #4CAF50;
+  padding: 1.2rem;
+  font-weight: 500;
+  color: #2e7d32;
+  border-radius: 0 4px 4px 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero-mantenimiento {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url('../../media/img/Martillos/hero-mantenimiento.jpg') center/cover no-repeat;
+  color: white;
+  padding: 8rem 2rem;
+  text-align: center;
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  line-height: 1.7;
+}
+
+.btn-cta-mantenimiento {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  background-color: var(--color-primario);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: var(--transicion);
+  margin: 0.5rem;
+  border: 2px solid var(--color-primario);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-cta-mantenimiento:hover {
+  background-color: transparent;
+  color: white;
+  border-color: white;
+  transform: translateY(-2px);
+}
+
+.btn-cta-outline {
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+.btn-cta-outline:hover {
+  background-color: white;
+  color: var(--color-primario) !important;
+  border-color: white;
+}
+
+/* Estilos para el formulario de contacto */
+.contacto-section {
+  padding: 6rem 0;
+  background-color: #f5f7fa;
+}
+
+.formulario-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.formulario-mantenimiento {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--color-secundario);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 2px rgba(181, 25, 34, 0.2);
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-actions {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.btn-enviar {
+  background-color: var(--color-primario);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transicion);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-enviar:hover {
+  background-color: #9c151d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Info de contacto */
+.info-contacto {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+  height: 100%;
+}
+
+.info-contacto h3 {
+  color: var(--color-secundario);
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #eee;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.info-item i {
+  color: var(--color-primario);
+  font-size: 1.2rem;
+  margin-top: 0.2rem;
+  min-width: 24px;
+  text-align: center;
+}
+
+.info-item h4 {
+  margin: 0 0 0.3rem 0;
+  color: var(--color-secundario);
+  font-size: 1.1rem;
+}
+
+.info-item p, 
+.info-item a {
+  margin: 0;
+  color: var(--color-texto-claro);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.info-item a:hover {
+  color: var(--color-primario);
+  text-decoration: underline;
+}
+
+.horario {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+}
+
+.horario h4 {
+  color: var(--color-secundario);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.horario p {
+  margin: 0.3rem 0;
+  color: var(--color-texto-claro);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .formulario-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .formulario-mantenimiento,
+  .info-contacto {
+    padding: 1.5rem;
+  }
+  
+  .contacto-section {
+    padding: 4rem 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .proceso-grid {
+    gap: 2rem;
+  }
+  
+  .paso {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .proceso-grid {
+    grid-template-columns: 1fr;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .proceso-video {
+    order: -1;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.4rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .proceso-mantenimiento {
+    padding: 4rem 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .hero-mantenimiento {
+    padding: 6rem 1.5rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+  
+  .btn-cta-mantenimiento {
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .paso {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .paso-numero {
+    margin: 0;
+  }
+  
+  .paso-contenido h3 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .btn-cta-mantenimiento {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0.8rem auto;
+  }
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #B51922;
+}
+
+/* Hero Section */
+.hero-mantenimiento {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url('../../media/img/Martillos/mantenimiento-hero.jpg') no-repeat center center/cover;
+  color: white;
+  padding: 120px 0;
+  text-align: center;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-mantenimiento h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-mantenimiento p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #f0f0f0;
+}
+
+/* Servicios Section */
+.servicios-section {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.servicio-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.servicio-card:hover {
+  transform: translateY(-10px);
+}
+
+.servicio-img {
+  height: 200px;
+  overflow: hidden;
+}
+
+.servicio-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.servicio-card:hover .servicio-img img {
+  transform: scale(1.05);
+}
+
+.servicio-content {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.servicio-content h3 {
+  color: #B51922;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.servicio-content p {
+  margin-bottom: 20px;
+  color: #555;
+  flex-grow: 1;
+}
+
+/* Proceso Section */
+.proceso-section {
+  padding: 80px 0;
+  background-color: white;
+}
+
+.pasos-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.pasos-container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50px;
+  height: 100%;
+  width: 3px;
+  background-color: #e0e0e0;
+  z-index: 1;
+}
+
+.paso {
+  display: flex;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.paso-icono {
+  width: 100px;
+  height: 100px;
+  background-color: #B51922;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  flex-shrink: 0;
+  margin-right: 30px;
+  box-shadow: 0 5px 15px rgba(181, 25, 34, 0.3);
+}
+
+.paso-contenido {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
+}
+
+.paso-contenido h3 {
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+/* Beneficios Section */
+.beneficios-mantenimiento {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f9f9f9 0%, #e9e9e9 100%);
+}
+
+.beneficios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.beneficio-card {
+  background: white;
+  border-radius: 8px;
+  padding: 30px 25px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.beneficio-card:hover {
+  transform: translateY(-5px);
+}
+
+.beneficio-icon {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(181, 25, 34, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: #B51922;
+  font-size: 2rem;
+}
+
+.beneficio-card h3 {
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+/* CTA Section */
+.cta-mantenimiento {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #B51922 0%, #8f131a 100%);
+  color: white;
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-mantenimiento .section-title {
+  color: white;
+}
+
+.cta-mantenimiento .section-title:after {
+  background-color: white;
+}
+
+.cta-mantenimiento p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.btn-cta-mantenimiento {
+  display: inline-block;
+  padding: 15px 40px;
+  background-color: white;
+  color: #B51922;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid white;
+  margin: 10px;
+}
+
+.btn-cta-mantenimiento:hover {
+  background-color: transparent;
+  color: white;
+}
+
+.btn-cta-outline {
+  background-color: transparent;
+  border-color: white;
+  color: white;
+}
+
+.btn-cta-outline:hover {
+  background-color: white;
+  color: #B51922;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .hero-mantenimiento h1 {
+    font-size: 2.5rem;
+  }
+  
+  .servicios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-mantenimiento {
+    padding: 80px 0;
+  }
+  
+  .hero-mantenimiento h1 {
+    font-size: 2.2rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .pasos-container:before {
+    left: 40px;
+  }
+  
+  .paso-icono {
+    width: 80px;
+    height: 80px;
+    font-size: 1.5rem;
+  }
+  
+  .beneficios-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .servicios-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .paso {
+    flex-direction: column;
+  }
+  
+  .paso-icono {
+    margin: 0 auto 20px;
+  }
+  
+  .paso-contenido {
+    margin-left: 0;
+  }
+  
+  .btn-cta-mantenimiento {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    margin: 10px auto;
+  }
+}

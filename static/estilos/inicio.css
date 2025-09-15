@@ -558,6 +558,7 @@ img {
 .about-text p {
   opacity: 0;
   transform: translateY(20px);
+  margin-bottom: 0.6rem;
 }
 
 .about-text .features-list li {
@@ -634,11 +635,11 @@ img {
 
 
 .about-text h2 {
-  font-size: 2.25rem;
-  margin-bottom: 4rem;
-  color: black;
+  font-size: 2.2rem;
+  margin-bottom: 1;
+  color: var(--color-principal);
   position: relative;
-  padding-bottom: 15px;
+  padding-bottom: 1rem;
 }
 
 .about-text h2::after {
@@ -654,15 +655,15 @@ img {
 .about-text p {
   font-size: 1.1rem;
   font-weight: 400;
-  line-height: 1.8;
-  margin-bottom: 4rem;
+  line-height: 1.6;
+  margin-bottom: 1.6rem;
   color: black;
-  text-align: left; /* 👈 fuerza la alineación a la izquierda */
+  text-align: left;
 }
 
 .features-list {
   list-style: none;
-  margin-bottom: 4rem;
+  margin: 2.5rem 0 3rem 0; /* Aumentado margen superior a 2.5rem */
   padding: 0;
 }
 
@@ -766,6 +767,133 @@ img {
   transform: translateY(0);
 }
 
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Video Container - Enhanced for Visibility */
+.about-video-container {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  max-width: 460px; /* Aumentado el ancho máximo */
+  margin: 0;
+  position: relative;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 9/16;
+  height: auto;
+}
+
+.about-video-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.9);
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 460px; /* Ancho máximo del video */
+  margin: 0 auto; /* Centrar el video */
+  padding-bottom: 177.78%; /* 9:16 Aspect Ratio for Shorts */
+  height: 0;
+  overflow: visible; /* Cambiado a visible para que se vean los controles */
+  border-radius: 0;
+  background: #000;
+  margin: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  background: #000;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .about-content {
+    padding: 0 2rem;
+  }
+  
+  .about-video-container {
+    max-width: 550px;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2rem;
+  }
+  
+  .about-text {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  
+  .about-video-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 2rem auto 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    padding: 0 1.5rem;
+  }
+  
+  .about-video-container {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-video-container {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+  }
+  
+  .video-wrapper {
+    padding-bottom: 177.78%; /* Maintain 9:16 aspect ratio */
+  }
+}
+
 .about-btn {
   display: block;
   width: auto;
@@ -776,12 +904,12 @@ img {
   padding: 10px 25px;
   font-size: 1rem;
   font-weight: 600;
-  border-radius: 100px; /* 👈 más grande para que el borde siga la curva */
+  border-radius: 100px; /* más grande para que el borde siga la curva */
   transition: all 0.3s ease;
   background-color: var(--color-oscuro);
   color: white;
   border: 2px;
-  box-sizing: border-box; /* 👈 asegura que el borde se incluya en el cálculo */
+  box-sizing: border-box; /* asegura que el borde se incluya en el cálculo */
 }
 
 .about-btn:hover {
@@ -923,7 +1051,8 @@ img {
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: var(--transicion);
+  transition: opacity 0.3s ease;
+  border-radius: 0;
 }
 
 .product-card:hover .product-overlay{
@@ -1800,7 +1929,7 @@ body {
 }
 
 .contenedor-barra-contacto.scrolled {
-  background: var(--color-oscuro); /* color sólido al hacer scroll */
+  background-color: rgba(0, 0, 0, 0.9); /* color sólido al hacer scroll */
 }
 
 @keyframes fadeIn {

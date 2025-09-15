@@ -23,7 +23,6 @@ html, body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   height: 100%;
   width: 100%;
-  padding-top: 82px;
 }
 
 /* Typography normalization (site-wide consistency) */
@@ -44,7 +43,7 @@ h3 { font-size: 1.5rem; }
 
 /* Contenedor de fondo plomo para la barra de contacto */
 .contenedor-barra-contacto {
-  background-color: var(--color-oscuro);
+  background-color: rgba(0, 0, 0, 0.9);
   width: 100%;
   padding: 43px 0;
   position: fixed;
@@ -231,7 +230,7 @@ nav ul {
 /* Hero Image Section */
 .hero-image {
   width: 100%;
-  height: 750px; /* Increased for better visual impact */
+  height: 98vh; /* Increased for better visual impact */
   overflow: hidden;
   position: relative;
   margin-bottom: 40px;
@@ -277,7 +276,8 @@ nav ul {
 
 .hero-overlay h1 {
   font-size: 3rem;
-  margin-bottom: 20px;
+  padding-top: 100px;
+  margin-bottom: 10px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   opacity: 0;
   transform: translateY(20px);
@@ -294,7 +294,8 @@ nav ul {
 
 .hero-overlay p {
   font-size: 1.2rem;
-  max-width: 800px;
+  padding-top: 10px;
+  max-width: 550px;
   margin: 0 auto;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   opacity: 0;
@@ -893,8 +894,8 @@ main{
   align-items: center;
   margin-right: 15px;
   font-size: 20px;             /* tamaño del ícono */
-  color: #fff;
-  background: rgba(255,255,255,0.1); /* fondo circular suave */
+  background: rgb(255, 255, 255); /* fondo circular suave */
+  color: #BC1922; 
   width: 40px;
   height: 40px;
   border-radius: 50%;          /* círculo */

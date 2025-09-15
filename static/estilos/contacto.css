@@ -535,8 +535,8 @@ button[type="submit"]:hover {
   align-items: center;
   margin-right: 15px;
   font-size: 20px;             /* tamaño del ícono */
-  color: #fff;
-  background: rgba(255,255,255,0.1); /* fondo circular suave */
+  background: rgb(255, 255, 255); /* fondo circular suave */
+  color: #BC1922;
   width: 40px;
   height: 40px;
   border-radius: 50%;          /* círculo */

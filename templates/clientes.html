@@ -6,6 +6,7 @@
   <meta name="robots" content="noindex, nofollow">
   <title>Hydromenn - Clientes</title>
   <link rel="stylesheet" href="../static/estilos/clientes.css" />
+  <link rel="stylesheet" href="../static/estilos/clientes-enhanced.css" />
   <link rel="stylesheet" href="../static/estilos/responsive-menu.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -109,6 +110,15 @@
   </div>
 
   <main class="clientes-container">
+    <!-- Hero Section -->
+    <section class="hero-clientes" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../media/img/Clientes/hero-clientes.jpg') no-repeat center center/cover; color: white; padding: 120px 20px; text-align: center;">
+      <div class="section-container">
+        <h1>Nuestros Clinos Hablan por Nosotros</h1>
+        <p style="max-width: 800px; margin: 0 auto 30px; font-size: 1.2rem;">Descubre por qué las principales empresas del sector confían en Hydromenn para sus equipos de perforación y martillos hidráulicos.</p>
+      </div>
+    </section>
+
+    <!-- Testimonios Slider -->
     <div class="testimonios-slider">
       <div class="slider-container">
         <!-- Slide 1 -->
@@ -212,7 +222,483 @@
         <span class="dot" data-slide="3"></span>
       </div>
     </div>
+
+    <!-- Video Showcase Section -->
+    <section class="video-showcase">
+      <div class="section-container">
+        <h2 class="section-title">Videos de Nuestros Equipos en Acción</h2>
+        <div class="video-grid">
+          <div class="video-card">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <h3>Demostración Martillo Hidráulico LC350</h3>
+              <p>Vea cómo nuestro martillo hidráulico LC350 maneja trabajos exigentes con facilidad.</p>
+            </div>
+          </div>
+          
+          <div class="video-card">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <h3>Testimonio Cliente Minero</h3>
+              <p>Nuestro cliente comparte su experiencia con nuestros equipos en operaciones mineras.</p>
+            </div>
+          </div>
+          
+          <div class="video-card">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <h3>Mantenimiento Preventivo</h3>
+              <p>Aprenda sobre los beneficios del mantenimiento preventivo para sus equipos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonios por Modelo de Martillo -->
+    <section class="testimonios-martillos">
+      <div class="section-container">
+        <h2 class="section-title">Testimonios por Modelo</h2>
+        
+        <div class="hammer-tabs">
+          <button class="hammer-tab active" data-model="lc350">LC350</button>
+          <button class="hammer-tab" data-model="lc1500">LC1500</button>
+          <button class="hammer-tab" data-model="lc2100">LC2100</button>
+          <button class="hammer-tab" data-model="lc4000">LC4000</button>
+          <button class="hammer-tab" data-model="lc500">LC500</button>
+          <button class="hammer-tab" data-model="lc750">LC750</button>
+          <button class="hammer-tab" data-model="lc3000">LC3000</button>
+        </div>
+        
+        <!-- LC350 Carousel -->
+        <div class="testimonio-content active" id="testimonio-lc350">
+          <div class="model-carousel">
+            <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+            
+            <div class="testimonio-slide active">
+              <div class="testimonio-imagen">
+                <img src="../media/img/Clientes/lc350-1.jpg" alt="LC350 en acción">
+              </div>
+              <div class="testimonio-contenido">
+                <i class="fas fa-quote-left"></i>
+                <p>"El LC350 ha superado nuestras expectativas en términos de durabilidad y rendimiento. Lo hemos estado utilizando en condiciones extremas y sigue funcionando perfectamente."</p>
+                <div class="testimonio-info">
+                  <p class="testimonio-nombre">Ing. Carlos Mendoza</p>
+                  <p class="testimonio-cargo">Supervisor de Operaciones, Constructora Andina</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="testimonio-slide">
+              <div class="testimonio-imagen">
+                <img src="../media/img/Clientes/lc350-2.jpg" alt="LC350 en obra">
+              </div>
+              <div class="testimonio-contenido">
+                <i class="fas fa-quote-left"></i>
+                <p>"La relación calidad-precio del LC350 es excepcional. Hemos reducido nuestros costos de mantenimiento en un 30% desde que lo implementamos."</p>
+                <div class="testimonio-info">
+                  <p class="testimonio-nombre">Ing. Laura Gutierrez</p>
+                  <p class="testimonio-cargo">Jefa de Maquinaria, Vialco S.A.</p>
+                </div>
+              </div>
+            </div>
+            
+            <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-nav">
+              <span class="carousel-dot active" data-slide="0"></span>
+              <span class="carousel-dot" data-slide="1"></span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- LC1500 Carousel -->
+        <div class="testimonio-content" id="testimonio-lc1500">
+          <div class="model-carousel">
+            <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+            
+            <div class="testimonio-slide active">
+              <div class="testimonio-imagen">
+                <img src="../media/img/Clientes/lc1500-1.jpg" alt="LC1500 en acción">
+              </div>
+              <div class="testimonio-contenido">
+                <i class="fas fa-quote-left"></i>
+                <p>"La potencia del LC1500 es impresionante. Hemos reducido nuestros tiempos de trabajo a la mitad desde que implementamos estos martillos en nuestra flota."</p>
+                <div class="testimonio-info">
+                  <p class="testimonio-nombre">Ing. Luis Torres</p>
+                  <p class="testimonio-cargo">Gerente de Proyectos, Minera del Sur</p>
+                </div>
+              </div>
+            </div>
+            
+            <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-nav">
+              <span class="carousel-dot active" data-slide="0"></span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- LC2100 Carousel -->
+        <div class="testimonio-content" id="testimonio-lc2100">
+          <div class="model-carousel">
+            <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+            
+            <div class="testimonio-slide active">
+              <div class="testimonio-imagen">
+                <img src="../media/img/Clientes/lc2100-1.jpg" alt="LC2100 en acción">
+              </div>
+              <div class="testimonio-contenido">
+                <i class="fas fa-quote-left"></i>
+                <p>"El LC2100 es nuestra mejor inversión hasta ahora. La relación calidad-precio es excelente y el soporte postventa es excepcional."</p>
+                <div class="testimonio-info">
+                  <p class="testimonio-nombre">Ing. Patricia Rojas</p>
+                  <p class="testimonio-cargo">Directora de Operaciones, Vialco S.A.</p>
+                </div>
+              </div>
+            </div>
+            
+            <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-nav">
+              <span class="carousel-dot active" data-slide="0"></span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- LC4000 Carousel -->
+        <div class="testimonio-content" id="testimonio-lc4000">
+          <div class="model-carousel">
+            <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+            
+            <div class="testimonio-slide active">
+              <div class="testimonio-imagen">
+                <img src="../media/img/Clientes/lc4000-1.jpg" alt="LC4000 en acción">
+              </div>
+              <div class="testimonio-contenido">
+                <i class="fas fa-quote-left"></i>
+                <p>"Para trabajos pesados, el LC4000 es insuperable. La reducción en costos de operación ha sido significativa desde que empezamos a usarlo."</p>
+                <div class="testimonio-info">
+                  <p class="testimonio-nombre">Ing. Roberto Vargas</p>
+                  <p class="testimonio-cargo">Jefe de Maquinaria, Constructora Norte Grande</p>
+                </div>
+              </div>
+            </div>
+            
+            <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-nav">
+              <span class="carousel-dot active" data-slide="0"></span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- LC500 Carousel -->
+        <div class="testimonio-content" id="testimonio-lc500">
+          <div class="model-carousel">
+            <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+            
+            <div class="testimonio-slide active">
+              <div class="testimonio-imagen">
+                <img src="../media/img/Clientes/lc500-1.jpg" alt="LC500 en acción">
+              </div>
+              <div class="testimonio-contenido">
+                <i class="fas fa-quote-left"></i>
+                <p>"El LC500 es perfecto para nuestros proyectos medianos. Su versatilidad y eficiencia nos han permitido optimizar nuestros recursos significativamente."</p>
+                <div class="testimonio-info">
+                  <p class="testimonio-nombre">Ing. Javier Morales</p>
+                  <p class="testimonio-cargo">Supervisor de Obra, Constructora Horizonte</p>
+                </div>
+              </div>
+            </div>
+            
+            <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-nav">
+              <span class="carousel-dot active" data-slide="0"></span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- LC750 Carousel -->
+        <div class="testimonio-content" id="testimonio-lc750">
+          <div class="model-carousel">
+            <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+            
+            <div class="testimonio-slide active">
+              <div class="testimonio-imagen">
+                <img src="../media/img/Clientes/lc750-1.jpg" alt="LC750 en acción">
+              </div>
+              <div class="testimonio-contenido">
+                <i class="fas fa-quote-left"></i>
+                <p>"El LC750 ha sido un cambio radical para nuestras operaciones. Su potencia controlada nos permite trabajar con mayor precisión en espacios reducidos."</p>
+                <div class="testimonio-info">
+                  <p class="testimonio-nombre">Ing. Sofía Ramírez</p>
+                  <p class="testimonio-cargo">Jefa de Proyectos, Urbanizadora del Pacífico</p>
+                </div>
+              </div>
+            </div>
+            
+            <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-nav">
+              <span class="carousel-dot active" data-slide="0"></span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- LC3000 Carousel -->
+        <div class="testimonio-content" id="testimonio-lc3000">
+          <div class="model-carousel">
+            <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+            
+            <div class="testimonio-slide active">
+              <div class="testimonio-imagen">
+                <img src="../media/img/Clientes/lc3000-1.jpg" alt="LC3000 en acción">
+              </div>
+              <div class="testimonio-contenido">
+                <i class="fas fa-quote-left"></i>
+                <p>"El LC3000 es nuestra solución para trabajos de alta exigencia. Su rendimiento en condiciones extremas es excepcional, superando a la competencia."</p>
+                <div class="testimonio-info">
+                  <p class="testimonio-nombre">Ing. Ricardo Mendez</p>
+                  <p class="testimonio-cargo">Gerente General, Minera Los Andes</p>
+                </div>
+              </div>
+            </div>
+            
+            <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-nav">
+              <span class="carousel-dot active" data-slide="0"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Testimonials Section -->
+    <section class="video-testimonials">
+      <div class="section-container">
+        <h2 class="section-title">Testimonios en Video</h2>
+        <p class="section-subtitle" style="text-align: center; max-width: 800px; margin: 0 auto 50px;">Conozca la experiencia de nuestros clientes en diferentes regiones del país</p>
+        
+        <div class="video-grid">
+          <!-- Video 1 -->
+          <div class="video-card">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/Ei35pAty8zE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <div class="video-location">
+                <i class="fas fa-map-marker-alt"></i> Arequipa, Perú
+              </div>
+              <span class="video-model">Modelo: LC350</span>
+              <p class="video-description">"Increíble el rendimiento del martillo hidráulico en nuestras operaciones mineras a gran altitud."</p>
+              <div class="video-client">Minera Los Andes</div>
+            </div>
+          </div>
+          
+          <!-- Video 2 -->
+          <div class="video-card">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <div class="video-location">
+                <i class="fas fa-map-marker-alt"></i> Lima, Perú
+              </div>
+              <span class="video-model">Modelo: LC2100</span>
+              <p class="video-description">"La mejor inversión para nuestros proyectos de construcción urbana. Excelente soporte postventa."</p>
+              <div class="video-client">Constructora Horizonte</div>
+            </div>
+          </div>
+          
+          <!-- Video 3 -->
+          <div class="video-card">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <div class="video-location">
+                <i class="fas fa-map-marker-alt"></i> Cusco, Perú
+              </div>
+              <span class="video-model">Modelo: LC1500</span>
+              <p class="video-description">"Ideal para trabajos en zonas de difícil acceso. La potencia y durabilidad son excepcionales."</p>
+              <div class="video-client">Constructora Andina</div>
+            </div>
+          </div>
+          
+          <!-- Video 4 -->
+          <div class="video-card">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <div class="video-location">
+                <i class="fas fa-map-marker-alt"></i> Piura, Perú
+              </div>
+              <span class="video-model">Modelo: LC4000</span>
+              <p class="video-description">"El mejor equipo para trabajos pesados en la costa norte. Superó nuestras expectativas."</p>
+              <div class="video-client">Constructora Norte Grande</div>
+            </div>
+          </div>
+          
+          <!-- Video 5 -->
+          <div class="video-card">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/VIDEO_ID_5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <div class="video-location">
+                <i class="fas fa-map-marker-alt"></i> Cajamarca, Perú
+              </div>
+              <span class="video-model">Modelo: LC3000</span>
+              <p class="video-description">"Excelente rendimiento en condiciones extremas. La mejor relación calidad-precio del mercado."</p>
+              <div class="video-client">Minera del Sur</div>
+            </div>
+          </div>
+          
+          <!-- Video 6 -->
+          <div class="video-card">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <div class="video-location">
+                <i class="fas fa-map-marker-alt"></i> La Libertad, Perú
+              </div>
+              <span class="video-model">Modelo: LC500</span>
+              <p class="video-description">"Perfecto para nuestros proyectos de infraestructura. La versatilidad del equipo nos ha permitido optimizar tiempos."</p>
+              <div class="video-client">Vialco S.A.</div>
+            </div>
+          </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 50px;">
+          <a href="https://www.youtube.com/nuestrocanal" target="_blank" class="btn-cta btn-primary">
+            <i class="fab fa-youtube"></i> Ver más testimonios
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clientes Destacados -->
+    <section class="clientes-destacados">
+      <div class="section-container">
+        <h2 class="section-title">Ellos Confían en Nosotros</h2>
+        <p style="max-width: 800px; margin: 0 auto 40px;">Trabajamos con las empresas más importantes del sector, brindando soluciones confiables y de alto rendimiento.</p>
+        
+        <div class="logos-container">
+          <img src="../media/img/Clientes/logo-minera.png" alt="Minera del Sur" class="client-logo" loading="lazy">
+          <img src="../media/img/Clientes/logo-vialco.png" alt="Vialco S.A." class="client-logo" loading="lazy">
+          <img src="../media/img/Clientes/logo-constructora.png" alt="Constructora Andina" class="client-logo" loading="lazy">
+          <img src="../media/img/Clientes/logo-norte.png" alt="Constructora Norte Grande" class="client-logo" loading="lazy">
+          <img src="../media/img/Clientes/logo-mineralosandes.png" alt="Minera Los Andes" class="client-logo" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-clientes">
+      <div class="cta-content">
+        <h2 class="section-title">¿Listo para llevar su operación al siguiente nivel?</h2>
+        <p>Únase a nuestros clientes satisfechos y descubra cómo podemos ayudarle a optimizar sus operaciones con nuestros equipos y servicios de primera calidad.</p>
+        <div class="cta-buttons">
+          <a href="#contacto" class="btn-cta btn-primary">Solicitar Cotización</a>
+          <a href="https://wa.link/u46549" target="_blank" class="btn-cta btn-outline">
+            <i class="fab fa-whatsapp"></i> Chatear por WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Tabs functionality
+      const tabs = document.querySelectorAll('.hammer-tab');
+      const contents = document.querySelectorAll('.testimonio-content');
+      
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          // Remove active class from all tabs and contents
+          tabs.forEach(t => t.classList.remove('active'));
+          contents.forEach(c => c.classList.remove('active'));
+          
+          // Add active class to clicked tab
+          tab.classList.add('active');
+          
+          // Show corresponding content
+          const model = tab.getAttribute('data-model');
+          document.getElementById(`testimonio-${model}`).classList.add('active');
+          
+          // Reset all carousels to first slide when switching tabs
+          document.querySelectorAll('.testimonio-content').forEach(content => {
+            const slides = content.querySelectorAll('.testimonio-slide');
+            const dots = content.querySelectorAll('.carousel-dot');
+            if (slides.length > 0) {
+              slides.forEach(slide => slide.classList.remove('active'));
+              slides[0].classList.add('active');
+              dots.forEach(dot => dot.classList.remove('active'));
+              dots[0].classList.add('active');
+            }
+          });
+        });
+      });
+
+      // Initialize carousels
+      document.querySelectorAll('.model-carousel').forEach(carousel => {
+        const slides = carousel.querySelectorAll('.testimonio-slide');
+        const dots = carousel.querySelectorAll('.carousel-dot');
+        const prevBtn = carousel.querySelector('.prev');
+        const nextBtn = carousel.querySelector('.next');
+        
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        
+        function showSlide(index) {
+          // Handle wrap around
+          currentSlide = (index + totalSlides) % totalSlides;
+          
+          // Update slides
+          slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === currentSlide);
+          });
+          
+          // Update dots
+          dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentSlide);
+          });
+        }
+        
+        // Navigation buttons
+        if (prevBtn) {
+          prevBtn.addEventListener('click', () => {
+            showSlide(currentSlide - 1);
+          });
+        }
+        
+        if (nextBtn) {
+          nextBtn.addEventListener('click', () => {
+            showSlide(currentSlide + 1);
+          });
+        }
+        
+        // Dot navigation
+        dots.forEach((dot, index) => {
+          dot.addEventListener('click', () => {
+            showSlide(index);
+          });
+        });
+        
+        // Auto-advance slides
+        if (totalSlides > 1) {
+          setInterval(() => {
+            showSlide(currentSlide + 1);
+          }, 7000);
+        }
+      });
+    });
+  </script>
 
   <!-- Footer -->
   <footer class="footer" role="contentinfo">
