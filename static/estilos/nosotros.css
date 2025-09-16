@@ -43,7 +43,7 @@ h3 { font-size: 1.5rem; }
 
 /* Contenedor de fondo plomo para la barra de contacto */
 .contenedor-barra-contacto {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(38, 54, 70, 0.9);
   width: 100%;
   padding: 43px 0;
   position: fixed;

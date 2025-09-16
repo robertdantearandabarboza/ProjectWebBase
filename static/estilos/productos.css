@@ -50,7 +50,7 @@ html, body {
 
 /* Contenedor de fondo plomo para la barra de contacto */
 .contenedor-barra-contacto {
-  background-color: var(--color-oscuro);
+  background-color: rgba(38, 54, 70, 0.9);
   width: 100%;
   padding: 43px 0;
   position: fixed;
