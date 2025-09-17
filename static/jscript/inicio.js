@@ -481,3 +481,27 @@ function resetInterval() {
   clearInterval(intervalId);
   intervalId = setInterval(next, 4500);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const headerElements = document.querySelectorAll('.contenedor-barra-contacto, .contenedor-nav');
+  let lastScrollTop = 0;
+  let scrollTimeout;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Usuario baja
+    if (currentScroll > lastScrollTop) {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        headerElements.forEach(el => el.classList.add('hidden-header'));
+      }, 300); // espera 300ms antes de ocultar
+    } 
+    // Usuario sube
+    else {
+      headerElements.forEach(el => el.classList.remove('hidden-header'));
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // evita valores negativos
+  });
+});

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Hydromenn - Contacto</title>
-  <link rel="stylesheet" href="../static/estilos/contacto.css" />
+  <title>Blog - Hydromenn</title>
+  <link rel="stylesheet" href="../static/estilos/blog.css">
   <link rel="stylesheet" href="../static/estilos/responsive-menu.css">
+  <link rel="stylesheet" href="../static/estilos/diseños.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -16,7 +17,6 @@
 </a>
 
 <body>
-
   <!-- Contenedor de fondo plomo para la barra de contacto -->
   <div class="contenedor-barra-contacto">
     <div class="barra-contacto">
@@ -48,7 +48,7 @@
   <div class="contenedor-nav">
     <nav>
       <!-- Logo a la izquierda -->
-      <a href="../index.html" class="logo">
+      <a href="index.html" class="logo">
         <img src="../media/img/logolyc.png" alt="Logo Hydromenn" width="120">
       </a>
   
@@ -77,10 +77,10 @@
             <span>PRODUCTOS <i class="fas fa-chevron-down dropdown-icon"></i></span>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="martillos-hidraulicos.html">Martillos Hidráulicos</a></li>
-            <li><a href="acoples-rapidos.html">Acoples Rápidos</a></li>
-            <li><a href="repuestos-martillos-hidraulicos.html">Repuestos para Martillo</a></li>
-            <li><a href="servicio-mantenimiento.html">Servicio de mantenimiento</a></li>
+            <li><a href="templates/martillos-hidraulicos.html">Martillos Hidráulicos</a></li>
+            <li><a href="templates/acoples-rapidos.html">Acoples Rápidos</a></li>
+            <li><a href="templates/repuestos-martillos-hidraulicos.html">Repuestos para Martillo</a></li>
+            <li><a href="templates/servicio-mantenimiento.html">Servicio de mantenimiento</a></li>
           </ul>
         </li>
         <li class="nav-item">
@@ -96,13 +96,13 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="blog.html" class="nav-link">
+          <a href="blog.html" class="nav-link active">
             <i class="fas fa-file nav-icon"></i>
             <span>BLOG</span>
           </a>
         </li>
         <li class="nav-item">
-          <a href="contacto.html" class="nav-link active">
+          <a href="contacto.html" class="nav-link">
             <i class="fas fa-envelope nav-icon"></i>
             <span>CONTACTO</span>
           </a>
@@ -111,86 +111,35 @@
     </nav>
   </div>
 
-  <main class="contact-container">
-      <!-- Columna izquierda: Texto + Formulario -->
-      <section class="form-section">
-          <h1>CONTÁCTANOS</h1>
-          <p>
-            ¿Necesitas más información sobre nuestros martillos hidráulicos, repuestos o servicios de mantenimiento? 
-            Completa el formulario de contacto o escríbenos directamente por <strong>WhatsApp</strong> para recibir atención inmediata de nuestro equipo especializado.
-          </p>
+  <!-- Hero Image Section -->
+  <div class="hero-image">
+    <img src="../media/img/Blog/blog-hero.jpg" alt="Blog de Hydromenn - Noticias y artículos">
+    <div class="hero-overlay">
+      <h1>Blog de Hydromenn</h1>
+      <p>Mantente actualizado con las últimas noticias, consejos y tendencias en maquinaria pesada</p>
+    </div>
+  </div>
 
-          <form name="contacto" netlify>
-            <input type="hidden" name="form-name" value="contacto">
-            <div>
-              <label for="nombre">Nombre completo</label>
-              <input type="text" id="nombre" name="nombre" required />
-            </div>
-          
-            <div>
-              <label for="email">Correo electrónico</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-          
-            <div>
-              <label for="telefono">Teléfono</label>
-              <input type="tel" id="telefono" name="telefono" />
-            </div>
-          
-            <div class="form-row">
-              <div>
-                <label for="empresa">Empresa</label>
-                <input type="text" id="empresa" name="empresa" />
-              </div>
-              <div>
-                <label for="ruc">RUC</label>
-                <input type="text" id="ruc" name="ruc" pattern="\d{11}" title="Debe ser un RUC válido de 11 dígitos" />
-              </div>
-            </div>
-          
-            <div>
-              <label for="mensaje">Mensaje</label>
-              <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-            </div>
-
-            <div class="g-recaptcha" data-sitekey="TU_SITE_KEY"></div>
-          
-            <button type="submit">Enviar mensaje</button>
-            <div id="respuesta" style="margin-top:10px; color:green;"></div>
-          </form>               
-      </section>
-
-      <!-- Columna derecha: Imagen destacada -->
-      <section class="featured-image">
-          <div class="image-container">
-              <img src="../media/img/Contacto/CONTACTO.png" alt="Martillos hidráulicos profesionales" />
-              <div class="image-overlay">
-                  <h3>Expertos en Equipos Hidráulicos</h3>
-                  <p>Soluciones profesionales para la industria</p>
-              </div>
-          </div>
-
-          <div class="map-container">
-            <h2>Encuéntranos en Lima, Perú</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1952.6446192382202!2d-77.1254798323789!3d-11.815004620949683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d5a975ac3a43%3A0xa09c15c6213d0420!2sL%26C%20TECHNOLOGY%20S.A.C.!5e0!3m2!1ses!2spe!4v1757723058409!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-      </section>
-
-</main>
+  <!-- Blog Content -->
+  <main class="container">
+    <h2 class="section-title">Últimos artículos</h2>
+    <section id="blog-section" class="blog-grid">
+      <!-- Los artículos se cargarán aquí con JS -->
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="footer" role="contentinfo">
     <div class="footer-container">
-
       <!-- Columna 1: Marca + Logo -->
       <div class="footer-col footer-brand">
-        <a class="brand" href="/" aria-label="Inicio - LYC Technology">
+        <a class="brand" href="/" aria-label="Inicio - Hydromenn">
           <div class="footer-logo-box">
             <img
               class="footer-logo"
               src="../media/img/logo.png"
-              alt="LYC Technology — especialistas en martillos hidráulicos"
-              title="LYC Technology"
+              alt="Hydromenn — especialistas en martillos hidráulicos"
+              title="Hydromenn"
               loading="lazy" decoding="async"
             />
           </div>
@@ -207,6 +156,7 @@
           <li><a href="productos.html">Productos</a></li>
           <li><a href="clientes.html">Clientes</a></li>
           <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="blog.html">Blog</a></li>
         </ul>
       </div>
 
@@ -216,7 +166,7 @@
         <p>📍 Lima, Perú</p>
         <p>🕒 Lun - Sáb: 8:00 am – 6:00 pm</p>
         <p>📞 <a href="tel:+51939864072">+51 939 864 072</a></p>
-        <p>📧 <a href="mailto:contacto@lyctechnology.com">contacto@lyctechnology.com</a></p>
+        <p>📧 <a href="mailto:contacto@hydromenn.com">contacto@hydromenn.com</a></p>
         <a href="/politicas">Políticas de Privacidad</a>
       </div>
 
@@ -255,11 +205,12 @@
 
     <!-- Créditos -->
     <div class="footer-bottom">
-      <p>© 2025 LYC Technology | Lima, Perú. Todos los derechos reservados.</p>
+      <p> 2025 Hydromenn | Lima, Perú. Todos los derechos reservados.</p>
     </div>
   </footer>
-
-  <script src="../static/jscript/contacto.js"></script>
+  
+  <script src="../static/jscript/clientes.js"></script>
   <script src="../static/jscript/responsive.js"></script>
+  <script src="../static/jscript/main-blog.js"></script>
 </body>
 </html>

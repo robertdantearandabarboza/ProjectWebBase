@@ -21,8 +21,31 @@
 
 /* Proceso de Mantenimiento */
 .proceso-mantenimiento {
+  position: relative;
   padding: 6rem 2rem;
-  background-color: var(--color-blanco);
+  background-image: url('../../media/img/Productos/Mantenimiento/Man-Fondo.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.proceso-mantenimiento::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* oscurece la imagen */
+  z-index: 1;
+}
+
+.proceso-mantenimiento > * {
+  position: relative;
+  z-index: 2; /* Esto asegura que el texto quede por encima */
 }
 
 .section-container {
@@ -31,13 +54,14 @@
   padding: 0 1.5rem;
 }
 
-.section-title {
+.proceso-mantenimiento .section-title {
   text-align: center;
-  color: var(--color-secundario);
+  color: var(--color-blanco);
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
   position: relative;
   padding-bottom: 1rem;
+  z-index: 2;
 }
 
 .section-title::after {
@@ -51,13 +75,15 @@
   background-color: var(--color-primario);
 }
 
-.section-subtitle {
+.proceso-mantenimiento .section-subtitle {
   text-align: center;
-  color: var(--color-texto-claro);
+  color: white;
   font-size: 1.2rem;
   max-width: 800px;
   margin: 0 auto 3rem;
   line-height: 1.6;
+  z-index: 2;
+  position: relative;
 }
 
 .proceso-grid {
@@ -71,6 +97,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  z-index: 2;
 }
 
 .paso {
@@ -124,11 +151,13 @@
   border-radius: 10px;
   overflow: hidden;
   height: fit-content;
+  z-index: 2;
 }
 
 .video-container {
   position: relative;
   width: 100%;
+  height: 700px;
   padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
   background: #000;
   border-radius: 10px;
@@ -179,20 +208,27 @@
 
 /* Hero Section */
 .hero-mantenimiento {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-              url('../../media/img/Martillos/hero-mantenimiento.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
+              url('../../media/img/Productos/Mantenimiento/hydro-Man.webp') no-repeat center center/cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: white;
   padding: 8rem 2rem;
   text-align: center;
   position: relative;
   margin-bottom: 4rem;
+  min-height: 95vh;
+  z-index: 2;
 }
 
 .hero-content {
   max-width: 900px;
+  padding: 0 2rem;
+  padding-bottom: 2rem;
+  padding-top: 13rem;
   margin: 0 auto;
   position: relative;
-  z-index: 2;
 }
 
 .hero-content h1 {
@@ -200,6 +236,7 @@
   margin-bottom: 1.5rem;
   line-height: 1.3;
   font-weight: 700;
+  color: white;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -540,15 +577,6 @@
   background-color: #B51922;
 }
 
-/* Hero Section */
-.hero-mantenimiento {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-              url('../../media/img/Martillos/mantenimiento-hero.jpg') no-repeat center center/cover;
-  color: white;
-  padding: 120px 0;
-  text-align: center;
-  position: relative;
-}
 
 .hero-content {
   max-width: 800px;

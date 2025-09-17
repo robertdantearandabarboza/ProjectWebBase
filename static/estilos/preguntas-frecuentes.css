@@ -23,6 +23,9 @@ html, body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   height: 100%;
   width: 100%;
+  overflow-x: hidden; /* solo oculta horizontal */
+  overflow-y: auto;   /* asegura scroll vertical */
+  transform: none !important;
 }
 
 /* Typography normalization (site-wide consistency) */
@@ -228,18 +231,35 @@ nav ul {
 }
 
 /* Hero Image Section */
+/* Hero contenedor */
 .hero-image {
-  width: 100%;
-  height: 98vh; /* Increased for better visual impact */
-  overflow: hidden;
   position: relative;
-  margin-bottom: 40px;
-  opacity: 0;
-  animation: fadeIn 1.2s ease-out forwards;
-  animation-delay: 0.3s;
-  margin-top: -55px;
+  width: 100%;
+  height: 60vh;
+  background-image: url('../../media/img/Productos/Mantenimiento/Pregunta-Hydromenn.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
+/* Overlay encima de la imagen */
+.hero-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* oscurece para mejor contraste */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  padding-top: 160px;
+  z-index: 1;
+}
+
+/* Animación */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -251,57 +271,30 @@ nav ul {
   }
 }
 
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 40%; /* Ajustado a 40% según solicitud del usuario */
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  padding: 20px;
-}
-
 .hero-overlay h1 {
   font-size: 3rem;
-  padding-top: 100px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transform: translateY(20px);
-  animation: slideUp 0.8s ease-out forwards;
-  animation-delay: 0.6s;
 }
 
+.hero-overlay p {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Animación para texto */
 @keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.hero-overlay p {
-  font-size: 1.2rem;
-  padding-top: 10px;
-  max-width: 550px;
-  margin: 0 auto;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transform: translateY(20px);
-  animation: slideUp 0.8s ease-out forwards;
-  animation-delay: 0.8s;
 }
 
 .nav-link span {
@@ -353,458 +346,271 @@ nav ul li:nth-child(5) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) fo
 nav ul li:nth-child(6) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.6s; }
 nav ul li:nth-child(7) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.7s; }
 
-/* Contenido principal */
-main {
-  max-width: 1200px;
-  padding: 0;
-  margin-bottom: -55px;
-}
 
-.quienes-somos-container {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-}
-
-.imagen-container {
-  flex: 1;
-  max-width: 500px;
-}
-
-.imagen-container img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.texto-container {
-  flex: 1;
-}
-
-.texto-container h1 {
-  margin-bottom: 20px;
-  color: var(--color-principal);
-}
-
-.texto-container h2 {
-  margin: 25px 0 15px;
-  color: var(--color-principal);
-}
-
-.texto-container p {
-  margin-bottom: 15px;
+/* ====== ESTILOS GENERALES ====== */
+body {
+  font-family: 'Arial', sans-serif;
+  background: transparent;
+  color: #333;
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
-.texto-container ul {
-  list-style: none;
-  padding-left: 20px;
-}
-
-.texto-container ul li {
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-}
-
-.fondo-principal {
-  background-image: url('../../media/img/img20.webp');
+main.clientes-container {
+  position: relative; /* Necesario para el ::before */
+  padding: 0;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background: transparent;
+  background-image: url('../../media/img/Productos/Mantenimiento/Pregunta-Hydromenn.png');
   background-size: cover;
   background-position: center;
-  height: 85vh;
-  position: relative;
-  z-index: 1;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-bottom: -60px;
+  z-index: 0; /* La imagen de fondo queda debajo */
 }
 
-main{
-  max-width: 100%;
-}
-
-/* Hero Section */
-.hero-nosotros {
-  background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
-  color: white;
-  padding: 100px 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  max-width: 100%;
-}
-
-.hero-nosotros::before {
-  content: '';
+/* Capa oscura */
+main.clientes-container::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.05"><polygon points="0,0 1000,100 1000,0"/></svg>') no-repeat;
-  background-size: cover;
-}
-
-.hero-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  position: relative;
-  z-index: 1;
-}
-
-.hero-nosotros h1 {
-  font-size: 3.5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-.hero-nosotros p {
-  font-size: 1.3rem;
-  margin-bottom: 30px;
-  opacity: 0.9;
-}
-
-/* Historia Section */
-.historia-section {
-  margin-top: -55px;
-  padding: 80px 0;
-  background: #f8fafc;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2.25rem;
-  color: #000000;
-  margin-bottom: 20px;
-  position: relative;
-}
-
-.section-title::after {
-  content: '';
-  display: block;
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(45deg, var(--color-accion), var(--color-destacado));
-  margin: 20px auto;
-  border-radius: 2px;
-}
-
-.historia-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-  margin-top: 60px;
-}
-
-.historia-texto {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: black;
-}
-
-/* Make historia paragraphs match section description size (1.2rem) */
-.historia-texto p {
-  font-size: 1.2rem;
-  line-height: 1.7;
-}
-
-.historia-imagen {
-  position: relative;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-}
-
-.historia-imagen img {
   width: 100%;
-  height: 500px;
-  object-fit: cover;
-  object-position: 50% 80%; /* 👈 mueve el recorte hacia abajo */
-  transition: transform 0.3s ease;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Oscurece la imagen */
+  z-index: 1; /* La capa oscura va encima del fondo */
+  pointer-events: none;
 }
 
-.historia-imagen:hover img {
-  transform: scale(1.05);
-}
-
-/* Misión y Visión Section */
-.mision-vision-section {
-  padding: 30px 0 90px 0;
-  background: white;
-}
-
-.mision-vision-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin-top: 60px;
-}
-
-.mision-card, .vision-card {
-  background: linear-gradient(135deg, #BB1922 0%, #16213e 100%);
-  color: white;
-  padding: 40px;
-  border-radius: 20px;
-  text-align: center;
+/* Asegura que el contenido esté visible */
+main.clientes-container > * {
   position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  /* sombra con color base */
-  box-shadow: 0 8px 20px rgba(187, 25, 34, 0.4),   /* rojo del inicio */
-              0 8px 20px rgba(22, 33, 62, 0.4);   /* azul oscuro del final */
-  border: none;
-}
-
-.mision-card:hover, .vision-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 50px rgba(187, 25, 34, 0.5),   /* rojo más intenso */
-              0 20px 50px rgba(22, 33, 62, 0.5);   /* azul más intenso */
+  z-index: 2; /* El contenido queda por encima de la capa oscura */
 }
 
 
-.mision-card::before, .vision-card::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.mision-card:hover::before, .vision-card:hover::before {
-  opacity: 1;
-}
-
-.card-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  opacity: 0.9;
-}
-
-.card-title {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-.card-text {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  opacity: 0.9;
-}
-
-/* Valores Section */
-.valores-section {
-  padding: 80px 0;
-  background: #000000;
-  color: white;
-}
-
-.valores-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-top: 60px;
-}
-
-.valor-item {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 30px;
-  border-radius: 15px;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-}
-
-.valor-item:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-5px);
-}
-
-.valor-icon {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  color: #ffffff;
-  text-shadow: 
-    1px 1px 0 #000,
-    2px 2px 0 #000,
-    3px 3px 0 #000,
-    4px 4px 0 #000,
-    5px 5px 0 #000;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-.valor-item:hover {
-  transform: scale(1.06);
-  box-shadow: 0 15px 25px rgba(0,0,0,0.2);
-}
-
-.valor-item:hover .valor-icon {
-  transform: translateZ(30px) scale(1.2) rotateX(10deg) rotateY(10deg);
-  color: #ffcc00;
-  text-shadow: 
-    1px 1px 0 #000,
-    2px 2px 0 #000,
-    3px 3px 0 #000,
-    4px 4px 0 #000,
-    5px 5px 0 #000;
-}
-
-.valor-titulo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.valor-descripcion {
-  font-size: 1.1rem;
-  opacity: 0.9;
-}
-
-/* Equipo Section */
-.equipo-section {
-  padding: 80px 0;
-  background: #f7fafc;
-}
-
-.equipo-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-  margin-top: 60px;
-}
-
-.equipo-imagen {
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-  transition: all 0.3s ease;
-}
-
-.equipo-imagen:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
-}
-
-.equipo-imagen img {
-  width: 100%;
-  height: 800px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.equipo-imagen:hover img {
-  transform: scale(1.05);
-}
-
-.equipo-texto {
+.section-container {
+  max-width: 100%;
+  margin: 0 auto;
   padding: 20px;
 }
 
-.equipo-descripcion {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: black;
-  margin-bottom: 30px;
-}
-
-.equipo-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-top: 40px;
-}
-
-.stat-item {
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
+/* ====== HERO SECTION ====== */
+.hero-section {
+  background: linear-gradient(to right, #b51922, #d32f2f);
+  color: white;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
+  padding: 60px 20px;
 }
 
-.stat-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
-.stat-numero {
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: #BB1322;
-  margin-bottom: 5px;
-  position: relative; /* ← Agregar esto */
+.hero-section p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
 }
 
-.stat-label {
-  color: #4a5568;
-  font-size: 0.95rem;
+/* ====== FAQ GENERAL ====== */
+.preguntas-frecuentes {
+  padding: 40px 20px;
+  margin: 0 auto;
+  background: transparent;
+  max-width: 1200px;
+}
+
+.categoria-faq {
+  margin-bottom: 30px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+.categoria-faq:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* ====== HEADER DE CATEGORÍA ====== */
+.categoria-header {
+  display: flex;
+  align-items: center;
+  background: #b51922;
+  color: white;
+  padding: 15px 20px;
+  font-size: 1.2rem;
+}
+
+.categoria-header.bg-oscuro {
+  background: #8e0b13;
+}
+
+.categoria-header i {
+  margin-right: 10px;
+  font-size: 1.4rem;
+}
+
+.categoria-header h2 {
+  margin: 0;
+  font-size: 1.3rem;
   font-weight: 600;
 }
 
-/* Responsive Design */
+/* ====== CONTENEDOR DE PREGUNTAS ====== */
+.preguntas-container {
+  padding: 20px;
+}
+
+/* ====== PREGUNTAS ====== */
+.pregunta-item {
+  border-bottom: 1px solid #eaeaea;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.pregunta-item:last-child {
+  border-bottom: none;
+}
+
+.pregunta-titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 15px 0;
+  font-weight: 600;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.pregunta-titulo:hover {
+  color: #b51922;
+}
+
+.pregunta-titulo i {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+/* Flecha hacia abajo animada */
+.pregunta-item.active .pregunta-titulo i {
+  transform: rotate(180deg);
+}
+
+/* ====== RESPUESTAS ====== */
+.respuesta {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s ease;
+  padding: 0 0;
+}
+
+.pregunta-item.active .respuesta {
+  max-height: 800px; /* Suficiente para respuestas largas */
+  opacity: 1;
+  padding: 10px 0 20px;
+}
+
+.respuesta p {
+  margin: 10px 0;
+}
+
+.respuesta ul {
+  margin-left: 20px;
+  margin-top: 10px;
+  padding-left: 15px;
+  list-style: disc;
+}
+
+/* ====== GRID PARA REPUESTOS ====== */
+.repuestos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.item-repuesto {
+  display: flex;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.item-repuesto i {
+  color: #b51922;
+  margin-right: 8px;
+}
+
+.item-repuesto:hover {
+  background: #f0f0f0;
+}
+
+/* ====== BOTONES ====== */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn-cotizar {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 15px;
+  background: #b51922;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.btn-cotizar i {
+  margin-right: 8px;
+  font-size: 1.1rem;
+}
+
+.btn-cotizar:hover {
+  background: #8e0b13;
+}
+
+.btn-whatsapp {
+  background: #25d366;
+}
+
+.btn-whatsapp:hover {
+  background: #1ebc59;
+}
+
+/* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
-  .hero-nosotros h1 {
-      font-size: 2.5rem;
+  .hero-section h1 {
+    font-size: 2rem;
   }
 
-  .hero-nosotros p {
-      font-size: 1.1rem;
+  .hero-section p {
+    font-size: 1rem;
   }
 
-  .historia-content {
-      grid-template-columns: 1fr;
-      gap: 40px;
+  .pregunta-titulo {
+    font-size: 0.95rem;
   }
-
-  .mision-vision-grid {
-      grid-template-columns: 1fr;
-      gap: 30px;
-  }
-
-  .equipo-content {
-      grid-template-columns: 1fr;
-      gap: 40px;
-  }
-
-  .equipo-stats {
-      grid-template-columns: 1fr;
-      gap: 15px;
-  }
-
-  .section-title {
-      font-size: 2rem;
-  }
-}
-
-/* Animaciones */
-@keyframes fadeInUp {
-  from {
-      opacity: 0;
-      transform: translateY(30px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-
-.fade-in-up {
-  animation: fadeInUp 0.8s ease-out;
 }
 
 /* Footer */

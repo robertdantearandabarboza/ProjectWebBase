@@ -73,3 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
     showSlide(0);
   }
 });
+
+const preguntas = document.querySelectorAll('.pregunta-item');
+
+preguntas.forEach(item => {
+  item.querySelector('.pregunta-titulo').addEventListener('click', () => {
+    item.classList.toggle('active');
+  });
+});

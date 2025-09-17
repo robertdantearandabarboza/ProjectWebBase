@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "titulo": "Guía Completa para Elegir el Martillo Hidráulico Correcto",
+    "fecha": "02 septiembre 2025",
+    "categoria": "Guías y Consejos",
+    "imagen": "../../media/img/Inicio/hero-bg.jpg",
+    "resumen": "Elegir el martillo hidráulico adecuado puede marcar la diferencia entre eficiencia y pérdida de tiempo. Te contamos todo lo que necesitas saber para tomar la mejor decisión.",
+    "contenido": "<p>Elegir el martillo hidráulico correcto depende de factores clave como el tipo de máquina portadora, la dureza del material, la frecuencia de uso y los requerimientos de producción. Aquí revisaremos los puntos esenciales para optimizar tu inversión.</p><h3>1. Compatibilidad con la máquina</h3><p>El martillo debe ser compatible con la excavadora o retroexcavadora, asegurando un rendimiento óptimo y evitando daños.</p><h3>2. Mantenimiento</h3><p>El mantenimiento preventivo es fundamental para prolongar la vida útil del equipo y evitar tiempos de inactividad costosos.</p><h3>3. Repuestos originales</h3><p>Siempre utiliza repuestos originales para garantizar seguridad y durabilidad.</p>"
+  },
+  {
+    "id": 2,
+    "titulo": "Cómo Mantener tu Martillo Hidráulico en Óptimas Condiciones",
+    "fecha": "28 agosto 2025",
+    "categoria": "Mantenimiento",
+    "imagen": "../../media/img/Inicio/hero-bg.jpg",
+    "resumen": "El mantenimiento adecuado de tu martillo hidráulico puede duplicar su vida útil. Descubre los pasos esenciales para mantenerlo en perfectas condiciones.",
+    "contenido": "<p>El mantenimiento regular no solo previene averías, sino que también optimiza el rendimiento y reduce costos a largo plazo. Estos son los pasos clave:</p><ul><li>Revisar el sistema hidráulico antes de cada uso.</li><li>Lubricar las partes móviles periódicamente.</li><li>Controlar el nivel de presión y temperatura.</li><li>Reemplazar piezas desgastadas de forma oportuna.</li></ul>"
+  },
+  {
+    "id": 3,
+    "titulo": "Martillos Hidráulicos para Demolición Pesada: ¿Cuál elegir?",
+    "fecha": "15 agosto 2025",
+    "categoria": "Demolición",
+    "imagen": "../../media/img/Inicio/hero-bg.jpg",
+    "resumen": "Si trabajas en demolición pesada, elegir el martillo correcto es vital. Aquí te mostramos los modelos más potentes y resistentes del mercado.",
+    "contenido": "<p>Para trabajos de demolición pesada, necesitas un martillo con alta potencia de impacto y diseño robusto. Considera factores como:</p><ul><li>Potencia y energía de impacto.</li><li>Durabilidad de los materiales.</li><li>Compatibilidad con tu máquina base.</li></ul><p>En Hydromenn recomendamos los modelos LC3500 y LC4000 por su confiabilidad y fuerza.</p>"
+  },
+  {
+    "id": 4,
+    "titulo": "Innovaciones en Tecnología de Martillos Hidráulicos 2025",
+    "fecha": "05 agosto 2025",
+    "categoria": "Tecnología",
+    "imagen": "../../media/img/Inicio/hero-bg.jpg",
+    "resumen": "Descubre las últimas innovaciones en martillos hidráulicos que están revolucionando la industria de la construcción.",
+    "contenido": "<p>El 2025 ha traído consigo avances significativos en la tecnología de martillos hidráulicos. Desde sistemas de reducción de ruido hasta mejoras en la eficiencia energética, las nuevas tecnologías están cambiando el juego en la industria de la construcción.</p><h3>Novedades destacadas:</h3><ul><li>Sistemas de control inteligente</li><li>Mayor durabilidad de componentes</li><li>Reducción de vibraciones</li><li>Nuevos materiales más resistentes</li></ul>"
+  }
+]
