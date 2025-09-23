@@ -730,6 +730,56 @@ h1 {
   }
 }
 
+@media (max-width: 480px) {
+
+  .carousel-track {
+      border-radius: 0;
+      margin: 0 auto;
+      width: 100%;
+      height: 100%;
+  }
+  
+  .image-card.side {
+      display: none;
+      width: 80px;
+      height: 80px;
+  }
+
+  .image-card.center {
+      margin-top: -60px;
+      width: 250px;
+      height: 220px;
+  }
+
+  .carousel-section {
+    padding: 0;
+  }
+
+  .carousel-container {
+    border-radius: 0;
+    width: 100%;
+    height: 400px;
+    padding: 0;
+  }
+
+  .carousel-slide {
+      gap: 10px;
+  }
+
+  .nav-next {
+    width: 55px;
+    height: 55px;
+    top: 60%;
+  }
+
+  .nav-prev {
+    width: 55px;
+    height: 55px;
+    top: 60%;
+  }
+}
+
+
 
 .acoples-section {
   max-width: 100%;
@@ -863,6 +913,12 @@ h1 {
 
 /* --- Responsivo --- */
 @media (max-width: 900px) {
+  .carousel-section {
+    padding: 10px 20px;
+  }
+  .acoples-section {
+    padding: 65px 20px;
+  }
   .acoples-container {
     flex-direction: column;
     text-align: center;
@@ -1954,12 +2010,13 @@ h1 {
 .intro-hero .intro-content h1 {
   color: whitesmoke;
   font-size: 2.8rem;
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 15px;
   line-height: 1.3;
 }
 
 .intro-hero .intro-content h1 span {
+  font-weight: 700;
   color: var(--color-blanco); /* tono corporativo/acento */
 }
 

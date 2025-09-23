@@ -24,6 +24,12 @@
     height: 100%;
     width: 100%;
   }
+
+  body{
+    padding-top: 40px;
+    margin-top: 40px;
+    background-color: var(--color-fondo-suave);
+  }
   
   /* Typography normalization (site-wide consistency) */
   h1, h2, h3, h4, h5, h6 {
@@ -251,7 +257,7 @@
   /* Hero Image Section - Optimized for SEO and Engagement */
   .hero-image {
     width: 100%;
-    min-height: 50vh;
+    min-height: 80vh;
     max-height: 600px;
     overflow: hidden;
     position: relative;
@@ -267,6 +273,7 @@
     background-attachment: fixed;
     position: relative;
     isolation: isolate;
+    margin-top: -85px;
   }
 
   .hero-image::after {
@@ -460,7 +467,7 @@ nav ul li:nth-child(7) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) fo
   
   /* Contenido principal */
   main {
-    max-width: 1200px;
+    max-width: 80%;
     padding: 0 20px;
     margin: 0 auto 60px;
   }
@@ -754,7 +761,7 @@ nav ul li:nth-child(7) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) fo
 
   /* Estilos para articulo-clean.html */
   .article-content {
-    max-width: 800px;
+    max-width: 1400px;
     margin: 40px auto;
     padding: 0 20px;
   }
@@ -788,7 +795,7 @@ nav ul li:nth-child(7) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) fo
     display: flex;
     justify-content: center;
     gap: 20px;
-    color: #7f8c8d;
+    color: black;
     font-size: 0.95rem;
     margin-bottom: 30px;
   }
@@ -817,6 +824,9 @@ nav ul li:nth-child(7) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) fo
   }
 
   .article-body {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
     line-height: 1.8;
     color: #444;
     font-size: 1.1rem;
@@ -975,6 +985,19 @@ nav ul li:nth-child(7) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) fo
 
   /* Responsive */
   @media (max-width: 768px) {
+    main {
+      max-width: 100%;
+    }
+
+    .articulo-detalle {
+      max-width: 100%;
+      padding: 10px 0 10px 0;
+    }
+
+    .blog-section {
+      padding: 0;
+    }
+
     .blog-grid {
       grid-template-columns: 1fr;
     }

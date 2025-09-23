@@ -790,7 +790,8 @@
   position: relative;
   margin: 60px auto;
   max-width: 1200px;
-  padding: 0 20px;
+  padding-top: 60px;
+  margin-top: -55px;
 }
 
 .model-carousel {

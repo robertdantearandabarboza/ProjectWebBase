@@ -1325,10 +1325,10 @@ img {
 .hero-background .carousel-caption h1,
 .hero-background .carousel-caption h2 {
   margin-bottom: 1.75rem !important;
-  font-size: 3.5rem !important; /* Acoples hero title size */
+  font-size: 3rem !important; /* Acoples hero title size */
   line-height: 1.2 !important;
   color: #ffffff !important;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5) !important;
+  text-shadow: 2px 2px 4px rgba(126, 93, 93, 0.5) !important;
 }
 .hero-background .carousel-caption p {
   margin-top: 0.75rem !important;
@@ -1340,20 +1340,28 @@ img {
 }
 
 /* Responsive adjustments for caption typography (keep Acoples feel) */
-@media (max-width: 992px) {
-  .hero-background .carousel-caption h1,
+
+/* Media Queries */
+@media (max-width: 1500px) {
+  .hero-background .carousel-caption h1 {font-size: 2.8rem !important;}
   .hero-background .carousel-caption h2 { font-size: 2.8rem !important; }
   .hero-background .carousel-caption p { font-size: 1.2rem !important; }
 }
 
+@media (max-width: 992px) {
+  .hero-background .carousel-caption h1 {font-size: 2.6rem !important;}
+  .hero-background .carousel-caption h2 { font-size: 2.6rem !important; }
+  .hero-background .carousel-caption p { font-size: 1.2rem !important; }
+}
+
 @media (max-width: 768px) {
-  .hero-background .carousel-caption h1,
+  .hero-background .carousel-caption h1 {font-size: 2.2rem !important;}
   .hero-background .carousel-caption h2 { font-size: 2.2rem !important; }
   .hero-background .carousel-caption p { font-size: 1.1rem !important; }
 }
 
 @media (max-width: 576px) {
-  .hero-background .carousel-caption h1,
+  .hero-background .carousel-caption h1 {font-size: 1.8rem !important;}
   .hero-background .carousel-caption h2 { font-size: 1.8rem !important; }
   .hero-background .carousel-caption p { font-size: 1rem !important; }
 }
@@ -1702,14 +1710,14 @@ html, body {
   rgba(0,0,0,0.9) 0%,   /* negro casi sólido justo arriba */
   rgba(0,0,0,0.8) 12%,
   rgba(0,0,0,0.6) 22%,  /* todavía oscuro en un tramo corto */
-  rgba(0,0,0,0.5) 25%,  /* empieza a desvanecerse */
-  rgba(0,0,0,0.3) 40%,
-  rgba(0,0,0,0.4) 52%,
-  rgba(0,0,0,0.4) 67%,
-  rgba(0,0,0,0.3) 75%,
-  rgba(0,0,0,0.1) 80%,
-  rgba(0,0,0,0.5) 95%,     /* ya transparente */
-  rgba(0,0,0,0.6) 100%     /* ya transparente */
+  rgba(0,0,0,0.4) 25%,  /* empieza a desvanecerse */
+  rgba(0,0,0,0.1) 40%,
+  rgba(0,0,0,0.5) 52%,
+  rgba(0,0,0,0.5) 67%,
+  rgba(0,0,0,0.1) 75%,
+  rgba(0,0,0,0.0) 80%,
+  rgba(0,0,0,0.4) 95%,     /* ya transparente */
+  rgba(0,0,0,0.4) 100%     /* ya transparente */
   );
 }
 
@@ -2899,6 +2907,7 @@ section.quienes-somos {
   padding: 4rem 0;
   background-color: var(--color-blanco);
   overflow: hidden;
+  max-width: 100%;
   height: 480px;
 }
 
@@ -2985,7 +2994,7 @@ section.quienes-somos {
   align-items: center;
   gap: 4rem;                 /* espacio entre logos */
   width: max-content;        /* ancho dinámico según el contenido */
-  animation: scroll 60s linear infinite;
+  animation: scroll 30s linear infinite;
   will-change: transform;
   backface-visibility: hidden;
 }
@@ -3235,6 +3244,65 @@ nav ul li:nth-child(5) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) fo
   }
   
   /* --- Responsive --- */
+  @media (max-width: 1327px) {
+  
+    /* Botón hamburguesa visible */
+    .menu-toggle {
+      display: block;
+    }
+  
+    /* ==== Menú hamburguesa oculto por defecto ==== */
+    .nav-menu {
+      position: absolute;
+      top: 70px;
+      right: 0;
+      background: white;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      display: none; /* Oculto al inicio */
+      z-index: 999;
+    }
+  
+    /* Cuando se abre con JS */
+    .nav-menu.active {
+      display: flex;
+    }
+  
+    /* ==== SOLO los que NO son always-visible van dentro del menú ==== */
+    .nav-item:not(.always-visible) {
+      display: none;
+    }
+  
+    /* Cuando el menú está activo, aparecen SOLO los que no son always-visible */
+    .nav-menu.active .nav-item:not(.always-visible) {
+      display: block;
+    }
+  
+    /* ==== Mantener siempre visibles los always-visible fuera del toggle ==== */
+    .always-visible {
+      display: block !important;
+      position: relative;
+      z-index: 1000; /* Asegura que estén encima si hay superposición */
+    }
+  
+    /* ===== Dropdown dentro de responsive ===== */
+    .dropdown-menu {
+      display: block;
+      position: static;
+      box-shadow: none;
+      padding-left: 1rem;
+    }
+  
+    nav ul li::before,
+    nav ul li a::before {
+      display: none;
+      content: none;
+    }
+  }
+
   @media (max-width: 992px) ,
   (max-width: 1010px){
 

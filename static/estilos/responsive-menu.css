@@ -7,6 +7,8 @@ nav ul li:nth-child(2) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) fo
 nav ul li:nth-child(3) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.3s; }
 nav ul li:nth-child(4) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.4s; }
 nav ul li:nth-child(5) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.5s; }
+nav ul li:nth-child(6) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.6s; }
+nav ul li:nth-child(7) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.7s; }
 
 @keyframes slideIn {
   0% {
@@ -124,10 +126,81 @@ nav ul li:nth-child(5) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) fo
     color: #333;
     cursor: pointer;
   }
+
+  .always-visible {
+    display: block;
+  }
+  
+  .hidden-medium {
+    display: block;
+  }
+  
+  .menu-toggle {
+    display: none;
+  }
+
+  @media (max-width: 1327px) {
+  
+    /* Botón hamburguesa visible */
+    .menu-toggle {
+      display: block;
+    }
+  
+    /* ==== Menú hamburguesa oculto por defecto ==== */
+    .nav-menu {
+      position: absolute;
+      top: 70px;
+      right: 0;
+      background: white;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      display: none; /* Oculto al inicio */
+      z-index: 999;
+    }
+  
+    /* Cuando se abre con JS */
+    .nav-menu.active {
+      display: flex;
+    }
+  
+    /* ==== SOLO los que NO son always-visible van dentro del menú ==== */
+    .nav-item:not(.always-visible) {
+      display: none;
+    }
+  
+    /* Cuando el menú está activo, aparecen SOLO los que no son always-visible */
+    .nav-menu.active .nav-item:not(.always-visible) {
+      display: block;
+    }
+  
+    /* ==== Mantener siempre visibles los always-visible fuera del toggle ==== */
+    .always-visible {
+      display: block !important;
+      position: relative;
+      z-index: 1000; /* Asegura que estén encima si hay superposición */
+    }
+  
+    /* ===== Dropdown dentro de responsive ===== */
+    .dropdown-menu {
+      display: block;
+      position: static;
+      box-shadow: none;
+      padding-left: 1rem;
+    }
+  
+    nav ul li::before,
+    nav ul li a::before {
+      display: none;
+      content: none;
+    }
+  }  
   
   /* --- Responsive --- */
   @media (max-width: 992px) ,
-  (max-width: 1010px){
+    (max-width: 1010px){
 
     .contenedor-nav nav {
         display: flex;

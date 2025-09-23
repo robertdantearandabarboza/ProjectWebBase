@@ -1361,6 +1361,7 @@ section {
 .cta-section .btn-primary:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
+
 .cta-section {
   padding: var(--espaciado-xxl) 0;
   background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
@@ -1373,6 +1374,7 @@ section {
   align-items: center;
   justify-content: center;
   min-height: 50vh;
+  margin-top: 0;
 }
 
 .cta-section::before {
