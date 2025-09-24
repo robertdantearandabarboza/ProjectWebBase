@@ -975,6 +975,7 @@ nav ul li:nth-child(7) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) fo
     background: #f0f4f8;
     color: #2c3e50;
     transition: all 0.3s ease;
+    text-decoration: none;
   }
 
   .social-share:hover {
@@ -985,8 +986,11 @@ nav ul li:nth-child(7) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) fo
 
   /* Responsive */
   @media (max-width: 768px) {
+
     main {
       max-width: 100%;
+      padding: 10px 0 0 0;
+      margin-bottom: -60px;
     }
 
     .articulo-detalle {
@@ -1000,6 +1004,7 @@ nav ul li:nth-child(7) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) fo
 
     .blog-grid {
       grid-template-columns: 1fr;
+      padding: 0 10px 0 10px;
     }
     
     .article-title {
@@ -1016,8 +1021,9 @@ nav ul li:nth-child(7) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) fo
     }
     
     .article-share {
-      margin-top: 20px;
-      width: 100%;
+      padding-top: 20px;
+      width: 80%;
+      margin: 0 auto;
       justify-content: space-between;
     }
   }

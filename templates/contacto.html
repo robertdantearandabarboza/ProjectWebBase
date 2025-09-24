@@ -111,72 +111,121 @@
     </nav>
   </div>
 
-  <main class="contact-container">
-      <!-- Columna izquierda: Texto + Formulario -->
-      <section class="form-section">
+  <main>
+
+    <section class="contact-hero">
+      <div class="contact-hero-content">
+        <h1>ESTAMOS AQUÍ PARA AYUDARTE</h1>
+        <p>
+          Comunícate con nosotros por WhatsApp o teléfono y mantén tu maquinaria siempre en marcha.
+        </p>
+        <a href="#contact-info" class="btn-primary">Ver opciones de contacto</a>
+      </div>
+    </section>
+    
+
+    <section class="contact-section" id="contact-info">
+      <div class="contact-container">
+  
+        <!-- Columna izquierda: texto, WhatsApp, correo y redes -->
+        <div class="contact-left">
           <h1>CONTÁCTANOS</h1>
           <p>
             ¿Necesitas más información sobre nuestros martillos hidráulicos, repuestos o servicios de mantenimiento? 
-            Completa el formulario de contacto o escríbenos directamente por <strong>WhatsApp</strong> para recibir atención inmediata de nuestro equipo especializado.
+            Escríbenos directamente por <strong>WhatsApp</strong> para recibir atención inmediata de nuestro equipo especializado.
+            También puedes enviarnos un correo electrónico si prefieres.
+          </p>
+  
+          <!-- Botón de WhatsApp -->
+          <a href="https://wa.me/51987654321" target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+            Enviar mensaje por WhatsApp
+          </a>          
+  
+          <!-- Correo electrónico -->
+          <p class="email-contact">
+            📧 O escríbenos a: 
+            <a href="mailto:ventas@lc-technology.com">ventas@lc-technology.com</a>
           </p>
 
-          <form name="contacto" netlify>
-            <input type="hidden" name="form-name" value="contacto">
-            <div>
-              <label for="nombre">Nombre completo</label>
-              <input type="text" id="nombre" name="nombre" required />
-            </div>
+          <div class="phones">
+            <h2>Llámanos</h2>
+            <p>📞 <a href="tel:+51987654321">+51 987 654 321</a></p>
+            <p>☎️ <a href="tel:+5112345678">+51 1 234 5678</a> (Central)</p>
+          </div>          
+  
+          <!-- Redes sociales -->
+          <div class="social-links">
+            <a href="https://facebook.com/tuempresa" target="_blank" aria-label="Facebook">
+              <img src="../media/icons/facebook.svg" alt="Facebook" />
+            </a>
+            <a href="https://instagram.com/tuempresa" target="_blank" aria-label="Instagram">
+              <img src="../media/icons/instagram.svg" alt="Instagram" />
+            </a>
+          </div>
+          <div class="schedule">
+            <h2>Horarios de atención</h2>
+            <ul>
+              <li>Lunes a Viernes: 8:00 am - 6:00 pm</li>
+              <li>Sábados: 9:00 am - 1:00 pm</li>
+              <li>Domingos y feriados: Cerrado</li>
+            </ul>
+          </div>
           
-            <div>
-              <label for="email">Correo electrónico</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-          
-            <div>
-              <label for="telefono">Teléfono</label>
-              <input type="tel" id="telefono" name="telefono" />
-            </div>
-          
-            <div class="form-row">
-              <div>
-                <label for="empresa">Empresa</label>
-                <input type="text" id="empresa" name="empresa" />
-              </div>
-              <div>
-                <label for="ruc">RUC</label>
-                <input type="text" id="ruc" name="ruc" pattern="\d{11}" title="Debe ser un RUC válido de 11 dígitos" />
-              </div>
-            </div>
-          
-            <div>
-              <label for="mensaje">Mensaje</label>
-              <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-            </div>
-
-            <div class="g-recaptcha" data-sitekey="TU_SITE_KEY"></div>
-          
-            <button type="submit">Enviar mensaje</button>
-            <div id="respuesta" style="margin-top:10px; color:green;"></div>
-          </form>               
-      </section>
-
-      <!-- Columna derecha: Imagen destacada -->
-      <section class="featured-image">
+        </div>
+  
+        <!-- Columna derecha: imagen y mapa -->
+        <div class="contact-right">
           <div class="image-container">
-              <img src="../media/img/Contacto/CONTACTO.png" alt="Martillos hidráulicos profesionales" />
-              <div class="image-overlay">
-                  <h3>Expertos en Equipos Hidráulicos</h3>
-                  <p>Soluciones profesionales para la industria</p>
-              </div>
+            <img src="../media/img/Contacto/CONTACTO.png" alt="Martillos hidráulicos profesionales" />
+            <div class="image-overlay">
+              <h3>Expertos en Equipos Hidráulicos</h3>
+              <p>Soluciones profesionales para la industria</p>
+            </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="map-container">
-            <h2>Encuéntranos en Lima, Perú</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1952.6446192382202!2d-77.1254798323789!3d-11.815004620949683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d5a975ac3a43%3A0xa09c15c6213d0420!2sL%26C%20TECHNOLOGY%20S.A.C.!5e0!3m2!1ses!2spe!4v1757723058409!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-      </section>
-
-</main>
+    <section class="locations">
+      <!-- Mapa de Lima -->
+      <div class="map-container full-width">
+        <h2>LIMA, PERÚ</h2>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1952.6446192382202!2d-77.1254798323789!3d-11.815004620949683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d5a975ac3a43%3A0xa09c15c6213d0420!2sL%26C%20TECHNOLOGY%20S.A.C.!5e0!3m2!1ses!2spe!4v1757723058409!5m2!1ses!2spe"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    
+      <!-- Contenedor Arequipa: Mapa + Video -->
+      <div class="arequipa-container">
+        <!-- Mapa Arequipa -->
+        <div class="map-box">
+          <h2>AREQUIPA, PERÚ</h2>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3828.6088433032724!2d-71.58927591522878!3d-16.342918796401463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTbCsDIwJzM0LjUiUyA3McKwMzUnMDMuOSJX!5e0!3m2!1ses-419!2spe!4v1758670354700!5m2!1ses-419!2spe"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+    
+        <!-- Video YouTube -->
+        <div class="video-box">
+          <h2>VIDEO DE REFERENCIA</h2>
+          <iframe 
+            src="https://www.youtube.com/embed/j_Ake-6qMvE" 
+            title="Video de la sede de Arequipa"
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>      
+  </main>  
 
   <!-- Footer -->
   <footer class="footer" role="contentinfo">

@@ -23,6 +23,7 @@
 
 <body>
 
+
   <!-- Contenedor de fondo plomo para la barra de contacto -->
   <div class="contenedor-barra-contacto">
     <div class="barra-contacto">
@@ -453,12 +454,12 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section fade-in">
+    <section class="cta-section fade-in" id="ctaSection">
       <div class="cta-content">
         <h2>¿Listo para potenciar tus proyectos?</h2>
         <p>Contáctanos hoy mismo y descubre cómo podemos ayudarte a alcanzar tus objetivos</p>
         <div class="cta-buttons">
-          <a href="contacto.html" class="btn btn-primary">Solicitar Cotización</a>
+          <a href="#ctaSection" class="btn btn-primary" onclick="openModal()">Solicitar Cotización</a>
           <a href="tel:+51939864072" class="btn btn-outline">Llámanos Ahora</a>
         </div>
       </div>
@@ -646,6 +647,41 @@
       <p>© 2025 LYC Technology | Lima, Perú. Todos los derechos reservados.</p>
     </div>
   </footer>
+
+  <script>
+    function openModal() {
+        const modal = document.getElementById('modalOverlay');
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevenir scroll del body
+    }
+
+    function closeModal(event) {
+        // Solo cerrar si se hace click en el overlay, no en el contenido del modal
+        if (!event || event.target.classList.contains('modal-overlay') || event.target.classList.contains('close-btn')) {
+            const modal = document.getElementById('modalOverlay');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restaurar scroll del body
+        }
+    }
+
+    // Cerrar modal con tecla ESC
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    });
+
+    // Añadir efectos de hover dinámicos
+    document.querySelectorAll('.contact-item').forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateX(10px) scale(1.02)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateX(0) scale(1)';
+        });
+    });
+</script>
 
 
     <script src="static/jscript/inicio.js"></script>
