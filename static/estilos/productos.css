@@ -1106,7 +1106,7 @@ h1 {
 
 
 .repuestos-section {
-  background: url("../../media/img/Inicio/carru3.webp") center/cover no-repeat fixed; 
+  background: url("../../media/img/Inicio/carru2.webp") center/cover no-repeat fixed; 
   /* puedes abreviar así en una sola línea */
   position: relative;
   z-index: 1;
@@ -2241,7 +2241,7 @@ h1 {
 .hammer-image {
   width: 600px;
   height: 600px;
-  background: url('../../media/img/martillos-hidraulicos/LC400/LC400-T.png') center/contain no-repeat;
+  background: url('../../media/img/martillos-hidraulicos/LC400/LC400-T.webp') center/contain no-repeat;
   position: relative;
   animation: float 3s ease-in-out infinite;
   filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));

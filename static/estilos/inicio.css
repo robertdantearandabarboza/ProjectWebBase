@@ -788,7 +788,7 @@ img {
   flex: 1;
   min-width: 0;
   width: 100%;
-  max-width: 460px; /* Aumentado el ancho máximo */
+  max-width: 400px; /* Aumentado el ancho máximo */
   margin: 0;
   position: relative;
   border-radius: 0;
@@ -811,7 +811,6 @@ img {
 .video-wrapper {
   position: relative;
   width: 100%;
-  max-width: 460px; /* Ancho máximo del video */
   margin: 0 auto; /* Centrar el video */
   padding-bottom: 177.78%; /* 9:16 Aspect Ratio for Shorts */
   height: 0;
@@ -867,7 +866,7 @@ img {
   
   .about-video-container {
     width: 100%;
-    max-width: 600px;
+    max-width: 550px;
     margin: 2rem auto 0;
   }
 }
@@ -878,7 +877,8 @@ img {
   }
   
   .about-video-container {
-    margin-top: 1.5rem;
+    margin-top: 0;
+    margin-bottom: -50px;
   }
 }
 
@@ -1312,7 +1312,7 @@ img {
    ===================================================== */
 .hero-background .carousel-caption {
   position: absolute !important;
-  top: 60% !important;
+  top: 62% !important;
   left: 50% !important;
   bottom: auto !important;
   transform: translate(-50%, -50%) !important;
@@ -1325,7 +1325,7 @@ img {
 .hero-background .carousel-caption h1,
 .hero-background .carousel-caption h2 {
   margin-bottom: 1.75rem !important;
-  font-size: 3rem !important; /* Acoples hero title size */
+  font-size: clamp(1.5rem, 5vw, 3rem) !important;
   line-height: 1.2 !important;
   color: #ffffff !important;
   text-shadow: 2px 2px 4px rgba(126, 93, 93, 0.5) !important;
@@ -1710,11 +1710,11 @@ html, body {
   rgba(0,0,0,0.9) 0%,   /* negro casi sólido justo arriba */
   rgba(0,0,0,0.8) 12%,
   rgba(0,0,0,0.6) 22%,  /* todavía oscuro en un tramo corto */
-  rgba(0,0,0,0.4) 25%,  /* empieza a desvanecerse */
-  rgba(0,0,0,0.1) 40%,
-  rgba(0,0,0,0.5) 52%,
-  rgba(0,0,0,0.5) 67%,
-  rgba(0,0,0,0.1) 75%,
+  rgba(0,0,0,0.5) 25%,  /* empieza a desvanecerse */
+  rgba(0,0,0,0.2) 40%,
+  rgba(0,0,0,0.4) 58%,
+  rgba(0,0,0,0.4) 67%,
+  rgba(0,0,0,0.4) 70%,
   rgba(0,0,0,0.0) 80%,
   rgba(0,0,0,0.4) 95%,     /* ya transparente */
   rgba(0,0,0,0.4) 100%     /* ya transparente */
@@ -2049,7 +2049,7 @@ body {
   background-color: #B51922; /* Color especificado por el usuario */
   color: white;
   text-decoration: none;
-  padding: 8px 16px;
+  padding: 6px 16px;
   border-radius: 4px;
   font-weight: 600;
   font-size: 1.1rem; /* Hacemos un poco más grande */
@@ -2060,12 +2060,11 @@ body {
   transition: background-color 0.3s ease;
   opacity: 0;
   transform: translateY(-10px);
-  animation: fadeIn 0.6s ease-out forwards 0.4s;
+  animation: fadeIn 0.4s ease-out forwards 0.4s;
 }
 
 .btn-cotizar:hover {
-  color: white;
-  background-color: #8B1419;
+  background-color: #8B1419; /* Color similar pero más oscuro para el hover */
 }
 
 .btn-cotizar i {
@@ -2525,11 +2524,10 @@ section.quienes-somos {
 
 .testimonios {
   background-color: var(--color-fondo-suave);
-  padding: 60px 20px;
+  padding: 60px 0;
   text-align: center;
   color: var(--color-texto);
   max-width: 100%;
-  padding: 100px 20px;
 }
 
 .testimonios h2 {
@@ -2539,18 +2537,19 @@ section.quienes-somos {
 }
 
 /* GRID centrado */
-.testimonios-grid {
+.testimonios .testimonios-grid {
+  padding: 20px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 60px;              /* más espacio entre las tarjetas */
-  max-width: 1200px;      /* límite del ancho del grid */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;              /* más espacio entre las tarjetas */
+  max-width: 1650px;      /* límite del ancho del grid */
   margin: 0 auto;         /* centra el grid */
   width: 100%;            /* asegura que ocupe todo hasta el máximo */
 }
 
 .testimonio {
   background-color: var(--color-blanco);
-  padding: 50px 20px 25px; /* más padding arriba porque la foto ocupará ese espacio */
+  padding: 150px 20px 25px; /* más padding arriba porque la foto ocupará ese espacio */
   border-radius: var(--borde-redondeado);
   box-shadow: var(--sombra);
   transition: var(--transicion);
@@ -2572,8 +2571,8 @@ section.quienes-somos {
 
 /* foto circular */
 .foto-cliente {
-  width: 90px;
-  height: 90px;
+  width: 185px;
+  height: 185px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--color-principal);
@@ -2601,7 +2600,7 @@ section.quienes-somos {
 /* BOTÓN CENTRADO */
 .ver-mas {
   padding: 30px 20px 0px 20px;
-  margin-top: 40px;
+  margin-top: 20px;
   text-align: center; /* fuerza el botón al centro */
 }
 
@@ -2630,17 +2629,54 @@ section.quienes-somos {
 }
 
 /* Responsive: tablets = 2 columnas, móviles = 1 */
-@media (max-width: 900px) {
-  .testimonios-grid {
+@media (max-width: 1500px) {
+  .testimonios h2 {
+    margin-bottom: 30px;
+  }
+
+  .testimonios .testimonios-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    padding: 50px;
+  }
+  .ver-mas {
+    margin-top: -5px;
+    padding: 20px 20px 0px 20px;
+    width: 310px;
   }
 }
 
-@media (max-width: 600px) {
-  .testimonios-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 1200px) {
+  .testimonios .testimonios-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    padding: 40px;
+  }
+  .ver-mas {
+    margin-top: -5px;
+    padding: 20px 20px 0px 20px;
+    width: 300px;
   }
 }
+
+@media (max-width: 800px) {
+  .testimonios .testimonios-grid {
+    grid-template-columns: 1fr;
+    padding: 60px;
+  }
+}
+
+@media (max-width: 500px) {
+  .testimonios h2 {
+    margin-bottom: 60px;
+  }
+
+  .testimonios .testimonios-grid {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+}
+
 
 
 /* ===== FOOTER CORPORATIVO ===== */
@@ -2994,7 +3030,7 @@ section.quienes-somos {
   align-items: center;
   gap: 4rem;                 /* espacio entre logos */
   width: max-content;        /* ancho dinámico según el contenido */
-  animation: scroll 30s linear infinite;
+  animation: scroll 28s linear infinite;
   will-change: transform;
   backface-visibility: hidden;
 }

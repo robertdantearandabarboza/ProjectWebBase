@@ -80,7 +80,7 @@ h3 { font-size: 1.5rem; }
   background-color: transparent; /* Ahora es transparente porque el contenedor padre tiene el fondo */
   backdrop-filter: none; /* Removemos el blur ya que no es necesario */
   -webkit-backdrop-filter: none;
-  margin-top: 1.5px;
+  margin-top: 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -98,6 +98,9 @@ h3 { font-size: 1.5rem; }
   display: flex;
   align-items: center;
   gap: 8px;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeIn 0.6s ease-out forwards;
 }
 
 .contacto-item i {
@@ -115,23 +118,23 @@ h3 { font-size: 1.5rem; }
   display: flex;
   align-items: center;
   gap: 30px; /* Aumentamos el espaciado entre elementos */
-  margin-right: 80px; /* Aumentamos el espaciado desde la derecha */
+  margin-right: 95px; /* Aumentamos el espaciando desde la derecha */
   margin-top: -20px; /* Movemos un poco más arriba */
 }
 
 .redes-sociales {
   display: flex;
-  gap: 15px;
-  opacity: 0;
-  transform: translateY(-10px);
-  animation: fadeIn 0.5s ease-out forwards 0.4s;
+  gap: 25px;
 }
 
 .red-social {
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   text-decoration: none;
   transition: color 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeIn 0.6s ease-out forwards 0.2s;
 }
 
 .red-social:hover {
@@ -142,7 +145,7 @@ h3 { font-size: 1.5rem; }
   background-color: #B51922; /* Color especificado por el usuario */
   color: white;
   text-decoration: none;
-  padding: 8px 16px;
+  padding: 6px 16px;
   border-radius: 4px;
   font-weight: 600;
   font-size: 1.1rem; /* Hacemos un poco más grande */
@@ -163,7 +166,6 @@ h3 { font-size: 1.5rem; }
 .btn-cotizar i {
   font-size: 1rem;
 }
-
 /* Navegación */
 nav {
   display: flex;
@@ -561,14 +563,14 @@ main.clientes-container > * {
 }
 
 /* ====== BOTONES ====== */
-.btn-group {
+.categoria-faq .btn-group {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 15px;
 }
 
-.btn-cotizar {
+.categoria-faq .btn-cotizar {
   display: inline-flex;
   align-items: center;
   padding: 10px 15px;
@@ -581,20 +583,20 @@ main.clientes-container > * {
   font-size: 0.95rem;
 }
 
-.btn-cotizar i {
+.categoria-faq .btn-cotizar i {
   margin-right: 8px;
   font-size: 1.1rem;
 }
 
-.btn-cotizar:hover {
+.categoria-faq .btn-cotizar:hover {
   background: #8e0b13;
 }
 
-.btn-whatsapp {
+.categoria-faq .btn-whatsapp {
   background: #25d366;
 }
 
-.btn-whatsapp:hover {
+.categoria-faq .btn-whatsapp:hover {
   background: #1ebc59;
 }
 
