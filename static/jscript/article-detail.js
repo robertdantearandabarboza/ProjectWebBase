@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     articleDetail.innerHTML = `
       <div class="error-message">
         <i class="fas fa-exclamation-triangle"></i>
-        <p>No se ha especificado ningún artículo. <a href="../../templates/blog.html">Volver al blog</a></p>
+        <p>No se ha especificado ningún artículo. <a href="../../templates/blog.html#blog-section">Volver al blog</a></p>
       </div>
     `;
     return;

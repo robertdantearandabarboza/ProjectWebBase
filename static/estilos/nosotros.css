@@ -470,6 +470,10 @@ main{
   background: #f8fafc;
 }
 
+.historia-section .container{
+  max-width: 1250px;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -534,13 +538,30 @@ main{
 }
 
 .timeline-container {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
+  background-image: url('../../media/img/Nosotros/HistoriaHydromenn.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-bottom: 10px;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .timeline {
+  max-width: 1200px;
+  margin: 0 auto;
   position: relative;
   padding: 20px 0;
 }
@@ -576,7 +597,7 @@ main{
 .timeline-content {
   position: relative;
   width: 45%;
-  padding: 30px;
+  padding: 40px;
   background: #ffffff;
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(180, 25, 34, 0.15);
@@ -971,6 +992,10 @@ main{
   margin-top: 60px;
 }
 
+.equipo-section .container {
+  max-width: 1400px;
+}
+
 .equipo-imagen {
   position: relative;
   border-radius: 20px;
@@ -986,7 +1011,7 @@ main{
 
 .equipo-imagen img {
   width: 100%;
-  height: 800px;
+  height: auto;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
@@ -1092,13 +1117,341 @@ main{
   animation: fadeInUp 0.8s ease-out;
 }
 
-/* Footer */
+
+/* Contenedor principal del footer */
+.footer-col {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 2rem;
+  padding: 0 15px;
+  overflow: hidden;
+  transition: var(--transicion);
+  position: relative;
+}
+
+.footer-brand .redes-sociales-container h5{
+  color: #fff;
+  font-size: 1rem;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+/* Contenedor de sedes */
+.sedes-container {
+  flex: 2; /* Ocupa más espacio que las otras columnas */
+  min-width: 300px;
+}
+
+.sedes-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 1rem;
+  margin: 0 auto;
+}
+
+.map-container {
+  width: 100%;
+}
+
+iframe {
+  width: 100%;
+}
+
+.video-reference {
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  background-color: #B51922;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.video-reference:hover {
+  transform: translateY(-3px);
+}
+
+.video-reference a {
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 5s ease;
+}
+
+.video-reference a:hover {
+  transform: translateY(-3px);
+}
+/* Estilos para cada sede */
+.sede {
+  flex: 1;
+  min-width: 250px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.sede:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.sede h5 {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.sede-info p {
+  color: #e0e0e0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.telefono a {
+  color: #fff;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.telefono a:hover {
+  color: #B51922;
+}
+
+/* Columna de horario */
+.horario-col {
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contenedor de horario personalizado */
+.horario-container {
+  display: flex;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.horario-container:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.horario-icon {
+  background: rgba(181, 25, 34, 0.2);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+.horario-icon i {
+  font-size: 1.5rem;
+  color: #B51922;
+}
+
+.horario-info h5 {
+  color: #fff;
+  font-size: 1rem;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.horario-sede {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.sede-nombre {
+  color: #e0e0e0;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+}
+
+.sede-horario {
+  font-weight: 500;
+  background: rgba(181, 25, 34, 0.2);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 992px) {
+  .horario-col {
+    order: 3;
+    max-width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .horario-container {
+    flex-direction: row;
+    text-align: left;
+    padding: 1.2rem;
+    height: auto;
+  }
+  
+  .horario-icon {
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .horario-col {
+    order: 3;
+    max-width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .horario-container {
+    padding: 1rem;
+  }
+  
+  .horario-sede {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .horario-col {
+    margin-top: 0.5rem;
+  }
+  
+  .horario-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .horario-info {
+    margin-left: 0;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  
+  .horario-sede {
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .sede-horario {
+    margin: 0 auto;
+  }
+  
+  .horario-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .horario-icon {
+    margin: 0 auto 1rem;
+  }
+  
+  .horario-info h5 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .horario-info p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Estilos responsivos */
+@media (max-width: 1200px) {
+  .sedes-wrapper {
+    flex-direction: column;
+  }
+  
+  .sede {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .sedes-container {
+    order: 1; /* Mover las sedes arriba en móviles */
+  }
+  
+  .sede {
+    padding: 0.8rem;
+  }
+  
+  .sede h5 {
+    font-size: 0.95rem;
+  }
+  
+  .sede-info p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 1201px) {
+  .sede {
+    flex: 1;
+    min-width: 250px;
+  }
+
+}
+
+/* ===== FOOTER CORPORATIVO ===== */
 .footer {
-  background: linear-gradient(180deg, var(--color-oscuro), #253546); /* Rojo vino degradado más elegante */
+  background: var(--color-oscuro); /* Rojo vino degradado más elegante */
   color: #f5f5f5;
   padding: 70px 50px 30px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin-top: 60px;
+  margin-top: 80px;
   font-size: 0.95rem;
 }
 
@@ -1106,31 +1459,37 @@ main{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 60px;
-  max-width: 1400px;
+  max-width: 1600px;
   margin: auto;
+  text-align: left;
 }
 
 .footer-logo {
   background-color: #fff;     /* Fondo blanco */
-  padding: 0 10px;          /* Espacio alrededor */
+  padding: 6px 10px;          /* Espacio alrededor */
   border-radius: 8px;         /* Opcional: esquinas redondeadas */
   display: inline-block;
 }
 
 .footer-logo-box {
-  width: 180px;
-  height: 100px;
+  width: 180px;     /* Caja fija */
+  height: 100px;     /* Caja fija */
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #fff;
+  background: #fff; /* opcional si quieres fondo blanco */
   border-radius: 6px;
   overflow: hidden;
 }
 
 .footer-logo-box img {
-  max-height: 150%;  /* o auto */
-  max-width: 150%;
+  max-height: 160%;  /* o auto */
+  max-width: 160%;
+  object-fit: contain;
+}
+.footer-logo {
+  height: 200%;     /* El logo crece dentro de la caja */
+  width: auto;
   object-fit: contain;
 }
 
@@ -1140,7 +1499,6 @@ main{
   font-size: 20px;
   margin-bottom: 20px;
   letter-spacing: 0.5px;
-  border-bottom: 2px solid rgba(255,255,255,0.1);
   display: inline-block;
   padding-bottom: 6px;
 }
@@ -1187,8 +1545,8 @@ main{
   align-items: center;
   margin-right: 15px;
   font-size: 20px;             /* tamaño del ícono */
-  background: rgb(255, 255, 255); /* fondo circular suave */
   color: #BC1922; 
+  background: rgb(255, 255, 255); /* fondo circular suave */
   width: 40px;
   height: 40px;
   border-radius: 50%;          /* círculo */

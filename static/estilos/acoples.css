@@ -238,7 +238,7 @@ section {
 .section-header {
   text-align: center;
   margin: 0 auto var(--espaciado-xl);
-  max-width: 800px;
+  max-width: 1600px;
   position: relative;
   z-index: 1;
   width: 100%;
@@ -448,6 +448,7 @@ section {
   background-color: var(--color-acento-secundario);
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-decoration: none !important;
 }
 
 .btn-outline {
@@ -460,6 +461,7 @@ section {
   background-color: rgba(255, 255, 255, 0.1);
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-decoration: none !important;
 }
 
 .scroll-down {
@@ -1169,14 +1171,13 @@ section {
   overflow: hidden;
   box-shadow: var(--sombra-suave);
   transition: var(--transicion-media);
-  height: 100%;
-  min-height: 600px;
-  max-height: 600px;
+  min-width: 40%;
+  height: auto;
 }
 
 .applications-image img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   display: block;
 }
@@ -1189,15 +1190,16 @@ section {
   margin: 0;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1100px) {
   .applications-container {
     flex-direction: column;
   }
   
   .applications-image {
-    width: 100%;
-    max-height: 400px;
+    width: auto;
+    max-height: auto;
     margin-bottom: var(--espaciado-lg);
+    margin: 0 auto;
   }
   
   .applications-grid {
@@ -1432,9 +1434,21 @@ section {
   color: var(--color-blanco);
 }
 
-.cta-buttons .btn-outline:hover {
-  background: var(--color-blanco);
+.cta-buttons:hover {
   color: var(--color-primario);
+  text-decoration: none !important;
+}
+
+.cta-section .cta-buttons .btn.btn-light,
+.cta-section .cta-buttons .btn.btn-outline-light {
+  background-color: transparent;
+  text-decoration: none !important;
+}
+
+.cta-section .cta-buttons .btn.btn-light:hover,
+.cta-section .cta-buttons .btn.btn-outline-light:hover {
+  background-color: var(--color-oscuro);
+  color: var(--color-blanco);
 }
 
 /* ============================================
@@ -1634,6 +1648,10 @@ section {
   margin: 0 auto 3rem;
   color: var(--color-oscuro);
   line-height: 1.8;
+}
+
+#productos{
+  scroll-margin-top: 120px;
 }
 
 /* Sección de Productos */
