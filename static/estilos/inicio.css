@@ -1247,7 +1247,7 @@ iframe {
 
 @media (max-width: 768px) {
   .horario-col {
-    margin-top: 0.5rem;
+    margin-top: 0;
   }
   
   .horario-container {
@@ -1306,11 +1306,20 @@ iframe {
 }
 
 @media (max-width: 768px) {
+  .footer{
+    padding: 70px 20px 30px !important;
+  }
+
   .footer-col {
     flex: 0 0 100%;
     max-width: 100%;
+    padding: 0;
   }
-  
+
+  .footer-container{
+    gap: 40px !important;
+  }
+
   .sedes-container {
     order: 1; /* Mover las sedes arriba en móviles */
   }

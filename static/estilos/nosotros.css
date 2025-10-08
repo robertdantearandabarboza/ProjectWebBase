@@ -357,7 +357,7 @@ nav ul li:nth-child(7) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) fo
 main {
   max-width: 1200px;
   padding: 0;
-  margin-bottom: -55px;
+  margin-bottom: -75px;
 }
 
 .quienes-somos-container {
@@ -718,9 +718,19 @@ main{
   .timeline::before {
       left: 30px;
   }
+
+  .content-header .icon {
+    display: none;
+  }
+
+  .timeline-item .year {
+    min-width: 10px;
+  }
+    
   
   .timeline-content {
       width: calc(100% - 80px);
+      padding: 15px;
       margin-left: 80px !important;
   }
   
@@ -933,7 +943,7 @@ main{
   transition: all 0.3s ease;
 }
 
-.valor-item:hover {
+.valor-item {
   background: rgba(255, 255, 255, 0.2);
   transform: translateY(-5px);
 }
@@ -956,7 +966,7 @@ main{
   box-shadow: 0 15px 25px rgba(0,0,0,0.2);
 }
 
-.valor-item:hover .valor-icon {
+.valor-icon {
   transform: translateZ(30px) scale(1.2) rotateX(10deg) rotateY(10deg);
   color: #ffcc00;
   text-shadow: 
@@ -1085,10 +1095,21 @@ main{
       grid-template-columns: 1fr;
       gap: 30px;
   }
+  .equipo-section {
+    padding: 40px 0;
+  }
+
+  .equipo-section .container {
+    padding: 10px 0;
+  }
 
   .equipo-content {
       grid-template-columns: 1fr;
       gap: 40px;
+  }
+
+  .equipo-imagen {
+    border-radius: 0;
   }
 
   .equipo-stats {
@@ -1415,9 +1436,18 @@ iframe {
 }
 
 @media (max-width: 768px) {
+  .footer{
+    padding: 70px 20px 30px !important;
+  }
+
   .footer-col {
     flex: 0 0 100%;
     max-width: 100%;
+    padding: 0;
+  }
+
+  .footer-container{
+    gap: 40px !important;
   }
   
   .sedes-container {

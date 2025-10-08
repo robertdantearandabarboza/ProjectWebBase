@@ -639,9 +639,18 @@ iframe {
 }
 
 @media (max-width: 768px) {
+  .footer{
+    padding: 70px 20px 30px !important;
+  }
+  
   .footer-col {
     flex: 0 0 100%;
     max-width: 100%;
+    padding: 0;
+  }
+
+  .footer-container{
+    gap: 40px !important;
   }
   
   .sedes-container {
@@ -1260,7 +1269,7 @@ iframe {
   height: 750px;
   overflow: hidden;
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 0px;
   opacity: 0;
   transform: scale(1.1);
   animation: gentleZoomIn 1.5s cubic-bezier(0.16, 0.61, 0.5, 1) forwards;
@@ -1294,7 +1303,7 @@ iframe {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 40%; /* Adjusted to show more of the middle part */
+  object-position: center 40%;
 }
 
 .hero-overlay {

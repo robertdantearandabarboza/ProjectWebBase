@@ -317,88 +317,222 @@ h1 {
 .contact-left {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
 .contact-left h1 {
-  font-size: 2rem;
-  color: var(--color-principal);
+  font-size: 2.2rem;
+  color: black;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  border-left: 5px solid var(--color-destacado);
+  padding-left: 10px;
 }
 
 .contact-left p {
   font-size: 1rem;
-  color: var(--color-texto);
-  line-height: 1.6;
+  color: #4a4a4a;
+  line-height: 1.7;
+  font-weight: 600;
 }
 
 /* ===== BOTÓN WHATSAPP ===== */
 .whatsapp-btn {
-  display: inline-block;
-  background-color: #25D366;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #25d366, #1ebc59);
   color: var(--color-blanco);
-  padding: 15px 25px;
-  border-radius: 8px;
-  font-size: 18px;
-  font-weight: bold;
+  padding: 14px 25px;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 600;
   text-decoration: none;
-  text-align: center;
-  max-width: 400px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+  transition: all 0.3s ease;
 }
 
 .whatsapp-btn i {
-  font-size: 24px;
-  margin-right: 10px;
+  font-size: 22px;
 }
 
 .whatsapp-btn:hover {
-  background-color: #128C7E;
   transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(37, 211, 102, 0.4);
 }
 
 /* ===== CORREO ELECTRÓNICO ===== */
 .email-contact {
   font-size: 16px;
-  color: var(--color-texto);
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8fafc;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border-left: 4px solid var(--color-oscuro);
+  transition: background 0.3s ease;
+}
+
+.email-contact:hover {
+  background: #eef3ff;
+}
+
+.email-contact i {
+  color: var(--color-principal);
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .email-contact a {
   color: var(--color-principal);
-  text-decoration: underline;
-  font-weight: 500;
+  text-decoration: none;
+  font-weight: 600;
 }
 
 .email-contact a:hover {
+  color: var(--color-destacado);
+  text-decoration: underline;
+}
+
+/* ===== TELÉFONOS ===== */
+.phones {
+  background: #f8fafc;
+  padding: 15px 18px;
+  border-radius: 12px;
+  border-left: 4px solid var(--color-oscuro);
+}
+
+.phones:hover {
+  background: #eef3ff;
+}
+
+.phones h2 {
+  font-size: 18px;
+  color: var(--color-oscuro);
+  margin-bottom: 10px;
+}
+
+.phones p {
+  margin: 6px 0;
+  color: #444;
+  display: flex;
+  font-weight: 600;
+  align-items: center;
+  gap: 8px;
+}
+
+.phones i {
+  color: var(--color-principal);
+  font-size: 1.1rem;
+}
+
+.phones a {
+  color: var(--color-principal);
   text-decoration: none;
+}
+
+.phones a:hover {
   color: var(--color-destacado);
 }
 
 /* ===== REDES SOCIALES ===== */
 .social-links {
-  display: flex;
-  gap: 15px;
-  margin-top: 10px;
+  margin-top: 18px;
+}
+
+.social-links h2 {
+  font-size: 18px;
+  color: black;
+  font-weight: 800;
+  margin-bottom: 12px;
 }
 
 .social-links a {
-  display: inline-block;
-  background: var(--color-principal);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  padding: 8px;
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.social-links a img {
-  width: 30px;
-  height: 30px;
-  display: block;
+  background: var(--color-principal);
+  color: #fff;
+  font-size: 1.2rem;
+  margin-right: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .social-links a:hover {
-  transform: scale(1.1);
-  background: var(--color-destacado);
+  transform: translateY(-4px);
 }
+
+/* Colores originales de las redes */
+.contact-left .social-links a[aria-label="Facebook"] {
+  background: #1877f2;
+  color: white;
+}
+
+.contact-left .social-links a[aria-label="Instagram"] {
+  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  color: white;
+}
+
+.contact-left .social-links a[aria-label="TikTok"] {
+  background: #000;
+  color: white;
+}
+
+/* ===== HORARIOS ===== */
+.schedule {
+  background: #f8fafc;
+  padding: 16px 18px;
+  border-radius: 12px;
+  border-left: 4px solid var(--color-oscuro);
+}
+
+.schedule:hover {
+  background: #eef3ff;
+}
+
+.schedule h2 {
+  font-size: 18px;
+  color: var(--color-oscuro);
+  margin-bottom: 10px;
+}
+
+.schedule ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.schedule li {
+  color: #444;
+  font-size: 16px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.schedule li::before {
+  content: "\f017";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: var(--color-destacado);
+  font-size: 1.1rem;
+}
+
+
 
 /* ===== COLUMNA DERECHA ===== */
 .contact-right {
@@ -513,6 +647,18 @@ h1 {
   color: black;
 }
 
+.map-box h3 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--color-texto);
+}
+
+.map-box h3 i {
+  color: var(--color-principal);
+  margin-left: 0.3rem;
+}
+
 /* Estilos para el iframe */
 .map-box iframe,
 .video-box iframe {
@@ -552,8 +698,23 @@ h1 {
     font-size: 16px;
   }
 
+  .contact-left{
+    padding: 35px 20px !important;
+  }
+
   .map-container iframe {
     height: 300px;
+  }
+
+  .contact-left .social-links{
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact-left .social-links h2{
+    margin-top: 1rem;
+    text-align: center;
   }
 }
 
@@ -787,7 +948,7 @@ h1 {
 
 @media (max-width: 768px) {
   .horario-col {
-    margin-top: 0.5rem;
+    margin-top: 0;
   }
   
   .horario-container {
@@ -846,9 +1007,18 @@ h1 {
 }
 
 @media (max-width: 768px) {
+  .footer{
+    padding: 70px 20px 30px !important;
+  }
+
   .footer-col {
     flex: 0 0 100%;
     max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .footer-container{
+    gap: 40px !important;
   }
   
   .sedes-container {
@@ -1514,7 +1684,7 @@ button[type="submit"]:active {
   }
 
   .contact-left {
-    padding: 0 20px;
+    padding: 10px 20px;
     margin-bottom: -50px;
   }
 
@@ -1572,7 +1742,7 @@ button[type="submit"]:active {
 
   .contact-left {
     margin-top: -40px;
-    padding: 0 20px;
+    padding: 10px 20px;
   }
   
   .image-container {
@@ -1631,18 +1801,23 @@ button[type="submit"]:active {
 }
 
 @media (max-width: 500px) {
+  
+  .contact-section {
+    width: 100%;
+  } 
 
   .contact-container {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     height: auto;
     width: 100%;
-    padding: 30px;
+    padding: 30px 0;
   }
 
   .contact-left {
     margin-top: -40px;
-    padding: 0 20px;
+    padding: 10px 10px;
+    border-radius: 0;
   }
 
   .image-container {
@@ -1650,6 +1825,7 @@ button[type="submit"]:active {
     width: 100%;
     height: auto;
     margin-top: 20px;
+    border-radius: 0;
   }
 
   .image-container img {
