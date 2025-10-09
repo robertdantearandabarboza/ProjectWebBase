@@ -1327,7 +1327,9 @@ iframe {
 .hero-overlay h1 {
   color: white;
   font-size: 3rem;
+  font-weight: 800;
   margin-bottom: 20px;
+  max-width: 800px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   opacity: 0;
   transform: translateY(30px) rotate(-5deg);
@@ -1351,7 +1353,7 @@ iframe {
 
 .hero-overlay p {
   font-size: 1.2rem;
-  max-width: 800px;
+  max-width: 650px;
   margin: 0 auto;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   opacity: 0;

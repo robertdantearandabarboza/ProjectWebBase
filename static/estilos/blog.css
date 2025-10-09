@@ -28,6 +28,11 @@
   body{
     padding-top: 40px;
     margin-top: 40px;
+    background-image: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0.5)), url(../../media/img/fondos1.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-color: var(--color-fondo-suave);
   }
   

@@ -954,6 +954,7 @@ img {
 /* Featured Products */
 .featured-products {
   margin: 0;
+  margin-bottom: -50px;
   padding: 100px 0;
   background-color: var(--color-fondo-suave);
   max-width: 2120px;

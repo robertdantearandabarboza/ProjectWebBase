@@ -692,15 +692,111 @@ main{
   margin-bottom: 15px;
 }
 
+.content-card {
+  position: relative;
+  width: 100%;       /* puedes ajustar el tamaño */
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.content-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Capa de texto oculta al inicio */
+.content-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  transition: opacity 0.4s ease;
+}
+
+/* Texto */
 .content-text {
-  color: #555;
-  line-height: 1.6;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
 }
 
 .highlight {
-  color: #B41922;
+  color: white;
   font-weight: bold;
+}
+
+/* Efecto hover */
+.content-card:hover .content-overlay {
+  opacity: 1;
+}
+
+.content-card:hover .content-image {
+  transform: scale(1.1);
+}
+
+/* ============================= */
+/* 🌐 Responsive Styles */
+/* ============================= */
+
+/* Tablets medianas (≤1024px) */
+@media (max-width: 1024px) {
+  .content-card {
+    max-width: 380px;
+  }
+
+  .content-text {
+    font-size: 1rem;
+    padding: 15px;
+  }
+}
+
+/* Tablets pequeñas / móviles grandes (≤768px) */
+@media (max-width: 768px) {
+  .future-section {
+    padding: 40px 15px !important;
+  }
+  .content-card {
+    max-width: 100%;
+  }
+
+  .content-overlay {
+    padding: 15px;
+  }
+
+  .content-text {
+    font-size: 0.95rem;
+  }
+}
+
+/* Celulares pequeños (≤480px) */
+@media (max-width: 480px) {
+  .content-card {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  .content-text {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .content-overlay {
+    padding: 12px;
+  }
+
+  .highlight {
+    font-weight: 600;
+  }
 }
 
 @keyframes slideUp {
