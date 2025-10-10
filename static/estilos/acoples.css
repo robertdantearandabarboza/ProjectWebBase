@@ -4,9 +4,9 @@
 
 :root {
   /* Paleta de colores principal */
-  --color-primario: #1a237e;        /* Azul oscuro */
-  --color-secundario: #0d47a1;      /* Azul */
-  --color-accent: #ff6d00;          /* Naranja */
+  --color-primario: #800000;        /* Azul oscuro */
+  --color-secundario: #990000;      /* Azul */
+  --color-accent: #cc0000;          /* Naranja */
   --color-acento-secundario: #ffab40; /* Naranja claro */
   --color-texto: #263238;           /* Gris oscuro para texto */
   --color-texto-secundario: #546e7a; /* Gris medio */
@@ -333,6 +333,7 @@ section {
   height: var(--altura-hero);
   min-height: var(--altura-hero-min);
   overflow: hidden;
+  height: 95vh;
 }
 
 .hero-video .video-background {
@@ -344,7 +345,7 @@ section {
   z-index: 1;
 }
 
-.hero-video .video-background video {
+.hero-video .video-background img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -795,8 +796,9 @@ section {
   padding: 0.8rem 2rem;
   background: none;
   border: 2px solid var(--color-primario);
-  color: var(--color-primario);
+  color: var(--color-oscuro);
   border-radius: var(--radio-borde);
+  border-color: var(--color-oscuro);
   font-weight: 600;
   cursor: pointer;
   transition: var(--transicion-rapida);
@@ -811,9 +813,9 @@ section {
 }
 
 .tab-button.active {
-  background: var(--color-primario);
+  background: var(--color-oscuro);
   color: var(--color-blanco);
-  border-color: var(--color-primario);
+  border-color: var(--color-oscuro);
   box-shadow: var(--sombra-boton);
 }
 
@@ -839,12 +841,19 @@ section {
   overflow: hidden;
   margin-bottom: var(--espaciado-md);
   box-shadow: var(--sombra-suave);
+  width: 100%;
+  height: 500px; /* 👈 ajusta este valor al tamaño que quieras */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5; /* opcional, fondo neutro */
 }
 
 .main-image img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  object-fit: cover; /* 👈 mantiene proporción y centra la imagen */
+  object-position: center;
   transition: transform 0.3s ease;
 }
 
@@ -866,6 +875,7 @@ section {
   cursor: pointer;
   border: 2px solid transparent;
   transition: var(--transicion-rapida);
+  background-color: #fff;
 }
 
 .product-thumbnails img:hover,
@@ -942,8 +952,8 @@ section {
 }
 
 @media (max-width: 576px) {
-  .product-specs {
-    grid-template-columns: 1fr;
+  .main-image {
+    height: 300px;
   }
   
   .tabs-header {
@@ -953,6 +963,12 @@ section {
   
   .tab-button {
     width: 100%;
+  }
+}
+
+@media (max-width: 375px) {
+  .product-specs {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1161,7 +1177,7 @@ section {
   display: flex;
   gap: var(--espaciado-xxl);
   align-items: flex-start;
-  width: 100%;
+  width: 1400px;
   order: 2;
 }
 

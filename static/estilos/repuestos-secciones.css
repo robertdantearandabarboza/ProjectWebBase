@@ -67,25 +67,42 @@
 
 /* Estilos para la sección hero */
 .hero-section {
-  padding: 120px 0 80px;
-  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+  height: 80vh;
+  background-image: url('../../media/img/Productos/Repuestos/IntroRepuestos.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   text-align: center;
   position: relative;
   overflow: hidden;
-  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .hero-section h1 {
   font-size: 2.8rem;
-  color: var(--color-secundario);
-  margin-bottom: 20px;
-  font-weight: 700;
+  color: var(--color-blanco);
+  font-weight: 800;
   line-height: 1.2;
 }
 
 .hero-subtitle {
   font-size: 1.4rem;
-  color: var(--color-texto);
+  color: var(--color-blanco);
   max-width: 800px;
   margin: 0 auto 30px;
   line-height: 1.6;
@@ -93,7 +110,7 @@
 
 .hero-description {
   font-size: 1.1rem;
-  color: var(--color-texto-claro);
+  color: var(--color-blanco);
   max-width: 700px;
   margin: 0 auto 40px;
   line-height: 1.7;
