@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../../static/estilos/productos.css">
   <link rel="stylesheet" href="../../static/estilos/responsive-menu.css">
   <link rel="stylesheet" href="../../static/estilos/responsive-footer.css">
+  <link rel="stylesheet" href="../../static/estilos/martillo-gallery.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -113,7 +114,28 @@
   <main>
     <section class="martillo-detalle">
       <div class="martillo-imagen">
-        <img src="../../media/img/martillos-hidraulicos/LC2100/LC2100.png" alt="Martillo Hidráulico LC2100">
+        <div class="martillo-gallery">
+          <div class="martillo-main-image">
+            <img src="../../media/img/martillos-hidraulicos/LC2100/LC2100.webp" alt="Martillo Hidráulico LC2100" class="martillo-active-img">
+          </div>
+          <div class="martillo-thumbnails-container">
+            <button class="martillo-thumb-nav prev-martillo-thumb" aria-label="Anterior">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="martillo-thumbnails">
+              <div class="martillo-thumbs-track">
+                <img src="../../media/img/martillos-hidraulicos/LC2100/LC2100.webp" alt="Vista frontal" class="martillo-thumb active">
+                <img src="../../media/img/martillos-hidraulicos/LC2100/lateral.jpg" alt="Vista lateral" class="martillo-thumb">
+                <img src="../../media/img/martillos-hidraulicos/LC2100/detalle.jpg" alt="Detalle del martillo" class="martillo-thumb">
+                <img src="../../media/img/martillos-hidraulicos/LC2100/uso.jpg" alt="En uso" class="martillo-thumb">
+                <img src="../../media/img/martillos-hidraulicos/LC2100/diagrama.jpg" alt="Diagrama técnico" class="martillo-thumb">
+              </div>
+            </div>
+            <button class="martillo-thumb-nav next-martillo-thumb" aria-label="Siguiente">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
       </div>
       <div class="martillo-info">
         <div class="info-martillo">
@@ -132,7 +154,7 @@
             <i class="fa-solid fa-bolt icon"></i>
             <div>
               <p class="label">Velocidad de Impacto</p>
-              <p class="value">400 - 1300 BPM</p>
+              <p class="value">400 - 1900 BPM</p>
             </div>
           </div>
         
@@ -144,6 +166,24 @@
             </div>
           </div>
         </div>
+        <div class="descarga-pdf">
+          <a href="../../static/PDFs/martillos/lc2100/Ficha tecnica lc 2100.pdf" class="btn-descarga" download>
+            <i class="fas fa-download"></i> Descargar Ficha Técnica
+          </a>
+        </div>
+        <div class="cotizar-pdf">
+          
+          <a href="../contacto.html" class="btn-cotizar">
+            <i class="fas fa-arrow-right"></i> Cotice aquí
+          </a>
+        </div>
+        <div class="cotizar-whatsApp">
+          
+          <a href="../contacto.html" class="btn-cotizar-martillo">
+            <i class="fab fa-whatsapp"></i> Cotiza rápido el martillo hidráulico LC 2100
+          </a>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -298,5 +338,6 @@
   
   <script src="../../static/jscript/responsive.js"></script>
   <script src="../../static/jscript/martillos.js"></script>
+  <script src="../../static/jscript/martillo-gallery.js"></script>
 </body>
 </html>

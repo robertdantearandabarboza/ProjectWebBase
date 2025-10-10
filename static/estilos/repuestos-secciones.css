@@ -19,12 +19,6 @@
   --espaciado: 2rem;
 }
 
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
 
 /* Estilos para botones */
 .btn {
@@ -87,24 +81,6 @@
   margin-bottom: 20px;
   font-weight: 700;
   line-height: 1.2;
-}
-
-.hero-section h1 span {
-  color: var(--color-primario);
-  position: relative;
-  display: inline-block;
-}
-
-.hero-section h1 span::after {
-  content: '';
-  position: absolute;
-  bottom: 5px;
-  left: 0;
-  width: 100%;
-  height: 8px;
-  background-color: rgba(181, 25, 34, 0.2);
-  z-index: -1;
-  border-radius: 4px;
 }
 
 .hero-subtitle {
@@ -1220,7 +1196,7 @@
 /* Pantallas grandes (desktops, 1200px y más) */
 @media (min-width: 1200px) {
   .container {
-    max-width: 1140px;
+    max-width: 1200px;
   }
 }
 

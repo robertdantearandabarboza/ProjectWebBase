@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../../static/estilos/productos.css">
   <link rel="stylesheet" href="../../static/estilos/responsive-menu.css">
   <link rel="stylesheet" href="../../static/estilos/responsive-footer.css">
+  <link rel="stylesheet" href="../../static/estilos/martillo-gallery.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <a href="https://wa.link/u46549" class="whatsapp-float" target="_blank">
@@ -112,7 +113,28 @@
   <main>
     <section class="martillo-detalle">
       <div class="martillo-imagen">
-        <img src="../../media/img/martillos-hidraulicos/LC380/LC380.png" alt="Martillo Hidráulico LC380">
+        <div class="martillo-gallery">
+          <div class="martillo-main-image">
+            <img src="../../media/img/martillos-hidraulicos/LC380/LC380.webp" alt="Martillo Hidráulico LC380" class="martillo-active-img">
+          </div>
+          <div class="martillo-thumbnails-container">
+            <button class="martillo-thumb-nav prev-martillo-thumb" aria-label="Anterior">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="martillo-thumbnails">
+              <div class="martillo-thumbs-track">
+                <img src="../../media/img/martillos-hidraulicos/LC380/LC380.webp" alt="Vista frontal" class="martillo-thumb active">
+                <img src="../../media/img/martillos-hidraulicos/LC380/lateral.jpg" alt="Vista lateral" class="martillo-thumb">
+                <img src="../../media/img/martillos-hidraulicos/LC380/detalle.jpg" alt="Detalle del martillo" class="martillo-thumb">
+                <img src="../../media/img/martillos-hidraulicos/LC380/uso.jpg" alt="En uso" class="martillo-thumb">
+                <img src="../../media/img/martillos-hidraulicos/LC380/diagrama.jpg" alt="Diagrama técnico" class="martillo-thumb">
+              </div>
+            </div>
+            <button class="martillo-thumb-nav next-martillo-thumb" aria-label="Siguiente">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
       </div>
       <div class="martillo-info">
         <div class="info-martillo">
@@ -144,7 +166,7 @@
           </div>
         </div>
         <div class="descarga-pdf">
-          <a href="../../static/PDFs/martillos/lc380/Ficha tecnica lc 380.pdf" class="btn-descarga" download>
+          <a href="../../static/PDFs/martillos/lc380/Ficha-tecnica-lc-380.pdf" class="btn-descarga" download>
             <i class="fas fa-download"></i> Descargar Ficha Técnica
           </a>
         </div>
@@ -315,5 +337,6 @@
   
   <script src="../../static/jscript/responsive.js"></script>
   <script src="../../static/jscript/martillos.js"></script>
+  <script src="../../static/jscript/martillo-gallery.js"></script>
 </body>
 </html>

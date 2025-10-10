@@ -170,25 +170,9 @@ main {
   gap: 2rem;
   margin: 2rem auto;
   max-width: 1400px;
-  width: 98%;
-  padding: 3rem;
-}
-
-.martillo-imagen {
-  background-color: white;
-  flex: 0 0 45%;
-  position: relative;
-  min-height: 300px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.martillo-imagen img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
+  padding: 3rem;
+  padding-top: 155px;
 }
 
 .martillo-info {
@@ -399,7 +383,7 @@ main {
 
   .martillo-imagen {
     flex: 0 0 100%; /* imagen toma todo el ancho */
-    min-height: 250px;
+    min-height: auto;
   }
 
   .martillo-info {
@@ -425,8 +409,9 @@ main {
 @media (max-width: 768px) {
   .martillo-detalle {
     flex-direction: column;
-    padding: 1.5rem;
+    padding: 1.5rem 0.5rem;
     gap: 1rem;
+    padding-top: 155px;
   }
 
   .martillo-imagen,
@@ -434,8 +419,9 @@ main {
     flex: 1 1 100%;
   }
 
-  .martillo-imagen {
-    min-height: 200px;
+  .martillo-main-image {
+    width: 100% !important;
+    height: auto !important;
   }
 
   .descarga-pdf, 
@@ -451,6 +437,7 @@ main {
     width: 100%;
     max-width: none;
   }
+
 }
 /* Estilos para los enlaces de navegación */
 .nav-item {
