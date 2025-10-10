@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     currentIndex--;
                     updateMainImage(thumbnails[currentIndex]);
                     centerThumb(currentIndex);
+                    checkThumbVisibility('prev');
                 }
             });
             
@@ -94,8 +95,27 @@ document.addEventListener('DOMContentLoaded', function() {
                     currentIndex++;
                     updateMainImage(thumbnails[currentIndex]);
                     centerThumb(currentIndex);
+                    checkThumbVisibility('next');
                 }
             });
+        }
+
+        // 👇 Nueva función inteligente
+        function checkThumbVisibility(direction) {
+            const track = thumbsTrack;
+            const thumb = thumbnails[currentIndex];
+            const thumbLeft = thumb.offsetLeft;
+            const thumbRight = thumbLeft + thumb.offsetWidth;
+
+            const visibleLeft = track.scrollLeft;
+            const visibleRight = visibleLeft + track.clientWidth;
+
+            // Si el thumb actual se sale del área visible, movemos el carrusel
+            if (thumbLeft < visibleLeft) {
+                scrollThumbs('prev');
+            } else if (thumbRight > visibleRight) {
+                scrollThumbs('next');
+            }
         }
         
         // Inicializar con la primera miniatura activa
