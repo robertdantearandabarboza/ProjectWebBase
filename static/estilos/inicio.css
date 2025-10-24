@@ -3294,8 +3294,8 @@ section.quienes-somos {
 
 .logo-item {
   flex-shrink: 0;
-  width: 200px;
-  height: 130px;
+  width: 130px !important;
+  height: 100px !important;
   opacity: 1;
   transition: transform 0.3s ease, filter 0.3s ease;
   will-change: transform, filter;

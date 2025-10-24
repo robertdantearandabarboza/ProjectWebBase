@@ -262,8 +262,7 @@
   /* Hero Image Section - Optimized for SEO and Engagement */
   .hero-image {
     width: 100%;
-    min-height: 80vh;
-    max-height: 600px;
+    height: 90vh;
     overflow: hidden;
     position: relative;
     background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
