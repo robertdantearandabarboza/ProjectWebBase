@@ -26,6 +26,10 @@ html, body {
   padding-top: 75px;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 
 body::before {
   content: "";

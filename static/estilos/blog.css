@@ -697,6 +697,10 @@ nav ul li:nth-child(7) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) fo
     padding: 25px;
   }
 
+  .blog-category{
+    display: none;
+  }
+
   .blog-card-category {
     display: inline-block;
     background: #f0f4f8;
