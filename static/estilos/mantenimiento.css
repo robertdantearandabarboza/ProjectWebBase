@@ -10,6 +10,11 @@
   --transicion: all 0.3s ease;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 /* Estilos generales */
 .mantenimiento-main {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -48,7 +53,7 @@
   z-index: 2; /* Esto asegura que el texto quede por encima */
 }
 
-.section-container {
+.proceso-mantenimiento .section-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
@@ -250,120 +255,12 @@
   line-height: 1.7;
 }
 
-.btn-cta-mantenimiento {
-  display: inline-block;
-  padding: 0.9rem 2.2rem;
-  background-color: var(--color-primario);
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: var(--transicion);
-  margin: 0.5rem;
-  border: 2px solid var(--color-primario);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+#proceso {
+  scroll-margin-top: 100px;
 }
 
-.btn-cta-mantenimiento:hover {
-  background-color: transparent;
-  color: white;
-  border-color: white;
-  transform: translateY(-2px);
-}
-
-.btn-cta-outline {
-  background-color: transparent;
-  border: 2px solid white;
-}
-
-.btn-cta-outline:hover {
-  background-color: white;
-  color: var(--color-primario) !important;
-  border-color: white;
-}
-
-/* Estilos para el formulario de contacto */
-.contacto-section {
-  padding: 6rem 0;
-  background-color: #f5f7fa;
-}
-
-.formulario-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-.formulario-mantenimiento {
-  background: white;
-  padding: 2.5rem;
-  border-radius: 10px;
-  box-shadow: var(--sombra);
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  color: var(--color-secundario);
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-  width: 100%;
-  padding: 0.8rem 1rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-  outline: none;
-  border-color: var(--color-primario);
-  box-shadow: 0 0 0 2px rgba(181, 25, 34, 0.2);
-}
-
-.form-group textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.form-actions {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.btn-enviar {
-  background-color: var(--color-primario);
-  color: white;
-  border: none;
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: var(--transicion);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.btn-enviar:hover {
-  background-color: #9c151d;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+#contacto {
+  scroll-margin-top: 200px;
 }
 
 /* Info de contacto */
@@ -725,6 +622,9 @@
   background: linear-gradient(135deg, #f9f9f9 0%, #e9e9e9 100%);
 }
 
+/* ============================================
+   SECCIÓN DE BENEFICIOS (ESTILO MODERNO)
+   ============================================ */
 .beneficios-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -733,92 +633,161 @@
 }
 
 .beneficio-card {
-  background: white;
-  border-radius: 8px;
-  padding: 30px 25px;
+  background: var(--color-blanco, #ffffff);
+  border-radius: var(--radio-borde, 12px);
+  overflow: hidden;
+  box-shadow: var(--sombra-suave, 0 5px 15px rgba(0, 0, 0, 0.05));
+  transition: var(--transicion-media, all 0.3s ease);
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+  padding: var(--espaciado-lg, 30px 25px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .beneficio-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
+  box-shadow: var(--sombra-fuerte, 0 10px 25px rgba(0, 0, 0, 0.1));
 }
 
+/* Ícono */
 .beneficio-icon {
   width: 80px;
   height: 80px;
-  background-color: rgba(181, 25, 34, 0.1);
+  background: rgba(181, 25, 34, 0.1);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 20px;
-  color: #B51922;
+  margin: 0 auto var(--espaciado-md, 20px);
   font-size: 2rem;
+  color: var(--color-primario, #B51922);
+  transition: var(--transicion-media, all 0.3s ease);
 }
 
+/* Animación de ícono al pasar el mouse */
+.beneficio-card:hover .beneficio-icon {
+  background: var(--color-primario, #B51922);
+  color: var(--color-blanco, #ffffff);
+  transform: rotateY(180deg);
+}
+
+/* Título */
 .beneficio-card h3 {
-  color: #1a1a1a;
-  margin-bottom: 15px;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+  margin-bottom: var(--espaciado-sm, 10px);
+  color: var(--color-primario, #B51922);
 }
 
-/* CTA Section */
+/* Texto opcional (si tienes descripciones dentro de las tarjetas) */
+.beneficio-card p {
+  color: var(--color-texto-secundario, #555555);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* ============================================
+   SECCIÓN CTA - MANTENIMIENTO
+   ============================================ */
 .cta-mantenimiento {
-  padding: 80px 0;
+  padding: var(--espaciado-xxl, 6rem) 0;
   background: linear-gradient(135deg, #B51922 0%, #8f131a 100%);
-  color: white;
+  color: #ffffff;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  margin-bottom: 50px;
 }
 
-.cta-content {
-  max-width: 700px;
+/* Fondo con patrón sutil */
+.cta-mantenimiento::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.beneficios-mantenimiento .section-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
+  padding: 0 var(--espaciado-md, 1.5rem);
 }
 
 .cta-mantenimiento .section-title {
-  color: white;
-}
-
-.cta-mantenimiento .section-title:after {
-  background-color: white;
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .cta-mantenimiento p {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
+  font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* BOTONES */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--espaciado-md, 1rem);
+  flex-wrap: wrap;
 }
 
 .btn-cta-mantenimiento {
-  display: inline-block;
-  padding: 15px 40px;
-  background-color: white;
-  color: #B51922;
-  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2rem;
   font-size: 1.1rem;
   font-weight: 600;
+  border-radius: 50px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  background-color: transparent;
   text-decoration: none;
   transition: all 0.3s ease;
-  border: 2px solid white;
-  margin: 10px;
+  z-index: 1;
+}
+
+.btn-cta-mantenimiento i {
+  font-size: 1.3rem;
 }
 
 .btn-cta-mantenimiento:hover {
-  background-color: transparent;
-  color: white;
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Botón de contorno (llamar) */
 .btn-cta-outline {
   background-color: transparent;
-  border-color: white;
-  color: white;
+  border-color: #ffffff;
+  color: #ffffff;
 }
 
 .btn-cta-outline:hover {
-  background-color: white;
+  background-color: #ffffff;
   color: #B51922;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive */

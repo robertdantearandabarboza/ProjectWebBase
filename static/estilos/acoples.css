@@ -1177,9 +1177,13 @@ section {
   display: flex;
   gap: var(--espaciado-xxl);
   align-items: flex-start;
-  width: 1400px;
+  width: 100%;
+  max-width: 1400px; /* para limitarlo en pantallas grandes */
+  margin: 0 auto;
+  padding: 0 var(--espaciado-lg); /* agrega padding lateral */
   order: 2;
 }
+
 
 .applications-image {
   flex: 1;
@@ -1269,88 +1273,6 @@ section {
   color: var(--color-texto-secundario);
   font-size: 1rem;
   line-height: 1.7;
-}
-
-/* ============================================
-   TESTIMONIALS SECTION
-   ============================================ */
-.testimonials-section {
-  padding: var(--espaciado-xxl) 0;
-  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.testimonials-slider {
-  margin-top: var(--espaciado-xl);
-  position: relative;
-}
-
-.testimonial-card {
-  background: var(--color-blanco);
-  border-radius: var(--radio-borde);
-  padding: var(--espaciado-lg);
-  box-shadow: var(--sombra-suave);
-  margin: 0 var(--espaciado-sm);
-  position: relative;
-}
-
-.testimonial-content {
-  position: relative;
-  padding-bottom: var(--espaciado-md);
-  margin-bottom: var(--espaciado-md);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.testimonial-text {
-  font-style: italic;
-  color: var(--color-texto);
-  margin-bottom: var(--espaciado-md);
-  position: relative;
-  padding-left: var(--espaciado-md);
-}
-
-.testimonial-text::before {
-  content: '"\201C"';
-  font-family: Georgia, serif;
-  font-size: 4rem;
-  position: absolute;
-  left: -15px;
-  top: -15px;
-  color: rgba(26, 35, 126, 0.1);
-  line-height: 1;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-}
-
-.testimonial-avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-right: var(--espaciado-sm);
-  border: 3px solid var(--color-accent);
-}
-
-.testimonial-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.testimonial-info h4 {
-  margin: 0;
-  color: var(--color-primario);
-  font-size: 1.1rem;
-}
-
-.testimonial-info p {
-  margin: 0;
-  color: var(--color-texto-secundario);
-  font-size: 0.9rem;
 }
 
 /* ============================================
@@ -1668,6 +1590,10 @@ section {
 
 #productos{
   scroll-margin-top: 120px;
+}
+
+#contacto{
+  scroll-margin-top: 200px;
 }
 
 /* Sección de Productos */

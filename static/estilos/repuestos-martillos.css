@@ -9,7 +9,45 @@
   --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
   --transicion: all 0.3s ease;
   --color-oscuro: #2c3e50;
+
+  --color-accent: #cc0000;          /* Naranja */
+  --color-acento-secundario: #B51922; /* Naranja claro */
+  --color-texto: #263238;           /* Gris oscuro para texto */
+  --color-texto-secundario: #546e7a; /* Gris medio */
+  --color-fondo: #f8f9fa;           /* Fondo gris claro */
+  --color-blanco: #ffffff;
+  --color-negro: #000000;
+  --color-exito: #2e7d32;           /* Verde */
+  --color-alerta: #d32f2f;          /* Rojo */
+  --color-advertencia: #ffa000;     /* Ámbar */
+  --color-info: #0288d1;            /* Azul claro */
+  
+  /* Sombras */
+  --sombra-suave: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --sombra-media: 0 8px 15px rgba(0, 0, 0, 0.1);
+  --sombra-fuerte: 0 15px 30px rgba(0, 0, 0, 0.15);
+  --sombra-boton: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+  /* Bordes */
+  --radio-borde: 8px;
+  --radio-borde-grande: 12px;
+  --radio-borde-completo: 9999px;
+  
+  /* Transiciones */
+  --transicion-rapida: all 0.2s ease-in-out;
+  --transicion-media: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transicion-lenta: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Espaciados */
+  --espaciado-xs: 0.5rem;
+  --espaciado-sm: 1rem;
+  --espaciado-md: 1.5rem;
+  --espaciado-lg: 2rem;
+  --espaciado-xl: 3rem;
+  --espaciado-xxl: 4rem;
+  
 }
+
 
 /* Estilos generales */
 * {
@@ -18,53 +56,170 @@
   box-sizing: border-box;
 }
 
-/* Estilos para la sección hero */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* ============================================
+   HERO SECTION (Adaptado al estilo hero-video)
+   ============================================ */
 .hero-section {
-  padding: 8rem 0 5rem;
+  position: relative;
+  height: 85vh !important;
   background-image: url('../../media/img/Productos/Repuestos/IntroRepuestos.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: var(--color-blanco);
   text-align: center;
-  position: relative;
   overflow: hidden;
-  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 var(--espaciado-md);
 }
 
+/* Capa oscura encima de la imagen */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Contenedor del contenido */
 .hero-section .container {
   position: relative;
   z-index: 2;
+  max-width: 1000px;
+  padding-top: 50px;
 }
 
+/* Título principal */
 .hero-section h1 {
-  font-size: 2.8rem;
-  font-weight: 800 !important;
-  margin-bottom: 1rem;
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: var(--espaciado-md);
   line-height: 1.2;
-  width: 900px;
+  color: var(--color-blanco);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: fadeInDown 1s ease-out;
 }
 
-.hero-section h1 span {
-  color: var(--color-primario);
-  position: relative;
-  display: inline-block;
-}
-
+/* Subtítulo */
 .hero-subtitle {
   font-size: 1.5rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
+  margin-bottom: var(--espaciado-lg);
   color: rgba(255, 255, 255, 0.9);
-  width: 700px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1s ease-out 0.3s both;
 }
 
+/* Descripción */
 .hero-description {
   font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto 2rem;
-  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--espaciado-xl);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.7;
+  animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+/* Botones */
+.hero-buttons {
+  display: flex;
+  gap: var(--espaciado-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 1s ease-out 0.7s both;
+}
+
+/* Reutiliza los estilos .btn, .btn-primary y .btn-outline del otro hero */
+.hero-buttons .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.8rem 2rem;
+  border-radius: var(--radio-borde);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transicion-rapida);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1rem;
+}
+
+.hero-buttons .btn-primary {
+  background-color: var(--color-accent);
+  color: #ffffff !important;
+  border: none;
+}
+
+.hero-buttons .btn-primary:hover {
+  background-color: var(--color-acento-secundario);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-buttons .btn-outline {
+  background-color: transparent;
+  color: var(--color-blanco);
+  border: 2px solid var(--color-blanco);
+}
+
+.hero-buttons .btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#repuesto{
+  scroll-margin-top: 150px;
+}
+
+#contacto{
+  scroll-margin-top: 200px;
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.2rem;
+  }
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
 }
 
 /* Sección de repuestos */
@@ -548,50 +703,85 @@
   transform: scale(1.05);
 }
 
-/* Sección CTA */
+/* ============================================
+   SECCIÓN CTA - REPUESTOS
+   ============================================ */
 .rep-cta-section {
-  padding: 6rem 0;
-  background: linear-gradient(135deg, var(--color-primario), #8c131a);
-  color: var(--color-blanco);
+  padding: var(--espaciado-xxl, 6rem) 0;
+  background: linear-gradient(135deg, var(--color-primario, #b11b22) 0%, var(--color-secundario, #8c131a) 100%);
+  color: var(--color-blanco, #ffffff);
   text-align: center;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
 }
 
+/* Patrón de fondo suave */
 .rep-cta-section::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 5px;
-  background: linear-gradient(90deg, var(--color-primario), var(--color-secundario));
+  height: 100%;
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+  opacity: 0.3;
+  z-index: 1;
 }
 
 .rep-cta-content {
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.rep-cta-section h2 {
+.rep-cta-content h2 {
+  color: var(--color-blanco, #ffffff);
   font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: var(--color-blanco);
   font-weight: 700;
+  margin-bottom: 1.5rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.rep-cta-section p {
+.rep-cta-content p {
+  color: rgba(255, 255, 255, 0.9);
   font-size: 1.2rem;
   margin-bottom: 2.5rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
   line-height: 1.7;
 }
+
+/* BOTÓN DE WHATSAPP */
+.rep-btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #ffffff !important;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  z-index: 1;
+}
+
+.rep-btn-whatsapp i {
+  font-size: 1.3rem;
+}
+
+.rep-btn-whatsapp:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 
 /* Responsive Design */
 @media (max-width: 1024px) {
