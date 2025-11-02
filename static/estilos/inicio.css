@@ -45,7 +45,7 @@ button, input, select, textarea, .btn, a, p, li, label {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.2;
   margin-bottom: 1rem;
   color: var(--color-principal);
