@@ -54,7 +54,7 @@ html {
 }
 
 .proceso-mantenimiento .section-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -148,6 +148,35 @@ html {
   color: var(--color-texto-claro);
   line-height: 1.6;
   font-size: 1rem;
+}
+
+table.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+table.styled-table thead tr {
+    background-color: var(--color-secundario);
+    color: #ffffff;
+    text-align: left;
+}
+table.styled-table th, table.styled-table td {
+    padding: 8px 10px;
+    border: 1px solid #dddddd;
+}
+table.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+table.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+table.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid var(--color-secundario);
+}
+table.styled-table tbody tr:hover {
+    background-color: #e0e2f7bd;
 }
 
 /* Sección de Video */
