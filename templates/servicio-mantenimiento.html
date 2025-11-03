@@ -42,7 +42,7 @@
           COTICE AQUÍ
         </a>
         <div class="redes-sociales">
-          <a href="#" class="red-social"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.facebook.com/HYDROMENNMARTILLOSHIDRAULICOS" target="_blank" class="red-social"><i class="fab fa-facebook"></i></a>
           <a href="#" class="red-social"><i class="fab fa-tiktok"></i></a>
           <a href="#" class="red-social"><i class="fab fa-instagram"></i></a>
         </div>
@@ -137,6 +137,17 @@
       <div class="section-container">
         <h2 class="section-title">Nuestro Proceso de Mantenimiento</h2>
         <p class="section-subtitle">Garantizamos un servicio integral que sigue rigurosos estándares de calidad para asegurar el óptimo funcionamiento de tu equipo</p>
+
+        <div class="paso" style="width: 1000px; margin: 0 auto; text-align: center;">
+              <div class="paso-contenido">
+                <h2>MANTENIMIENTO CORRECTIVO</h2>
+                <p><strong>Nota inicial:</strong><br>
+                El <strong>mantenimiento preventivo</strong> es aquel que realiza el cliente una vez comprado el martillo, siguiendo las indicaciones de limpieza, lubricación y revisiones periódicas.<br>
+                El <strong>mantenimiento correctivo</strong> es el que realiza la empresa cuando el martillo presenta fallas, pérdidas de potencia, fugas o desgaste de componentes, asegurando su funcionamiento óptimo y prolongando su vida útil.</p>
+
+                <a href="blog/articulo-clean.html?id=2" class="btn">Guía de Mantenimiento Preventivo</a>
+              </div>
+            </div>
         
         <div class="proceso-grid">
           <div class="proceso-pasos">
@@ -251,6 +262,11 @@
                 </ul>
               </div>
             </div>
+            <div class="paso">
+              <div class="paso-contenido">
+                <a href="blog/articulo-clean.html?id=6" class="btn">FRECUENCIA DE MANTENIMIENTO CORRECTIVO RECOMENDADA Y RECOMENDACIONES GENERALES</a>
+              </div>
+            </div>
           </div>
           
           <div class="proceso-video">
@@ -353,7 +369,7 @@
         <div class="redes-sociales-container">
           <h5 style="margin-top: 1.5rem; margin-bottom: 0.8rem;">SÍGUENOS</h5>
           <div class="social-links" aria-label="Redes sociales">
-            <a href="https://facebook.com" target="_blank" rel="nofollow noopener" aria-label="Facebook">
+            <a href="https://www.facebook.com/HYDROMENNMARTILLOSHIDRAULICOS" target="_blank" rel="nofollow noopener" aria-label="Facebook">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="#1877F2">
                 <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.13 8.44 9.88v-6.99H7.9v-2.89h2.54V9.79c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.77l-.44 2.89h-2.33v6.99C18.34 21.13 22 17 22 12z"/>
               </svg>
@@ -481,33 +497,6 @@
 
   <script src="../static/js/modal.js"></script>
   <script src="../static/jscript/responsive.js"></script>
-  <script>
-    // Script para el envío del formulario
-    document.getElementById('formulario-mantenimiento').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Aquí iría la lógica para enviar el formulario
-      alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo a la brevedad.');
-      this.reset();
-    });
-    
-    // Smooth scrolling para los enlaces internos
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 100,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-  </script>
+
 </body>
 </html>

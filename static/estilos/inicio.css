@@ -1771,7 +1771,7 @@ iframe {
 
 /* Ajusta btn-secondary para que luzca como el outline blanco de acoples */
 .hero-background .carousel-caption .button-container .btn.btn-secondary {
-  background-color: transparent !important;
+  background-color: rgba(0, 0, 0, 0.3) !important;
   color: #ffffff !important;
   border: 2px solid #ffffff !important;
 }
