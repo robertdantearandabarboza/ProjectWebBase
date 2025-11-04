@@ -56,7 +56,7 @@ html {
 .proceso-mantenimiento .section-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 50px 5px;
 }
 
 .proceso-mantenimiento .section-title {
@@ -178,6 +178,32 @@ table.styled-table tbody tr:last-of-type {
 table.styled-table tbody tr:hover {
     background-color: #e0e2f7bd;
 }
+
+.btn-blog {
+  display: inline-block;
+  max-width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(90deg, var(--color-secundario), #800000);
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.4s ease, background-position 0.6s ease, transform 0.3s ease;
+  text-align: center;
+  background-size: 200% 100%;
+  background-position: left;
+}
+
+.btn-blog:hover {
+  background-position: right;
+  transform: scale(1.05); /* Se agranda un 5% */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+
+
 
 /* Sección de Video */
 .proceso-video {
@@ -411,7 +437,16 @@ table.styled-table tbody tr:hover {
 
 @media (max-width: 768px) {
   .proceso-mantenimiento {
-    padding: 4rem 1.5rem;
+    padding: 0 10px; /* Un poco de padding para que no toque los bordes */
+    font-size: 0.9rem; /* Reduce un poco el tamaño del texto */
+    max-width: 100%; /* Evita que se salga horizontalmente */
+    box-sizing: border-box; /* Asegura que padding no haga overflow */
+  }
+
+  /* Si tienes elementos internos como pasos o imágenes */
+  .proceso-mantenimiento .paso {
+    font-size: 0.85rem; /* Reduce texto de los pasos */
+    margin-bottom: 1rem; /* Ajusta separación entre pasos */
   }
   
   .section-title {
@@ -438,6 +473,14 @@ table.styled-table tbody tr:hover {
   .btn-cta-mantenimiento {
     padding: 0.8rem 1.8rem;
     font-size: 1rem;
+  }
+
+  table.styled-table {
+    font-size: 14px;
+  }
+  table.styled-table th,
+  table.styled-table td {
+    padding: 6px 8px;
   }
 }
 
@@ -474,6 +517,60 @@ table.styled-table tbody tr:hover {
     width: 100%;
     max-width: 300px;
     margin: 0.8rem auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-mantenimiento {
+    padding: 3rem 0.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.4rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .btn-cta-mantenimiento {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .proceso-mantenimiento {
+    padding: 0 5px;
+  }
+
+  table.styled-table {
+    font-size: 12px;
+  }
+  table.styled-table th,
+  table.styled-table td {
+    padding: 4px 6px;
+  }
+  
+}
+
+/* Pantallas muy pequeñas (celulares pequeños) */
+@media (max-width: 360px) {
+  .proceso-mantenimiento {
+    padding: 0 3px;
+    font-size: 0.75rem;
+  }
+
+  .proceso-mantenimiento .paso {
+    font-size: 0.7rem;
+    margin-bottom: 0.6rem;
   }
 }
 

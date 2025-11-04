@@ -1,4 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // META TAGS para SEO
+  document.title = "Blog de Hydromenn - Artículos sobre mantenimiento";
+  const metaDescription = document.createElement('meta');
+  metaDescription.name = "description";
+  metaDescription.content = "Encuentra artículos sobre mantenimiento correctivo, recomendaciones y buenas prácticas.";
+  document.head.appendChild(metaDescription);
+
+  // OPEN GRAPH TAGS para compartir en redes sociales
+  const ogTitle = document.createElement('meta');
+  ogTitle.setAttribute('property', 'og:title');
+  ogTitle.content = "Blog de Hydromenn - Artículos sobre mantenimiento";
+  document.head.appendChild(ogTitle);
+
+  const ogDescription = document.createElement('meta');
+  ogDescription.setAttribute('property', 'og:description');
+  ogDescription.content = "Encuentra artículos sobre mantenimiento correctivo, recomendaciones y buenas prácticas.";
+  document.head.appendChild(ogDescription);
+
+  const ogUrl = document.createElement('meta');
+  ogUrl.setAttribute('property', 'og:url');
+  ogUrl.content = window.location.href;
+  document.head.appendChild(ogUrl);
+
+  const ogImage = document.createElement('meta');
+  ogImage.setAttribute('property', 'og:image');
+  ogImage.content = "../../media/img/Blog/blog1/Articulo-1-1.webp"; // Imagen genérica para la página principal
+  document.head.appendChild(ogImage);
+
   const blogSection = document.getElementById("blog-section");
 
   fetch("/static/data/blog-posts.json")
@@ -16,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             <h3 class="blog-title">${article.titulo}</h3>
             <p class="blog-excerpt">${article.resumen}</p>
-            <a href="../../templates/blog/articulo-clean.html?id=${article.id}" class="btn btn-primary">Leer más</a>
+            <a href="../../templates/blog/articulo-clean.html#${article.slug}" class="btn btn-primary">Leer más</a>
           </div>
         </article>
       `).join('');

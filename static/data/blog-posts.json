@@ -2,6 +2,7 @@
   {
     "id": 1,
     "titulo": "Guía Completa para Elegir el Martillo Hidráulico Correcto",
+    "slug": "guia-martillo-hidraulico",
     "fecha": "02 septiembre 2025",
     "categoria": "Guías y Consejos",
     "imagen": "../../media/img/Blog/blog1/Blog1.webp",
@@ -11,6 +12,7 @@
   {
     "id": 2,
     "titulo": "Mantenimiento Preventivo de Martillos Hidráulicos: Guía Completa para Evitar Fallas Costosas",
+    "slug": "mantenimiento-preventivo-martillos-hidraulicos",
     "fecha": "02 julio 2025",
     "categoria": "Mantenimiento",
     "imagen": "../../media/img/Blog/blog2/Blog2.webp",
@@ -20,6 +22,7 @@
   {
     "id": 3,
     "titulo": "Martillos Hidráulicos en Demolición Pesada: Optimiza Rendimiento y Seguridad",
+    "slug": "martillos-hidraulicos-demolicion-pesada",
     "fecha": "15 agosto 2025",
     "categoria": "Demolición",
     "imagen": "../../media/img/Blog/blog3/Blog3.webp",
@@ -29,6 +32,7 @@
   {
     "id": 4,
     "titulo": "Innovaciones en Tecnología de Martillos Hidráulicos 2025",
+    "slug": "innovaciones-tecnologia-martillos-hidraulicos",
     "fecha": "05 agosto 2025",
     "categoria": "Tecnología",
     "imagen": "../../media/img/Blog/blog4/Blog4.webp",
@@ -38,6 +42,7 @@
   {
     "id": 5,
     "titulo": "Principales Problemas en Martillos Hidráulicos y Cómo Evitarlos",
+    "slug": "principales-problemas-martillos-hidraulicos-como-evitarlos",
     "fecha": "25 junio 2025",
     "categoria": "Mantenimiento y Reparación",
     "imagen": "../../media/img/Inicio/hero-bg.jpg",
@@ -47,6 +52,7 @@
   {
     "id": 6,
     "titulo": "¿Cada cuánto se debe realizar el mantenimiento correctivo de un martillo hidráulico?",
+    "slug": "cada-cuanto-se-debe-realizar-mantenimiento-correctivo-martillo-hidraulico",
     "fecha": "01 julio 2025",
     "categoria": "Productividad y Costos",
     "imagen": "../../media/img/Inicio/hero-bg.jpg",
