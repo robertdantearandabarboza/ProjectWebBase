@@ -280,13 +280,17 @@ table.styled-table tbody tr:hover {
   margin-bottom: 4rem;
   min-height: 95vh;
   z-index: 2;
+
+  /* 🧭 Aquí va la clave */
+  display: flex;
+  align-items: center; /* centra verticalmente */
+  justify-content: center; /* centra horizontalmente */
 }
 
+
 .hero-content {
-  max-width: 900px;
-  padding: 0 2rem;
-  padding-bottom: 2rem;
-  padding-top: 13rem;
+  max-width: 800px;
+  padding: 2rem 2rem;
   margin: 0 auto;
   position: relative;
 }
