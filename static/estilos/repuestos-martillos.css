@@ -533,7 +533,7 @@ html {
   box-shadow: 0 7px 25px rgba(37, 211, 102, 0.4);
 }
 
-.main .btn-cotizar {
+.main .rep-btn-cotizar {
   background: linear-gradient(45deg, var(--color-primario), #c1121f);
   color: white !important;
   padding: 0.9rem 1.8rem !important;
@@ -549,7 +549,7 @@ html {
   box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3) !important;
 }
 
-.main .btn-cotizar:hover {
+.main .rep-btn-cotizar:hover {
   background: transparent !important;
   color: var(--color-primario) !important;
   border-color: var(--color-primario) !important;
@@ -707,7 +707,7 @@ html {
    SECCIÓN CTA - REPUESTOS
    ============================================ */
 .rep-cta-section {
-  padding: var(--espaciado-xxl, 6rem) 0;
+  padding: var(--espaciado-xxl, 6rem);
   background: linear-gradient(135deg, var(--color-primario, #b11b22) 0%, var(--color-secundario, #8c131a) 100%);
   color: var(--color-blanco, #ffffff);
   text-align: center;
@@ -839,13 +839,18 @@ html {
     padding: 0 1rem;
   }
   
-  .rep-btn, .btn-whatsapp, .btn-cotizar {
+  .rep-btn, .btn-whatsapp {
+    padding: 0.8rem 1.5rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  .rep-btn-cotizar {
     padding: 0.8rem 1.5rem !important;
     font-size: 0.9rem !important;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 517px) {
   .hero-section h1 {
     font-size: 1.8rem;
   }
@@ -859,7 +864,12 @@ html {
     gap: 1rem;
   }
   
-  .rep-btn, .btn-whatsapp, .btn-cotizar {
+  .rep-btn, .btn-whatsapp{
+    width: 100%;
+    justify-content: center;
+  }
+
+  .rep-btn-cotizar  {
     width: 100%;
     justify-content: center;
   }

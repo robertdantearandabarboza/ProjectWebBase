@@ -36,16 +36,23 @@
   letter-spacing: 0.5px;
 }
 
-.btn-cotizar {
-  background-color: var(--color-primario);
-  color: white;
-  display: inline-flex;
+.rep-btn-cotizar {
+  background: linear-gradient(45deg, var(--color-primario), #c1121f);
+  color: white !important;
+  padding: 0.9rem 1.8rem !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 0.5rem;
+  transition: var(--transicion) !important;
+  border: 2px solid transparent !important;
+  box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3) !important;
 }
 
-.btn-cotizar:hover {
+.rep-btn-cotizar:hover {
   background-color: #8B1419;
   transform: translateY(-2px);
   box-shadow: var(--sombra-hover);
