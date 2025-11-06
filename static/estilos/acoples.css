@@ -214,8 +214,9 @@ p {
 }
 
 .btn-outline:hover, .btn-outline:focus {
-  background-color: var(--color-accent);
+  background-color: transparent;
   color: var(--color-blanco);
+  text-decoration: none !important;
 }
 
 .btn-large {
@@ -330,10 +331,8 @@ section {
    ============================================ */
 .hero-video {
   position: relative;
-  height: var(--altura-hero);
-  min-height: var(--altura-hero-min);
+  height: 96vh;
   overflow: hidden;
-  height: 95vh;
 }
 
 .hero-video .video-background {

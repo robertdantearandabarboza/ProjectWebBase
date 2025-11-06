@@ -66,7 +66,7 @@ html {
    ============================================ */
 .hero-section {
   position: relative;
-  height: 85vh !important;
+  height: 95vh !important;
   background-image: url('../../media/img/Productos/Repuestos/IntroRepuestos.webp');
   background-size: cover;
   background-position: center;
@@ -526,11 +526,11 @@ html {
 }
 
 .btn-whatsapp:hover {
-  background: transparent !important;
+  background: transparent;
   color: #25D366 !important;
   border-color: #25D366 !important;
   transform: translateY(-3px);
-  box-shadow: 0 7px 25px rgba(37, 211, 102, 0.4) !important;
+  box-shadow: 0 7px 25px rgba(37, 211, 102, 0.4);
 }
 
 .main .btn-cotizar {
@@ -677,7 +677,7 @@ html {
 
 .rep-btn-whatsapp:hover {
   background: transparent;
-  color: #25D366;
+  color: #25D366 !important;
   border-color: #25D366;
   transform: translateY(-3px);
   box-shadow: 0 7px 25px rgba(37, 211, 102, 0.4);

@@ -1266,12 +1266,13 @@ h1 {
   position: relative;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 35px;
 }
 
 .mantenimiento-image img {
   width: 600px;
   height: 500px;
-  border-radius: 0;
+  border-radius: 35px;
   object-fit: cover;
   display: block;
 }
@@ -1322,7 +1323,7 @@ h1 {
 }
 
 .benefits-list i {
-  color: var(--color-accion);
+  color: var(--color-accion-hover);
   font-size: 1.2rem;
 }
 
