@@ -24,7 +24,7 @@ body {
 html, body {
   height: 100%;
   width: 100%;
-  padding-top: 50px;
+  padding-top: 65px;
 }
 
 /* El contenido principal (lo que está entre nav y footer) debe crecer */
@@ -1266,7 +1266,7 @@ iframe {
 /* Hero Image Section - Efecto de zoom suave */
 .hero-image {
   width: 100%;
-  height: 840px;
+  height: 88vh;
   overflow: hidden;
   position: relative;
   margin-bottom: 0px;
