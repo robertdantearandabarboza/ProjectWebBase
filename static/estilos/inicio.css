@@ -653,13 +653,13 @@ img {
   background: var(--color-destacado);
 }
 
-.about-text p {
+.about-section .about-text p{
   font-size: 1.1rem;
   font-weight: 400;
   line-height: 1.6;
   margin-bottom: 1.6rem;
   color: black;
-  text-align: left;
+  text-align: justify;
 }
 
 .features-list {

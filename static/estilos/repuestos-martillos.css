@@ -291,14 +291,19 @@ html {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 600px;
+  height: 500px; /* 🔹 altura fija */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9; /* color de fondo para evitar parpadeo */
 }
 
 .gallery-main img {
   width: 100%;
-  height: auto;
-  max-height: 100%;
-  object-fit: contain;
-  display: block;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Contenedor del carrusel de miniaturas */

@@ -35,7 +35,7 @@ const images = [
   {
       src: "../../media/img/martillos-hidraulicos/LC900/LC900-A.webp",
       alt: "Auriculares premium",
-      href: "../../templates/Martillos Hidraulicos/lc900.html"
+      href: "../../templates/Martillos Hidraulicos/lc900-modelo-lapiz.html"
   },
   {
       src: "../../media/img/martillos-hidraulicos/LC1500/LC1500-A.webp",
