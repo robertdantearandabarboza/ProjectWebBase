@@ -1646,7 +1646,7 @@ iframe {
    ===================================================== */
 .hero-background .carousel-caption {
   position: absolute !important;
-  top: 62% !important;
+  top: 62%;
   left: 50% !important;
   bottom: auto !important;
   transform: translate(-50%, -50%) !important;
@@ -2149,7 +2149,7 @@ html, body {
 @media (max-width: 576px) {
   .carousel-caption {
     bottom: auto;                /* anula el "bottom: 25%" */
-    top: 40%;                    /* lo llevamos al medio */
+    top: 55% !important;                    /* lo llevamos al medio */
     left: 5%;                   /* centramos horizontal */
     max-width: 90%;              /* más ancho que en PC */
     padding: 15px;               /* menos padding para móviles */
