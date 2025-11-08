@@ -947,6 +947,7 @@ section {
   
   .product-specs {
     grid-template-columns: 1fr 1fr;
+    text-align: left;
   }
 }
 
@@ -965,9 +966,11 @@ section {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 571px) {
   .product-specs {
     grid-template-columns: 1fr;
+    max-width: 350px;
+    margin: 0 auto !important;
   }
 }
 
