@@ -609,7 +609,7 @@ table.styled-table tbody tr:hover {
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
-    padding: 0;
+    padding: 3rem 0;
     box-sizing: border-box;
   }
 
