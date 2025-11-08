@@ -290,7 +290,7 @@ table.styled-table tbody tr:hover {
 
 .hero-content {
   max-width: 800px;
-  padding: 2rem 2rem;
+  padding: 10rem 2rem;
   margin: 0 auto;
   position: relative;
 }
@@ -521,6 +521,14 @@ table.styled-table tbody tr:hover {
     padding: 0;
     width: 100%;
     box-sizing: border-box;
+  }
+
+  .paso{
+    padding: 2rem 5px;
+  }
+
+  .paso .paso-contenido{
+    padding: 25px;
   }
 
   .section-title {
