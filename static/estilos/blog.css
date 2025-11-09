@@ -640,6 +640,117 @@ nav ul li:nth-child(7) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) fo
     font-style: italic;
     color: #555;
   }
+
+  /* 🌐 Estilos generales para la tabla del blog */
+table.blog-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow-x: auto;
+  display: block; /* importante para JSON o contenedores dentro de <p> */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  margin: 25px 0;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  text-align: left;
+  background-color: #ffffff;
+}
+
+/* Encabezados */
+table.blog-tabla th {
+  background-color: #2B3D4F;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 14px 16px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+/* Celdas */
+table.blog-tabla td {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(43, 61, 79, 0.15);
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Filas alternadas */
+table.blog-tabla tr:nth-child(even) td {
+  background-color: #f7f9fb;
+}
+
+/* Efecto hover */
+table.blog-tabla tr:hover td {
+  background-color: rgba(43, 61, 79, 0.08);
+  transition: background-color 0.3s ease;
+}
+
+/* Bordes suaves */
+table.blog-tabla th:first-child,
+table.blog-tabla td:first-child {
+  border-left: 4px solid #2B3D4F;
+}
+
+/* Scroll horizontal moderno (para móviles y tablets) */
+table.blog-tabla::-webkit-scrollbar {
+  height: 8px;
+}
+table.blog-tabla::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+table.blog-tabla::-webkit-scrollbar-thumb {
+  background: #2B3D4F;
+  border-radius: 10px;
+}
+table.blog-tabla::-webkit-scrollbar-thumb:hover {
+  background: #1e2a38;
+}
+
+/* Indicador visual en pantallas pequeñas */
+@media (max-width: 768px) {
+  table.blog-tabla::after {
+    content: '↔ Desliza para ver más';
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    color: #666;
+    margin-top: 6px;
+    font-style: italic;
+  }
+}
+
+/* Ajuste extra de margen en contenedores estrechos */
+@media (max-width: 600px) {
+  table.blog-tabla {
+    font-size: 14px;
+  }
+}
+
+  /* Diseño responsivo */
+  @media (max-width: 768px) {
+    .blog-tabla {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+      white-space: nowrap;
+      border-radius: 8px;
+    }
+
+    .blog-tabla th,
+    .blog-tabla td {
+      padding: 12px 10px;
+      font-size: 14px;
+    }
+  }
+
+  /* Estilo sutil para foco */
+  .blog-tabla:focus-within {
+    box-shadow: 0 0 0 3px rgba(43, 61, 79, 0.25);
+  }
   
   /* Estilos para el contenido principal */
   /* Estilos para blog.html */

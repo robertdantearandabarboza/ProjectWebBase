@@ -288,7 +288,11 @@ html {
 /* New layout styles */
 main {
   max-width: 100%;
-  background-color: var(--color-fondo-suave);
+  background: linear-gradient(var(--color-fondo-suave), rgba(255, 255, 255, 0.5)),url(../../media/img/fondos1.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   margin: 25px auto; /* Reducimos el margin */
   padding: 18px 25px; /* Reducimos el padding */
   padding-top: 50px;

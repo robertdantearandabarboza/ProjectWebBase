@@ -229,6 +229,21 @@ html {
 }
 
 .repuesto-section {
+  background: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0.5)),url(../../media/img/fondos3.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin-bottom: 5rem;
+  position: relative;
+}
+
+.repuesto-section.bg-light{
+  background: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0.5)),url(../../media/img/fondos2.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   margin-bottom: 5rem;
   position: relative;
 }
@@ -434,6 +449,11 @@ html {
 
 .repuesto-info {
   padding: 1rem;
+}
+
+.repuesto-descripcion{
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
 }
 
 .repuesto-descripcion h3 {
@@ -733,7 +753,7 @@ html {
   width: 100%;
   height: 100%;
   background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
-  opacity: 0.3;
+  opacity: 0.45;
   z-index: 1;
 }
 
@@ -900,7 +920,7 @@ html, body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 5px;
+  padding: 0 20px;
 }
 
 /* Contenedor de fondo plomo para la barra de contacto */
