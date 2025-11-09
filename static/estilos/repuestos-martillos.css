@@ -927,6 +927,10 @@ html, body {
   overflow-x: hidden;
 }
 
+.hero-section .container{
+  overflow-x: visible;
+}
+
 /* Contenedor de fondo plomo para la barra de contacto */
 .contenedor-barra-contacto {
   background-color: var(--color-oscuro);
