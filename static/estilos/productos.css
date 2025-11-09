@@ -2642,6 +2642,7 @@ iframe {
       text-align: center;
       padding: 0 30px;
       gap: 40px;
+      width: 100%;
   }
 
   .hero-section h1 {
@@ -2674,5 +2675,6 @@ iframe {
   .features {
       justify-content: center;
   }
+
 }
 

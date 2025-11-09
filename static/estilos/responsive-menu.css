@@ -316,5 +316,41 @@ nav ul li:nth-child(7) { animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) fo
             order: 2;
             margin-right: 15px;
         }
+
+        @media (max-width: 360px) {
+        .contenedor-barra-contacto .contacto-derecha .btn-cotizar {
+            margin-left: auto !important;
+          }
+
+        .contenedor-barra-contacto {
+            padding: 35px 0; /* aún más compacto en pantallas chicas */
+          }
+
+        /* Ocultar correo y teléfono */
+        .contacto-izquierda {
+            display: none; /* ocultar correo/teléfono */
+          }
+        
+          .contacto-derecha {
+            display: flex;
+            margin-right: 0 !important;
+            justify-content: space-between; /* redes a la izq, botón a la der */
+            align-items: center;
+            width: 100%;
+            padding: 0;
+          }
+        
+          /* Redes sociales a la izquierda */
+          .contacto-derecha .redes-sociales {
+            order: 1;
+            margin-left: 5px; /* pegadas a la izq */
+          }
+        
+          /* Botón cotizar a la derecha */
+          .contacto-derecha .btn-cotizar {
+            order: 2;
+            margin-right: 5px;
+        }
       }
-  
+
+    }
