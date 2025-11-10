@@ -784,7 +784,7 @@ h1 {
 .acoples-section {
   max-width: 100%;
   padding: 220px 20px;
-  background: linear-gradient(135deg, #f8f8f8, #ffffff);
+  background: linear-gradient(135deg, #f1f1f1, #ffffff);
   position: relative;
   overflow: hidden;
   box-shadow: 
@@ -939,7 +939,12 @@ h1 {
 /* --- Sección general --- */
 .puntas-section {
   padding: 80px 20px;
-  background: #f4f4f4;
+  background: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0.5)),
+    url(../../media/img/fondos3.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   text-align: center;
 }
 
@@ -1244,7 +1249,12 @@ h1 {
   position: relative;  /* necesario para que el z-index funcione */
   padding: 90px 20px;
   z-index: 2;
-  background: #ffffff;
+  background: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0.5)),
+    url(../../media/img/fondos2.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   box-shadow: 
     0 -25px 30px rgba(0, 0, 0, 0.2); /* sombra arriba */
 }
@@ -1476,7 +1486,7 @@ h1 {
 /* Martillos Section */
 .martillos-section {
   max-width: 100%;
-  margin: 2rem auto;
+  margin: 0 auto;
   padding: 2rem;
 }
 
@@ -2347,7 +2357,7 @@ iframe {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
   padding: 0 60px;
   position: relative;
@@ -2388,6 +2398,25 @@ iframe {
   line-height: 1.2;
   color: black;
 }
+
+.plus-icon {
+  color: #FFD700; /* amarillo base */
+  font-weight: 900;
+  text-shadow:
+    1px 1px 0 #000,    /* sombra principal negra */
+    2px 2px 3px rgba(0, 0, 0, 0.8), /* profundidad */
+   -1px -1px 0 #333,   /* borde superior más oscuro */
+    0 0 5px #ffea00;   /* brillo amarillo suave */
+  filter: brightness(1.1);
+  letter-spacing: 1px;
+}
+
+
+.kit-text {
+  color: #0D68B7; /* azul solicitado */
+  font-weight: 800;
+}
+
 
 .hero-section p {
   font-size: 1.2rem;
@@ -2564,31 +2593,42 @@ iframe {
   }
 }
 
-@media (max-width: 1150px){
+@media (max-width: 1550px){
   .hammer-image {
-    width: 450px;
-    height: 450px;
+    width: 480px;
+    height: 480px;
+}
+
+.container {
+    width: 85%;
 }
 }
 
-@media (max-width: 1030px){
+@media (max-width: 1215px){
   .hammer-image {
     margin-left: -50px;
     --base-rot: 90deg;
     width: 500px;
     height: 500px;
 }
+.container{
+  width: 95%;
+  padding: 0 60px;
+}
 }
 
 @media (max-width: 940px){
   .hammer-image {
-    margin-left: 0;
     width: 500px;
     height: 500px;
 }
+
+.container {
+    width: 100%;
+}
 }
 
-@media (max-width: 844px){
+@media (max-width: 946px){
   .hero-section {
     height: auto;
     padding: 40px 0;
@@ -2599,6 +2639,7 @@ iframe {
     text-align: center;
     padding: 0 30px;
     gap: 40px;
+    width: 100%;
 }
 .hero-section h1 {
   text-align: center;
@@ -2620,6 +2661,7 @@ iframe {
     --base-rot: 0deg;
     width: 450px;
     height: 450px;
+    margin: 0 auto;
 }
 .buttons {
   flex-direction: column;
@@ -2665,6 +2707,7 @@ iframe {
     --base-rot: 0deg;
       width: 400px;
       height: 400px;
+      margin: 0 auto;
   }
 
   .buttons {

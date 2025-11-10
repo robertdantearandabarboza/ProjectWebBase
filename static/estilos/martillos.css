@@ -11,7 +11,6 @@ html {
   height: 95vh;
   overflow: hidden;
   position: relative;
-  margin-bottom: 40px;
   margin-top: -55px;
 
   /* Animación original */
@@ -140,6 +139,65 @@ html {
   }
   .hero-overlay p {
     font-size: 1.1rem;
+  }
+}
+
+.kit-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.kit-texto {
+  flex: 1;
+  min-width: 280px;
+  text-align: left;
+}
+
+.kit-texto h3 {
+  font-size: 1.8rem;
+  color: #B51922; /* rojo Hydromenn */
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.kit-texto p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #000; /* negro */
+}
+
+.kit-imagen {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+}
+
+.kit-imagen img {
+  width: 400px;
+  max-width: 100%;
+  background-color: transparent !important;
+}
+
+/* 📱 Responsivo */
+@media (max-width: 768px) {
+  .kit-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .kit-texto {
+    text-align: center;
+  }
+
+  .kit-imagen img {
+    width: 80%;
   }
 }
 

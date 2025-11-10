@@ -28,6 +28,11 @@ const images = [
       href: "../../templates/Martillos Hidraulicos/lc350.html"
   },
   {
+      src: "../../media/img/martillos-hidraulicos/LC380/LC380-A.webp",
+      alt: "Espacio de trabajo moderno",
+      href: "../../templates/Martillos Hidraulicos/lc380.html"
+  },
+  {
       src: "../../media/img/martillos-hidraulicos/LC400/LC400-A.webp",
       alt: "Configuración de desarrollo",
       href: "../../templates/Martillos Hidraulicos/lc400.html"
