@@ -1452,6 +1452,10 @@ section {
     --altura-hero: 70vh;
     --altura-hero-min: 500px;
   }
+
+  .container{
+    gap: 0 !important;
+  }
   
   .hero-content h1 {
     font-size: 2.2rem;

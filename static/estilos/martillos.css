@@ -166,6 +166,7 @@ html {
 }
 
 .kit-texto p {
+  margin-left: 10px;
   font-size: 1rem;
   line-height: 1.5;
   color: #000; /* negro */
@@ -182,7 +183,22 @@ html {
   width: 400px;
   max-width: 100%;
   background-color: transparent !important;
+  animation: balanceo 2s ease-in-out infinite; /* 👈 animación infinita */
+  transform-origin: center bottom; /* pivote en la parte inferior */
 }
+
+@keyframes balanceo {
+  0% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(2deg);
+  }
+}
+
 
 /* 📱 Responsivo */
 @media (max-width: 768px) {

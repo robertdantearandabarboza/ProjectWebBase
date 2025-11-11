@@ -175,14 +175,18 @@
 
 .testimonio-imagen {
   flex: 0 0 50%;
-  height: 400px;
+  aspect-ratio: 15 / 10;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .testimonio-imagen img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 60%; /* un poquito más abajo del centro */
   transition: transform 0.5s ease;
 }
 
