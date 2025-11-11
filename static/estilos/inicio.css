@@ -67,10 +67,6 @@ a {
   transition: var(--transicion);
 }
 
-a:hover {
-  color: var(--color-accion-hover);
-}
-
 img {
   max-width: 100%;
   height: auto;
